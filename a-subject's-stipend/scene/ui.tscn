@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://bkfrxuo7bqwkc"]
+
+[ext_resource type="Texture2D" uid="uid://c2g63frirfnki" path="res://img/settingsbanner.png" id="1_kee8w"]
+[ext_resource type="Script" uid="uid://bl7pcee8a3bwa" path="res://scene/ui.gd" id="1_ytdjg"]
+[ext_resource type="Texture2D" uid="uid://cew8mvec6gsjb" path="res://icon.svg" id="3_ajaei"]
+[ext_resource type="PackedScene" uid="uid://dx6pvn53q36xp" path="res://scene/textbox.tscn" id="3_ytdjg"]
+[ext_resource type="PackedScene" uid="uid://yujeky7jgxja" path="res://scene/questbox.tscn" id="5_ytdjg"]
+
+[sub_resource type="Animation" id="Animation_xh8xk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ytdjg"]
+resource_name = "down"
+length = 0.6666667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 3, -0.14, 0, 0, 0, 3, -0.026666671, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.43333334, 0.59333336)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0, 0, -0.14, -20.5, 0, 0, -5, -0.026666671, 0.8333333, 0, 0),
+"times": PackedFloat32Array(0, 0.43333334, 0.59333336)
+}
+
+[sub_resource type="Animation" id="Animation_ajaei"]
+resource_name = "up"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-5.04, -0.058333334, 1.25, 0.058333334, -1.25, -1, -0.25, 0, 0.25, 0, -123, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.03333333, 0.24, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0oc5v"]
+_data = {
+&"RESET": SubResource("Animation_xh8xk"),
+&"down": SubResource("Animation_ytdjg"),
+&"up": SubResource("Animation_ajaei")
+}
+
+[node name="UI" type="Node2D" unique_id=2040788229]
+script = ExtResource("1_ytdjg")
+
+[node name="Textbox" parent="." unique_id=2072839090 instance=ExtResource("3_ytdjg")]
+
+[node name="Questbox" parent="." unique_id=1006860803 instance=ExtResource("5_ytdjg")]
+
+[node name="SettingsBanner" type="Sprite2D" parent="." unique_id=596087236]
+z_index = 10
+position = Vector2(3, -123)
+
+[node name="img" type="TextureRect" parent="SettingsBanner" unique_id=1650306761]
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kee8w")
+metadata/_edit_use_anchors_ = true
+
+[node name="hover" type="TextureButton" parent="SettingsBanner" unique_id=1064502870]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = -1
+anchor_left = -66.0
+anchor_right = -66.0
+offset_left = 19.0
+offset_top = -1.0
+offset_right = 147.0
+offset_bottom = 220.0
+texture_normal = ExtResource("3_ajaei")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="animation" type="AnimationPlayer" parent="SettingsBanner" unique_id=570463665]
+libraries/ = SubResource("AnimationLibrary_0oc5v")
+
+[connection signal="mouse_entered" from="SettingsBanner/hover" to="." method="onHover"]
+[connection signal="mouse_exited" from="SettingsBanner/hover" to="." method="offHover"]

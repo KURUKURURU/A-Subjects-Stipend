@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://yujeky7jgxja"]
+
+[ext_resource type="Texture2D" uid="uid://bmcxb7yjiymt8" path="res://img/questbox.png" id="1_vky0n"]
+[ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="2_e7rh6"]
+[ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="3_xyuwn"]
+[ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="4_uag7b"]
+
+[node name="Questbox" type="Control" unique_id=1006860803]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="img" type="TextureRect" parent="." unique_id=2113514526]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vky0n")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1869932174]
+texture_filter = 1
+layout_mode = 0
+offset_left = 538.0
+offset_top = 10.0
+offset_right = 754.0
+offset_bottom = 60.0
+scale = Vector2(0.9284081, 0.9284081)
+step = 2.0
+value = 88.0
+texture_under = ExtResource("2_e7rh6")
+texture_over = ExtResource("3_xyuwn")
+texture_progress = ExtResource("4_uag7b")

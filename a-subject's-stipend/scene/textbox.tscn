@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dx6pvn53q36xp"]
+
+[ext_resource type="Texture2D" uid="uid://c7ut6vm7reeh7" path="res://img/textbox.png" id="1_0lrlq"]
+[ext_resource type="Script" uid="uid://dj7fsevcehty2" path="res://scene/textbox.gd" id="1_gtaqj"]
+[ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="2_47n42"]
+[ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="3_gtaqj"]
+[ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="5_h73uh"]
+
+[sub_resource type="Theme" id="Theme_h73uh"]
+RichTextLabel/colors/default_color = Color(0.6198598, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 18
+RichTextLabel/fonts/normal_font = ExtResource("2_47n42")
+
+[sub_resource type="Theme" id="Theme_kuvky"]
+RichTextLabel/colors/default_color = Color(2.041636, 2.041636, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 0.3529412, 0, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/font_sizes/normal_font_size = 21
+RichTextLabel/fonts/normal_font = ExtResource("3_gtaqj")
+
+[sub_resource type="Animation" id="Animation_gtaqj"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_kuvky"]
+resource_name = "jump"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-0.77, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.43333334, 1)
+}
+
+[sub_resource type="Animation" id="Animation_h73uh"]
+resource_name = "text"
+length = 0.96666664
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("message:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.05, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.9333334)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kuvky"]
+_data = {
+&"RESET": SubResource("Animation_gtaqj"),
+&"jump": SubResource("Animation_kuvky"),
+&"text": SubResource("Animation_h73uh")
+}
+
+[node name="Textbox" type="Control" unique_id=788472388]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gtaqj")
+
+[node name="img" type="TextureRect" parent="." unique_id=1623982899]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0lrlq")
+
+[node name="message" type="RichTextLabel" parent="." unique_id=640455853]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 460.0
+offset_right = 660.0
+offset_bottom = 540.0
+theme = SubResource("Theme_h73uh")
+bbcode_enabled = true
+text = "For love is as strong as death is, And exclusive devotion is as unyielding as the Grave. Marigold is the name for a gold and beautifully orange flower found in humid and arid places, and is a sign of great wealth."
+visible_characters_behavior = 1
+
+[node name="name" type="RichTextLabel" parent="." unique_id=670146490]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 434.0
+offset_right = 637.0
+offset_bottom = 514.0
+theme = SubResource("Theme_kuvky")
+bbcode_enabled = true
+text = "Crown Princess Marigold"
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1926644378]
+libraries/ = SubResource("AnimationLibrary_kuvky")
+
+[node name="animation2" type="AnimationPlayer" parent="." unique_id=2040983995]
+libraries/ = SubResource("AnimationLibrary_kuvky")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=124692072]
+position = Vector2(388, 459)
+stream = ExtResource("5_h73uh")
