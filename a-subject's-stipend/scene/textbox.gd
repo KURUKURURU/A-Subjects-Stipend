@@ -9,8 +9,7 @@ signal advance
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await Speak("You", "For love is as strong as death is, And exclusive devotion is as unyielding as the Grave.")
-	await Speak("You", "Marigold is the name for a gold and beautifully orange flower found in humid and arid places, and is a sign of great wealth.")
+	
 	pass # Replace with function body.
 
 
@@ -23,6 +22,7 @@ func _process(delta: float) -> void:
 	pass
 
 func Speak(n: String, m: String):
+	self.show()
 	animation_2.play("jump")
 	
 	message.bbcode_enabled = true
@@ -36,4 +36,5 @@ func Speak(n: String, m: String):
 	message.bbcode_enabled = false
 	
 	await advance
+	self.hide()
 	

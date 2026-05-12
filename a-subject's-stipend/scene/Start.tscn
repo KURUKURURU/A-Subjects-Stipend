@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://cvr0cceh6nn41"]
 
-[node name="Node2D" type="Node2D" unique_id=1564351414]
+[ext_resource type="Texture2D" uid="uid://c2nhrtg3qdc4e" path="res://img/test-img.png" id="1_omp3a"]
+[ext_resource type="PackedScene" uid="uid://bkfrxuo7bqwkc" path="res://scene/ui.tscn" id="2_lg3he"]
+[ext_resource type="AudioStream" uid="uid://b7j2djh4yu12n" path="res://sound/The Palace.wav" id="3_lg3he"]
+
+[node name="Start" type="Node2D" unique_id=1564351414]
+
+[node name="TestImg" type="Sprite2D" parent="." unique_id=1308901481]
+position = Vector2(400, 300)
+texture = ExtResource("1_omp3a")
+
+[node name="UI" parent="." unique_id=2040788229 instance=ExtResource("2_lg3he")]
+
+[node name="the_palace" type="AudioStreamPlayer" parent="." unique_id=593163783]
+stream = ExtResource("3_lg3he")
+volume_db = -10.714
+pitch_scale = 1.19
+autoplay = true

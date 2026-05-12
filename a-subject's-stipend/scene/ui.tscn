@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cew8mvec6gsjb" path="res://icon.svg" id="3_ajaei"]
 [ext_resource type="PackedScene" uid="uid://dx6pvn53q36xp" path="res://scene/textbox.tscn" id="3_ytdjg"]
 [ext_resource type="PackedScene" uid="uid://yujeky7jgxja" path="res://scene/questbox.tscn" id="5_ytdjg"]
+[ext_resource type="AudioStream" uid="uid://b1bp1fqn7svou" path="res://sound/happy-open.wav" id="6_ajaei"]
 
 [sub_resource type="Animation" id="Animation_xh8xk"]
 length = 0.001
@@ -113,6 +114,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="animation" type="AnimationPlayer" parent="SettingsBanner" unique_id=570463665]
 libraries/ = SubResource("AnimationLibrary_0oc5v")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="SettingsBanner" unique_id=224122239]
+stream = ExtResource("6_ajaei")
+volume_db = -7.786
 
 [connection signal="mouse_entered" from="SettingsBanner/hover" to="." method="onHover"]
 [connection signal="mouse_exited" from="SettingsBanner/hover" to="." method="offHover"]

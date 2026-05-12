@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dvd1v3ehvftbj"]
+
+[ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="2_f8ppk"]
+[ext_resource type="Texture2D" uid="uid://dhuvbkuat8bie" path="res://img/filter.png" id="2_y05xi"]
+[ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="3_0me4j"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="3_u8bag"]
+[ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="4_u8bag"]
+
+[sub_resource type="Theme" id="Theme_0me4j"]
+RichTextLabel/colors/default_color = Color(2.041636, 2.041636, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 0.3529412, 0, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/font_sizes/normal_font_size = 21
+RichTextLabel/fonts/normal_font = ExtResource("4_u8bag")
+
+[sub_resource type="Animation" id="Animation_0me4j"]
+resource_name = "vines_in"
+length = 1.5333333
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qij5q"]
+_data = {
+&"vines_in": SubResource("Animation_0me4j")
+}
+
+[node name="Introduction" type="Node2D" unique_id=451491363]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=12597274]
+offset_left = -14.0
+offset_top = -25.0
+offset_right = 818.0
+offset_bottom = 640.0
+color = Color(0.015201731, 0.09021091, 0.1134455, 1)
+
+[node name="ScrollBG" type="Parallax2D" parent="." unique_id=346868067]
+repeat_size = Vector2(0, 7250)
+autoscroll = Vector2(0, -250)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollBG" unique_id=1651731591]
+offset_right = 800.0
+offset_bottom = 7674.0
+texture = ExtResource("2_f8ppk")
+
+[node name="messagebg" type="TextureRect" parent="." unique_id=1283934752]
+offset_right = 800.0
+offset_bottom = 600.0
+texture = ExtResource("3_u8bag")
+
+[node name="vines" type="TextureRect" parent="." unique_id=160341854]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 800.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0me4j")
+
+[node name="filter" type="TextureRect" parent="." unique_id=1361941577]
+self_modulate = Color(18.892157, 18.892157, 4.876789, 0.4392157)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_y05xi")
+
+[node name="message" type="RichTextLabel" parent="." unique_id=306244314]
+offset_left = 200.0
+offset_top = 190.0
+offset_right = 610.0
+offset_bottom = 414.0
+theme = SubResource("Theme_0me4j")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Crown Princess Marigold, 
+savior of the kingdom and 
+holder of the silver sword."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="message_animation" type="AnimationPlayer" parent="message" unique_id=1376291654]
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1212273795]
+libraries/ = SubResource("AnimationLibrary_qij5q")

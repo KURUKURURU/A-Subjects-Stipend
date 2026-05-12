@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dj7fsevcehty2" path="res://scene/textbox.gd" id="1_gtaqj"]
 [ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="2_47n42"]
 [ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="3_gtaqj"]
-[ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="5_h73uh"]
+[ext_resource type="AudioStream" uid="uid://by0rsv0aq6mup" path="res://sound/happy-fantasy.wav" id="5_h73uh"]
 
 [sub_resource type="Theme" id="Theme_h73uh"]
 RichTextLabel/colors/default_color = Color(0.6198598, 0, 0, 1)
@@ -121,3 +121,4 @@ libraries/ = SubResource("AnimationLibrary_kuvky")
 [node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=124692072]
 position = Vector2(388, 459)
 stream = ExtResource("5_h73uh")
+volume_db = -11.401

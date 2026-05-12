@@ -1,13 +1,100 @@
 [gd_scene format=3 uid="uid://yujeky7jgxja"]
 
+[ext_resource type="Script" uid="uid://jkj8fipln2nl" path="res://scene/questbox.gd" id="1_uag7b"]
 [ext_resource type="Texture2D" uid="uid://bmcxb7yjiymt8" path="res://img/questbox.png" id="1_vky0n"]
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="2_e7rh6"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="3_xyuwn"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="4_uag7b"]
+[ext_resource type="AudioStream" uid="uid://buwoo045w88nn" path="res://sound/whoosh.wav" id="6_hnl16"]
+
+[sub_resource type="Animation" id="Animation_xn6vg"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-95, 0, 0, 0.16666667, 15.833334),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_e7j7k"]
+resource_name = "down"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.16666667, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0),
+"points": PackedFloat32Array(-95, 0, 0, 0.16666667, 15.833334, 0, -1.1666666, -12, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_jotdo"]
+resource_name = "up"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -91, -0.16666667, 15.166667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pkvs8"]
+_data = {
+&"RESET": SubResource("Animation_xn6vg"),
+&"down": SubResource("Animation_e7j7k"),
+&"up": SubResource("Animation_jotdo")
+}
 
 [node name="Questbox" type="Control" unique_id=1006860803]
 layout_mode = 3
 anchors_preset = 0
+offset_top = -95.0
+offset_bottom = -95.0
+script = ExtResource("1_uag7b")
 
 [node name="img" type="TextureRect" parent="." unique_id=2113514526]
 texture_filter = 1
@@ -15,9 +102,8 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_vky0n")
-metadata/_edit_use_anchors_ = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1869932174]
+[node name="progressbar" type="TextureProgressBar" parent="." unique_id=1869932174]
 texture_filter = 1
 layout_mode = 0
 offset_left = 538.0
@@ -30,3 +116,11 @@ value = 88.0
 texture_under = ExtResource("2_e7rh6")
 texture_over = ExtResource("3_xyuwn")
 texture_progress = ExtResource("4_uag7b")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=77399951]
+libraries/ = SubResource("AnimationLibrary_pkvs8")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=1595793080]
+position = Vector2(643, 19)
+stream = ExtResource("6_hnl16")
+pitch_scale = 1.45
