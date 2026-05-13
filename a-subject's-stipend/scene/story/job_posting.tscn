@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dw3807nlqj1ku"]
+
+[ext_resource type="Script" uid="uid://bx15wqblb1glf" path="res://scene/story/job_posting.gd" id="1_sbbmk"]
+[ext_resource type="Texture2D" uid="uid://d34jg581xjgfw" path="res://img/ph.jpg" id="2_eqlpi"]
+
+[node name="Job_Posting" type="Node2D" unique_id=1981176305]
+script = ExtResource("1_sbbmk")
+
+[node name="imgph" type="TextureRect" parent="." unique_id=482779743]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.2969012, 3.2969012)
+texture = ExtResource("2_eqlpi")

@@ -13,7 +13,13 @@ config_version=5
 config/name="A Subject's Stipend"
 run/main_scene="uid://dvd1v3ehvftbj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://c2nhrtg3qdc4e"
 config/icon="res://icon.svg"
+
+[autoload]
+
+Fade="*uid://7go56it4j0fu"
+Global="*uid://bs0a7f4oawdrl"
 
 [display]
 

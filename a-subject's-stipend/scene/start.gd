@@ -3,16 +3,19 @@ extends Node2D
 @onready var textbox = $UI/Textbox
 @onready var the_palace: AudioStreamPlayer = $the_palace
 @onready var filter: TextureRect = $filter
+@onready var sad = $sad
 
 
 func _ready() -> void:
+	await Fade.fade("out")
 	
 	# Have a derpy you face
+	sad.play()
 	await Speak("Crown Princess Marigold", "Viorel. You need a job.")
 	
 	# Have a view of mari from afar crosshanded
 	await Speak("Crown Princess Marigold", "A common noble like you should have better spending habits, it worries me how you've dug yourself this deep.")
-	await Speak("Crown Princess Marigold", "In this kingdom, there's should be no shame in being a working noble, at least from me.")
+	await Speak("Crown Princess Marigold", "In this kingdom, there should be no shame in being a working noble, I have eliminated that problem for you.")
 	
 	await Speak("Crown Princess Marigold", "[font_size=12][wave] I just need him to become a suitable match for a crown princess...")
 	
@@ -20,7 +23,9 @@ func _ready() -> void:
 	await Speak("You","Yes, my Princess. I'll do everything you say.")
 	await Speak("Crown Princess Marigold","Do your best, and do it for me. To loose your debt, you must spend wisely and think about the future.")
 	await Speak("Crown Princess Marigold","Don't fall back onto your old habits.")
-
+	
+	await Fade.fade("in")
+	get_tree().change_scene_to_file("res://scene/story/job_posting.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
