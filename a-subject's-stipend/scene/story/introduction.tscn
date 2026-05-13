@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="4_u8bag"]
 [ext_resource type="AudioStream" uid="uid://bkpw6v77yoyvm" path="res://sound/Her Silver Sword.wav" id="6_qij5q"]
 [ext_resource type="AudioStream" uid="uid://cwmnyaphedwgi" path="res://sound/scroll_paper.wav" id="8_3ahhr"]
+[ext_resource type="AudioStream" uid="uid://c7skcf1jtmsaw" path="res://sound/desert_ambience.wav" id="8_lue14"]
 
 [sub_resource type="Theme" id="Theme_0me4j"]
 RichTextLabel/colors/default_color = Color(2.041636, 2.041636, 0, 1)
@@ -119,6 +120,98 @@ tracks/5/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("messagebg:self_modulate:a")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.5, 0.1745098, 0.5, -0.1745098),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lue14"]
+resource_name = "end"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("darkcolor:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(0.015686275, -0.5, 0.000121136196, 0.5, -0.000121136196, 0.015201731, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("darkcolor:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(0.09019608, -0.5, -3.7066638e-06, 0.5, 3.7066638e-06, 0.09021091, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("darkcolor:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(0.11372549, -0.5, 6.9998205e-05, 0.5, -6.9998205e-05, 0.1134455, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("darkcolor:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(0, -0.5, -0.25, 0.5, 0.25, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("messagebg:self_modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(3, 0),
+"points": PackedFloat32Array(1, -0.5, 0.1745098, 0.5, -0.1745098, 0.3019608, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.70000005)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("vines:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.14, -0.295, -0.034999996, 0.295, 0.034999996),
+"times": PackedFloat32Array(0, 1.8)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("vines:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.14, -0.295, -0.034999996, 0.295, 0.034999996),
+"times": PackedFloat32Array(0, 1.8)
+}
 
 [sub_resource type="Animation" id="Animation_0me4j"]
 resource_name = "vines_in"
@@ -193,6 +286,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qij5q"]
 _data = {
 &"RESET": SubResource("Animation_qij5q"),
+&"end": SubResource("Animation_lue14"),
 &"vines_in": SubResource("Animation_0me4j")
 }
 
@@ -246,14 +340,14 @@ offset_left = 200.0
 offset_top = 190.0
 offset_right = 610.0
 offset_bottom = 414.0
-pivot_offset = Vector2(634, 14)
+pivot_offset = Vector2(655, -18)
 theme = SubResource("Theme_0me4j")
 theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
-text = "AMBERWOOD, 
-kingdom of honey.
+text = "Enjoy this upcoming journey,
+[pulse freq=0.90 color=#A85511]and whatever else awaits you.[/pulse]
 
-–A kingdom revered for its beauty."
+your PRINCESS has called for you."
 horizontal_alignment = 1
 vertical_alignment = 1
 visible_characters_behavior = 1
@@ -271,10 +365,16 @@ volume_db = -9.905
 pitch_scale = 0.85
 autoplay = true
 
+[node name="Music2" type="AudioStreamPlayer" parent="." unique_id=411361698]
+stream = ExtResource("8_lue14")
+volume_db = -25.171
+pitch_scale = 2.58
+autoplay = true
+
 [node name="sfx" type="AudioStreamPlayer" parent="." unique_id=880815215]
 stream = ExtResource("8_3ahhr")
 volume_db = -9.905
-pitch_scale = 0.85
+pitch_scale = 1.4
 autoplay = true
 
 [node name="darkcolor" type="ColorRect" parent="." unique_id=456434537]
