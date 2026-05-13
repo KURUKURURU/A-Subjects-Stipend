@@ -18,7 +18,7 @@ kingdom of honey.
 
 –A kingdom revered for its beauty.")
 
-	await Speak("a testiment to this beauty 
+	await Speak("a testament to this beauty 
 would be the kingdom's castle,
 dubbed the \"FIREGARDEN\".")
 	
@@ -38,18 +38,18 @@ despite you being a poor lowly noble.")
 	await Speak("It truly shows how amazing
 and humble our crown princess is.
 
-You would know though, [wave]childhood friend.")
+You would know though, [wave]as her childhood friend.")
 
 	await Speak("~~~")
 	await Speak("Enjoy this upcoming journey,
-[pulse freq=0.90 color=#A85511]and whatever else awaits you.[/pulse]
+	and whatever else awaits you.
 
 your PRINCESS has called for you.")
 	
 	animation.play("end")
 	await animation.animation_finished
 	
-	get_tree().change_scene_to_file("res://scene/Start.tscn")
+	get_tree().change_scene_to_file("res://scene/story/Start.tscn")
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):

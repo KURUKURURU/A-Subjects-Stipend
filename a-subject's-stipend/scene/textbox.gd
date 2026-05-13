@@ -33,7 +33,6 @@ func Speak(n: String, m: String):
 	animation.play("text")
 	await animation.animation_finished
 	message.text = m
-	message.bbcode_enabled = false
 	
 	await advance
 	self.hide()

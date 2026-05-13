@@ -6,13 +6,14 @@ extends Node2D
 @onready var questbox: Control = $Questbox
 @onready var textbox: Control = $Textbox
 @onready var audio: AudioStreamPlayer2D = $SettingsBanner/audio
+var pull = false
 
 func _ready() -> void:
-	
-	await Speak("You", "For love is as strong as death is, And exclusive devotion is as unyielding as the Grave.")
-	await questbox.startQuest("Sigma Challenge!")
-	await Speak("You", "Marigold is the name for a gold and beautifully orange flower found in humid and arid places, and is a sign of great wealth.")
-	
+	#
+	#await Speak("You", "For love is as strong as death is, And exclusive devotion is as unyielding as the Grave.")
+	#await questbox.startQuest("Sigma Challenge!")
+	#await Speak("You", "Marigold is the name for a gold and beautifully orange flower found in humid and arid places, and is a sign of great wealth.")
+	#
 	pass # Replace with function body.
 
 
@@ -23,11 +24,16 @@ func Speak(n, m):
 	await textbox.Speak(n, m)
 
 func onHover() -> void:
-	print_debug()
+	
+	if pull:
+		return
+		
+	pull = true
 	audio.play()
 	settings_animation.play("down")
-
+	pull = false
 
 func offHover() -> void:
+	
 	audio.play()
 	settings_animation.play("up")

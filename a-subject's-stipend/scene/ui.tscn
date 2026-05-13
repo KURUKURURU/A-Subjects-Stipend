@@ -85,6 +85,8 @@ script = ExtResource("1_ytdjg")
 [node name="Textbox" parent="." unique_id=2072839090 instance=ExtResource("3_ytdjg")]
 
 [node name="Questbox" parent="." unique_id=1006860803 instance=ExtResource("5_ytdjg")]
+offset_top = -95.0
+offset_bottom = -95.0
 
 [node name="SettingsBanner" type="Sprite2D" parent="." unique_id=596087236]
 z_index = 10

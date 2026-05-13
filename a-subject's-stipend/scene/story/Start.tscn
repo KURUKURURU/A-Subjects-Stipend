@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cvr0cceh6nn41"]
 
+[ext_resource type="Script" uid="uid://c422ctanyqj1v" path="res://scene/start.gd" id="1_kapdx"]
 [ext_resource type="Texture2D" uid="uid://c2nhrtg3qdc4e" path="res://img/test-img.png" id="1_omp3a"]
 [ext_resource type="PackedScene" uid="uid://bkfrxuo7bqwkc" path="res://scene/ui.tscn" id="2_lg3he"]
 [ext_resource type="AudioStream" uid="uid://b7j2djh4yu12n" path="res://sound/The Palace.wav" id="3_lg3he"]
+[ext_resource type="Texture2D" uid="uid://dhuvbkuat8bie" path="res://img/filter.png" id="4_ua5m8"]
 
 [node name="Start" type="Node2D" unique_id=1564351414]
+script = ExtResource("1_kapdx")
 
 [node name="TestImg" type="Sprite2D" parent="." unique_id=1308901481]
 position = Vector2(400, 300)
@@ -17,3 +20,11 @@ stream = ExtResource("3_lg3he")
 volume_db = -10.714
 pitch_scale = 1.19
 autoplay = true
+
+[node name="filter" type="TextureRect" parent="." unique_id=1699068397]
+self_modulate = Color(0.6505784, 0.6591647, 0.5472173, 0.25490198)
+z_index = 10
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("4_ua5m8")
