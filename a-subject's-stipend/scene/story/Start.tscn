@@ -5,6 +5,144 @@
 [ext_resource type="PackedScene" uid="uid://bkfrxuo7bqwkc" path="res://scene/ui.tscn" id="3_t5eaj"]
 [ext_resource type="AudioStream" uid="uid://b7j2djh4yu12n" path="res://sound/The Palace.wav" id="4_u8f33"]
 [ext_resource type="Texture2D" uid="uid://dhuvbkuat8bie" path="res://img/filter.png" id="5_bnx4a"]
+[ext_resource type="Texture2D" uid="uid://bn1frcke7gc80" path="res://img/Layers/5.png" id="6_qycei"]
+[ext_resource type="Texture2D" uid="uid://brylnv3nk2m3h" path="res://img/Layers/4.png" id="7_78nn2"]
+[ext_resource type="Texture2D" uid="uid://b5x6nee2t01h5" path="res://img/Layers/3.png" id="8_0yog5"]
+[ext_resource type="Texture2D" uid="uid://1lyx71uhbxhj" path="res://img/Layers/2.png" id="9_47sc8"]
+[ext_resource type="Texture2D" uid="uid://d0ned1v6wl7tf" path="res://img/Layers/1.png" id="10_lecm5"]
+
+[sub_resource type="Animation" id="Animation_nh031"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zoom/5:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("zoom/4:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("zoom/3:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("zoom/2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("zoom/1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4edp0"]
+resource_name = "intro"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("zoom/5:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27, 1.27), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("zoom/4:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.16666667, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27, 1.27), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("zoom/3:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666666, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27, 1.27), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("zoom/2:scale")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27, 1.27), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("zoom/1:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.27, 1.27), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jw3r5"]
+_data = {
+&"RESET": SubResource("Animation_nh031"),
+&"intro": SubResource("Animation_4edp0")
+}
 
 [node name="Start" type="Node2D" unique_id=1564351414]
 script = ExtResource("1_2sa14")
@@ -13,12 +151,57 @@ script = ExtResource("1_2sa14")
 position = Vector2(400, 300)
 texture = ExtResource("2_4vrvi")
 
+[node name="zoom" type="AnimationPlayer" parent="." unique_id=926267909]
+libraries/ = SubResource("AnimationLibrary_jw3r5")
+autoplay = &"intro"
+
+[node name="5" type="TextureRect" parent="zoom" unique_id=627308759]
+self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+texture_filter = 1
+offset_right = 800.0
+offset_bottom = 600.0
+pivot_offset = Vector2(400, 300)
+texture = ExtResource("6_qycei")
+
+[node name="4" type="TextureRect" parent="zoom" unique_id=172028320]
+self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+texture_filter = 1
+offset_right = 800.0
+offset_bottom = 600.0
+pivot_offset = Vector2(400, 300)
+texture = ExtResource("7_78nn2")
+
+[node name="3" type="TextureRect" parent="zoom" unique_id=161360401]
+self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+texture_filter = 1
+offset_right = 800.0
+offset_bottom = 600.0
+pivot_offset = Vector2(400, 300)
+texture = ExtResource("8_0yog5")
+
+[node name="2" type="TextureRect" parent="zoom" unique_id=1856246297]
+self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+texture_filter = 1
+offset_right = 800.0
+offset_bottom = 600.0
+pivot_offset = Vector2(400, 300)
+texture = ExtResource("9_47sc8")
+
+[node name="1" type="TextureRect" parent="zoom" unique_id=1193672878]
+self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+texture_filter = 1
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset = Vector2(400, 300)
+texture = ExtResource("10_lecm5")
+
 [node name="UI" parent="." unique_id=2040788229 instance=ExtResource("3_t5eaj")]
+z_index = 20
 
 [node name="the_palace" type="AudioStreamPlayer" parent="." unique_id=593163783]
 stream = ExtResource("4_u8f33")
-volume_db = -10.714
-pitch_scale = 1.19
+volume_db = -8.364
+pitch_scale = 1.07
 
 [node name="sad" type="AudioStreamPlayer" parent="." unique_id=107341902]
 volume_db = -10.714
