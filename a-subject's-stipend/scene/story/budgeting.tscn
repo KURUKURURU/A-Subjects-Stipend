@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://t26laumt50od"]
+
+[ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="1_fs8fp"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="2_hh5bm"]
+[ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="3_rtogq"]
+[ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
+[ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="5_co2mp"]
+[ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="6_2eqe0"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
+
+[sub_resource type="Theme" id="Theme_3ypin"]
+RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
+RichTextLabel/colors/font_outline_color = Color(0.11372549, 0, 0.08235294, 0.5764706)
+RichTextLabel/colors/font_shadow_color = Color(0.5294118, 0, 0, 0.57254905)
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/constants/shadow_offset_x = 2
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/font_sizes/normal_font_size = 66
+RichTextLabel/fonts/normal_font = ExtResource("3_rtogq")
+
+[sub_resource type="Animation" id="Animation_fs8fp"]
+resource_name = "Debts"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3),
+"points": PackedFloat32Array(800, -0.25, 0, 0.9, -1, 0, -0.25, 200, 0.25, -200),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_hh5bm"]
+resource_name = "Profits"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 800, -1.2333333, -3, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_rtogq"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ug5vd"]
+_data = {
+&"Debts": SubResource("Animation_fs8fp"),
+&"Profits": SubResource("Animation_hh5bm"),
+&"RESET": SubResource("Animation_rtogq")
+}
+
+[node name="Budgeting" type="Node2D" unique_id=1682666116]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=72166293]
+offset_right = 800.0
+offset_bottom = 599.0
+color = Color(0.25539732, 0.12621486, 0.12942946, 1)
+
+[node name="Screen" type="Node2D" parent="." unique_id=1174710104]
+
+[node name="banner" type="TextureRect" parent="Screen" unique_id=1343928861]
+offset_left = 4021.0
+offset_top = -100.0
+offset_right = 4821.0
+offset_bottom = 7574.0
+rotation = 1.5707964
+texture = ExtResource("1_fs8fp")
+flip_v = true
+
+[node name="Profit" type="Node2D" parent="Screen" unique_id=1103506440]
+position = Vector2(-800, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Screen/Profit" unique_id=1058705184]
+offset_left = 817.0
+offset_top = -241.0
+offset_right = 1617.0
+offset_bottom = 359.0
+rotation = 1.5742477
+scale = Vector2(1.4267163, 1.4267163)
+texture = ExtResource("2_hh5bm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen/Profit" unique_id=374040881]
+offset_left = 196.0
+offset_top = 33.0
+offset_right = 591.0
+offset_bottom = 139.0
+theme = SubResource("Theme_3ypin")
+text = "Profits!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="progressbar2" type="TextureProgressBar" parent="Screen/Profit" unique_id=950611932]
+texture_filter = 1
+offset_left = 262.0
+offset_top = 122.999985
+offset_right = 478.0
+offset_bottom = 172.99998
+scale = Vector2(1.2742465, 1.2742465)
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+
+[node name="label" type="RichTextLabel" parent="Screen/Profit/progressbar2" unique_id=705193466]
+layout_mode = 0
+offset_left = 2.3543324
+offset_top = 51.79533
+offset_right = 208.75084
+offset_bottom = 91.795334
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+text = "10,000 gold left"
+horizontal_alignment = 1
+
+[node name="Debt" type="Node2D" parent="Screen" unique_id=729954405]
+
+[node name="TextureRect" type="TextureRect" parent="Screen/Debt" unique_id=27492585]
+offset_left = 817.0
+offset_top = -241.0
+offset_right = 1617.0
+offset_bottom = 359.0
+rotation = 1.5742477
+scale = Vector2(1.4267163, 1.4267163)
+texture = ExtResource("2_hh5bm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen/Debt" unique_id=1105167198]
+offset_left = 196.0
+offset_top = 33.0
+offset_right = 591.0
+offset_bottom = 139.0
+theme = SubResource("Theme_3ypin")
+text = "Debts"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="progressbar" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
+texture_filter = 1
+offset_left = 262.0
+offset_top = 122.999985
+offset_right = 478.0
+offset_bottom = 172.99998
+scale = Vector2(1.2742465, 1.2742465)
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+
+[node name="label" type="RichTextLabel" parent="Screen/Debt/progressbar" unique_id=746575871]
+layout_mode = 0
+offset_left = 2.3543324
+offset_top = 51.79533
+offset_right = 208.75084
+offset_bottom = 91.795334
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+text = "10,000 gold left"
+horizontal_alignment = 1
+
+[node name="TransitionButton" type="TextureButton" parent="Screen" unique_id=327762804]
+offset_left = -112.0
+offset_top = -15.0
+offset_right = 110.0
+offset_bottom = 612.0
+
+[node name="animation" type="AnimationPlayer" parent="Screen/TransitionButton" unique_id=621273729]
+libraries/ = SubResource("AnimationLibrary_ug5vd")

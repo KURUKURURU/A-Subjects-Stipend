@@ -13,8 +13,13 @@ config_version=5
 config/name="A Subject's Stipend"
 run/main_scene="uid://dvd1v3ehvftbj"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0.03758735, 0.08744451, 0.07885607, 1)
 boot_splash/image="uid://c2nhrtg3qdc4e"
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://d085ntlqta3fy"
 
 [autoload]
 

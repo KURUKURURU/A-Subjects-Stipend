@@ -49,6 +49,9 @@ your PRINCESS has called for you.")
 	animation.play("end")
 	await animation.animation_finished
 	
+	await Fade.fade("in")
+	
+	
 	get_tree().change_scene_to_file("res://scene/story/Start.tscn")
 	
 func _process(delta: float) -> void:

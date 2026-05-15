@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://c0107gwsduunx"]
+
+[ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="1_y1ci1"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.6198598, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 18
+RichTextLabel/fonts/normal_font = ExtResource("1_y1ci1")

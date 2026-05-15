@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://bnj0fm4hpncl1"]
+
+[ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="1_7qrak"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(2.041636, 2.041636, 0, 1)
+RichTextLabel/colors/font_outline_color = Color(1, 0.3529412, 0, 1)
+RichTextLabel/constants/outline_size = 4
+RichTextLabel/font_sizes/normal_font_size = 21
+RichTextLabel/fonts/normal_font = ExtResource("1_7qrak")

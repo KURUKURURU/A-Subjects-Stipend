@@ -92,6 +92,7 @@ offset_bottom = 40.0
 texture = ExtResource("1_0lrlq")
 
 [node name="message" type="RichTextLabel" parent="." unique_id=640455853]
+texture_filter = 1
 layout_mode = 0
 offset_left = 140.0
 offset_top = 460.0

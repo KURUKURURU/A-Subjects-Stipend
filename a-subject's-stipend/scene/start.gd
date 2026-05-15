@@ -4,12 +4,22 @@ extends Node2D
 @onready var the_palace: AudioStreamPlayer = $the_palace
 @onready var filter: TextureRect = $filter
 @onready var sad = $sad
+@onready var zoom = $zoom
+@onready var music = AudioServer.get_bus_index("Music")
+
 
 
 func _ready() -> void:
-	await Fade.fade("out")
+	AudioServer.set_bus_volume_db(music, -80.0)
 	
+	await Fade.fade("out")
+	await zoom.animation_finished
 	# Have a derpy you face
+
+	for i in range(60):
+		await Global.wait(0.2)
+		AudioServer.set_bus_volume_db(music, -60 + (i)) # Lower volume by 10dB
+			
 	sad.play()
 	await Speak("Crown Princess Marigold", "Viorel. You need a job.")
 	

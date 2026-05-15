@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8ta0nm11t6hk" path="res://scene/fade.gd" id="1_27sph"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="1_n3g8k"]
+[ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="3_pk4yt"]
 
 [sub_resource type="Animation" id="Animation_27sph"]
 length = 0.001
@@ -70,6 +71,18 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 560)]
 }
 
 [sub_resource type="Animation" id="Animation_pk4yt"]
@@ -140,6 +153,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(0, 0, 0, 0.16666667, 0.16666667, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 560), Vector2(0, -2421)]
+}
 
 [sub_resource type="Animation" id="Animation_lhul0"]
 resource_name = "out"
@@ -209,6 +234,18 @@ tracks/5/keys = {
 "points": PackedFloat32Array(1, 0, 0, 0.16666667, -0.16666667, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TextureRect:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -2421), Vector2(0, -3729)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tuojb"]
 _data = {
@@ -218,8 +255,18 @@ _data = {
 }
 
 [node name="fade" type="Node2D" unique_id=2056393534]
-z_index = 20
+z_index = 100
 script = ExtResource("1_27sph")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1086501822]
+self_modulate = Color(0.51183194, 0.25056568, 0.51183194, 1)
+clip_contents = true
+offset_top = 560.0
+offset_right = 800.0
+offset_bottom = 4220.0
+texture = ExtResource("3_pk4yt")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="vines" type="TextureRect" parent="." unique_id=1797515997]
 anchors_preset = 8
