@@ -7,4 +7,4 @@ func _ready() -> void:
 	await Fade.fade("out")
 	await Global.wait(3.0)
 	await Fade.fade("in")
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://scene/story/budgeting.tscn")

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://di8hx5i4i12il"]
+
+[ext_resource type="Shader" uid="uid://dodkcyawvkav" path="res://theme/less.gdshader" id="1_hris2"]
+
+[resource]
+shader = ExtResource("1_hris2")
+shader_parameter/blur_amount = 2.0

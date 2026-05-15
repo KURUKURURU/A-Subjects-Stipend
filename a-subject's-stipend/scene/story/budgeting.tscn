@@ -1,13 +1,18 @@
 [gd_scene format=3 uid="uid://t26laumt50od"]
 
-[ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="1_fs8fp"]
 [ext_resource type="Script" uid="uid://dw3emvtsball0" path="res://scene/story/budgeting.gd" id="1_hh5bm"]
 [ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="2_hh5bm"]
+[ext_resource type="Texture2D" uid="uid://dkcyy6pd1v8t8" path="res://img/pattern.png" id="2_rtogq"]
 [ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="3_rtogq"]
+[ext_resource type="Material" uid="uid://di8hx5i4i12il" path="res://theme/blurless.tres" id="3_ug5vd"]
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="5_co2mp"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="6_2eqe0"]
+[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="6_co2mp"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
+[ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="10_ug5vd"]
+[ext_resource type="Script" uid="uid://dh17rmnybjgr3" path="res://scene/story/bank.gd" id="11_o4uiu"]
+[ext_resource type="AudioStream" uid="uid://bkpw6v77yoyvm" path="res://sound/Her Silver Sword.wav" id="12_2eqe0"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -19,124 +24,76 @@ RichTextLabel/constants/shadow_offset_y = 3
 RichTextLabel/font_sizes/normal_font_size = 66
 RichTextLabel/fonts/normal_font = ExtResource("3_rtogq")
 
-[sub_resource type="Animation" id="Animation_fs8fp"]
-resource_name = "Debts"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 3),
-"points": PackedFloat32Array(800, -0.25, 0, 0.9, -1, 0, -0.25, 200, 0.25, -200),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="Animation" id="Animation_hh5bm"]
-resource_name = "Profits"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 800, -1.2333333, -3, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 2),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
-"times": PackedFloat32Array(0, 1)
-}
-
-[sub_resource type="Animation" id="Animation_rtogq"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("..:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ug5vd"]
-_data = {
-&"Debts": SubResource("Animation_fs8fp"),
-&"Profits": SubResource("Animation_hh5bm"),
-&"RESET": SubResource("Animation_rtogq")
-}
-
 [node name="Budgeting" type="Node2D" unique_id=1682666116]
 script = ExtResource("1_hh5bm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=72166293]
 offset_right = 800.0
 offset_bottom = 599.0
-color = Color(0.25539732, 0.12621486, 0.12942946, 1)
+color = Color(0.4488905, 0.1095167, 1.4439226e-07, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="TextureRect" parent="." unique_id=1509573940]
+self_modulate = Color(0.86078215, 0.768872, 0.20719914, 1)
+offset_left = 1.0
+offset_right = 801.0
+offset_bottom = 601.0
+texture = ExtResource("2_rtogq")
+stretch_mode = 1
 
 [node name="Screen" type="Node2D" parent="." unique_id=1174710104]
+position = Vector2(800, 0)
 
-[node name="banner" type="TextureRect" parent="Screen" unique_id=1343928861]
-offset_left = 4021.0
-offset_top = -100.0
-offset_right = 4821.0
-offset_bottom = 7574.0
-rotation = 1.5707964
-texture = ExtResource("1_fs8fp")
-flip_v = true
+[node name="Blur2" type="ColorRect" parent="Screen" unique_id=1561294951]
+material = ExtResource("3_ug5vd")
+offset_left = -810.0
+offset_top = -12.0
+offset_right = 22.0
+offset_bottom = 588.0
+scale = Vector2(1.0084083, 1.0608687)
 
 [node name="Profit" type="Node2D" parent="Screen" unique_id=1103506440]
-position = Vector2(-800, 0)
+position = Vector2(-840, 76.99999)
+scale = Vector2(0.7, 0.7)
 
 [node name="TextureRect" type="TextureRect" parent="Screen/Profit" unique_id=1058705184]
-offset_left = 817.0
-offset_top = -241.0
-offset_right = 1617.0
-offset_bottom = 359.0
+self_modulate = Color(0.914478, 2.0194066, 0.22632064, 1)
+offset_left = 842.8572
+offset_top = -332.85712
+offset_right = 1642.8572
+offset_bottom = 267.14288
+rotation = 1.5742477
+scale = Vector2(1.4267163, 1.4267163)
+texture = ExtResource("2_hh5bm")
+
+[node name="TextureRect2" type="TextureRect" parent="Screen/Profit" unique_id=779948830]
+self_modulate = Color(0.91673136, 2.0193505, 0.22277522, 0.45882353)
+offset_left = 842.8572
+offset_top = -332.85712
+offset_right = 1642.8572
+offset_bottom = 267.14288
 rotation = 1.5742477
 scale = Vector2(1.4267163, 1.4267163)
 texture = ExtResource("2_hh5bm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/Profit" unique_id=374040881]
-offset_left = 196.0
+offset_left = 220.0
 offset_top = 33.0
-offset_right = 591.0
+offset_right = 614.2857
 offset_bottom = 139.0
 theme = SubResource("Theme_3ypin")
+theme_override_fonts/normal_font = ExtResource("6_co2mp")
 text = "Profits!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="progressbar2" type="TextureProgressBar" parent="Screen/Profit" unique_id=950611932]
+visible = false
 texture_filter = 1
-offset_left = 262.0
-offset_top = 122.999985
-offset_right = 478.0
-offset_bottom = 172.99998
+offset_left = 280.00003
+offset_top = 124.285736
+offset_right = 496.00003
+offset_bottom = 174.28574
 scale = Vector2(1.2742465, 1.2742465)
 step = 50.0
 value = 50.0
@@ -161,8 +118,20 @@ text = "10,000 gold left"
 horizontal_alignment = 1
 
 [node name="Debt" type="Node2D" parent="Screen" unique_id=729954405]
+position = Vector2(-507, 77)
+scale = Vector2(0.7, 0.7)
 
 [node name="TextureRect" type="TextureRect" parent="Screen/Debt" unique_id=27492585]
+offset_left = 817.0
+offset_top = -241.0
+offset_right = 1617.0
+offset_bottom = 359.0
+rotation = 1.5742477
+scale = Vector2(1.4267163, 1.4267163)
+texture = ExtResource("2_hh5bm")
+
+[node name="TextureRect2" type="TextureRect" parent="Screen/Debt" unique_id=1768646179]
+self_modulate = Color(1, 1, 1, 0.3882353)
 offset_left = 817.0
 offset_top = -241.0
 offset_right = 1617.0
@@ -177,24 +146,27 @@ offset_top = 33.0
 offset_right = 591.0
 offset_bottom = 139.0
 theme = SubResource("Theme_3ypin")
-text = "Debts"
+theme_override_fonts/normal_font = ExtResource("6_co2mp")
+text = "Debts..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="progressbar" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
+[node name="Bank" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
 texture_filter = 1
-offset_left = 262.0
-offset_top = 122.999985
-offset_right = 478.0
-offset_bottom = 172.99998
-scale = Vector2(1.2742465, 1.2742465)
-step = 50.0
-value = 50.0
+offset_left = 244.28577
+offset_top = 151.42859
+offset_right = 460.28577
+offset_bottom = 201.42859
+scale = Vector2(1.4032681, 1.4032681)
+max_value = 10000.0
+step = 10.0
+value = 5000.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("11_o4uiu")
 
-[node name="label" type="RichTextLabel" parent="Screen/Debt/progressbar" unique_id=746575871]
+[node name="label" type="RichTextLabel" parent="Screen/Debt/Bank" unique_id=746575871]
 layout_mode = 0
 offset_left = 2.3543324
 offset_top = 51.79533
@@ -207,14 +179,40 @@ theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 23
 text = "10,000 gold left"
 horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debt" unique_id=566640764]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="TransitionButton" type="TextureButton" parent="Screen" unique_id=327762804]
 offset_left = -112.0
 offset_top = -15.0
 offset_right = 110.0
 offset_bottom = 612.0
+metadata/_edit_use_anchors_ = true
 
-[node name="animation" type="AnimationPlayer" parent="Screen/TransitionButton" unique_id=621273729]
-libraries/ = SubResource("AnimationLibrary_ug5vd")
+[node name="vines" type="TextureRect" parent="." unique_id=228047318]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 800.0
+offset_bottom = 600.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1316695, 1.1316695)
+pivot_offset = Vector2(400, 300)
+mouse_filter = 2
+texture = ExtResource("10_ug5vd")
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=175469749]
+stream = ExtResource("12_2eqe0")
+volume_db = -9.668
+autoplay = true
+
+[connection signal="pressed" from="Screen/TransitionButton" to="." method="Transition"]

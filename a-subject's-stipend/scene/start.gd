@@ -17,7 +17,7 @@ func _ready() -> void:
 	# Have a derpy you face
 
 	for i in range(60):
-		await Global.wait(0.2)
+		await Global.wait(0.02)
 		AudioServer.set_bus_volume_db(music, -60 + (i)) # Lower volume by 10dB
 			
 	sad.play()
