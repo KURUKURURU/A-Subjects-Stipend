@@ -26,6 +26,7 @@ buses/default_bus_layout="uid://d085ntlqta3fy"
 Fade="*uid://7go56it4j0fu"
 Global="*uid://bs0a7f4oawdrl"
 AlertMessage="*uid://d13j35qkgx42s"
+Questbox="*uid://yujeky7jgxja"
 
 [display]
 

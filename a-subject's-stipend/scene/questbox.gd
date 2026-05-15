@@ -17,3 +17,4 @@ func _process(delta: float) -> void:
 func startQuest(title: String):
 	sfx.play()
 	animation.play("down")
+	

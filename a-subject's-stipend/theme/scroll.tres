@@ -1,0 +1,18 @@
+[gd_resource type="Theme" format=3 uid="uid://sde4e68oot4f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kajte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0mt7m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jtown"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3eb7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0w6ok"]
+
+[resource]
+ScrollContainer/styles/focus = SubResource("StyleBoxEmpty_kajte")
+ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_0mt7m")
+VSlider/styles/grabber_area = SubResource("StyleBoxEmpty_jtown")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_3eb7d")
+VSlider/styles/slider = SubResource("StyleBoxEmpty_0w6ok")

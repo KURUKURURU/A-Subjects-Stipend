@@ -7,6 +7,7 @@ extends Node2D
 @onready var transition_button: TextureButton = $Screen/TransitionButton
 @onready var animation: AnimationPlayer = $Screen/TransitionButton/animation
 @onready var bank: TextureProgressBar = $Screen/Debt/Bank
+@onready var scroll_container: ScrollContainer = $Screen1/Profit/ScrollContainer
 
 var page := "Profits"
 

@@ -30,7 +30,9 @@ func _ready() -> void:
 	await Speak("Crown Princess Marigold", "[font_size=12][wave] I just need him to become a suitable match for a crown princess...")
 	
 	# he looks up smiling
+	Questbox.startQuest("hi")
 	await Speak("You","Yes, my Princess. I'll do everything you say.")
+	
 	await Speak("Crown Princess Marigold","Do your best, and do it for me. To loose your debt, you must spend wisely and think about the future.")
 	await Speak("Crown Princess Marigold","Don't fall back onto your old habits.")
 	

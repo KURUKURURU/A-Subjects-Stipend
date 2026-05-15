@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://jkj8fipln2nl" path="res://scene/questbox.gd" id="1_uag7b"]
 [ext_resource type="Texture2D" uid="uid://bmcxb7yjiymt8" path="res://img/questbox.png" id="1_vky0n"]
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="2_e7rh6"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="3_hnl16"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="3_xyuwn"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="4_uag7b"]
 [ext_resource type="AudioStream" uid="uid://buwoo045w88nn" path="res://sound/whoosh.wav" id="6_hnl16"]
@@ -90,6 +91,7 @@ _data = {
 }
 
 [node name="Questbox" type="Control" unique_id=1006860803]
+z_index = 20
 layout_mode = 3
 anchors_preset = 0
 offset_top = -93.1
@@ -103,19 +105,31 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_vky0n")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1504321288]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 44.1
+offset_right = 759.01764
+offset_bottom = 71.1
+theme = ExtResource("3_hnl16")
+text = "Debt left!"
+
 [node name="progressbar" type="TextureProgressBar" parent="." unique_id=1869932174]
 texture_filter = 1
 layout_mode = 0
-offset_left = 538.0
-offset_top = 10.0
-offset_right = 754.0
-offset_bottom = 60.0
-scale = Vector2(0.9284081, 0.9284081)
+offset_left = 532.0
+offset_top = 24.099998
+offset_right = 748.0
+offset_bottom = 74.1
+scale = Vector2(0.9868142, 0.41211277)
 step = 50.0
-value = 64.0
+value = 100.0
 texture_under = ExtResource("2_e7rh6")
 texture_over = ExtResource("3_xyuwn")
 texture_progress = ExtResource("4_uag7b")
+tint_under = Color(0.027652124, 0.027652124, 0.00023692685, 1)
+tint_over = Color(0.66537815, 0.14054173, 0.052176412, 1)
+tint_progress = Color(3.0485291, 3.0485291, 0, 1)
 
 [node name="animation" type="AnimationPlayer" parent="." unique_id=77399951]
 libraries/ = SubResource("AnimationLibrary_pkvs8")

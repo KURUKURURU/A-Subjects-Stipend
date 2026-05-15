@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	pass
 
 func Alert(message:String):
+	tug.show()
 	tmessage.text = message
 	sfx.play()
 	banners.play("down")
@@ -40,3 +41,4 @@ func Tug() -> void:
 	banners.play("up")
 	await banners.animation_finished
 	emit_signal("accept_message")
+	tug.hide()

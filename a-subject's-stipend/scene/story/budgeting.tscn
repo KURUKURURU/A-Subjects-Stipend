@@ -11,8 +11,13 @@
 [ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="6_co2mp"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="10_ug5vd"]
+[ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="11_3ypin"]
 [ext_resource type="Script" uid="uid://dh17rmnybjgr3" path="res://scene/story/bank.gd" id="11_o4uiu"]
-[ext_resource type="AudioStream" uid="uid://bkpw6v77yoyvm" path="res://sound/Her Silver Sword.wav" id="12_2eqe0"]
+[ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="13_w1771"]
+[ext_resource type="Theme" uid="uid://sde4e68oot4f" path="res://theme/scroll.tres" id="14_3eb7d"]
+[ext_resource type="AudioStream" uid="uid://cjqakxcb4b8sf" path="res://sound/Sun Theme.wav" id="14_3ypin"]
+[ext_resource type="Script" uid="uid://bt14djigx6rmo" path="res://scene/story/scroll_container.gd" id="15_0w6ok"]
+[ext_resource type="Texture2D" uid="uid://d3a0he1m0bifi" path="res://img/arrow.png" id="16_fwjy0"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -30,7 +35,7 @@ script = ExtResource("1_hh5bm")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=72166293]
 offset_right = 800.0
 offset_bottom = 599.0
-color = Color(0.4488905, 0.1095167, 1.4439226e-07, 1)
+color = Color(0.28233004, 0.09477242, 0.113822974, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="TextureRect" parent="." unique_id=1509573940]
@@ -42,9 +47,10 @@ texture = ExtResource("2_rtogq")
 stretch_mode = 1
 
 [node name="Screen" type="Node2D" parent="." unique_id=1174710104]
-position = Vector2(800, 0)
+position = Vector2(1600, 0)
 
 [node name="Blur2" type="ColorRect" parent="Screen" unique_id=1561294951]
+visible = false
 material = ExtResource("3_ug5vd")
 offset_left = -810.0
 offset_top = -12.0
@@ -56,8 +62,9 @@ scale = Vector2(1.0084083, 1.0608687)
 position = Vector2(-840, 76.99999)
 scale = Vector2(0.7, 0.7)
 
-[node name="TextureRect" type="TextureRect" parent="Screen/Profit" unique_id=1058705184]
-self_modulate = Color(0.914478, 2.0194066, 0.22632064, 1)
+[node name="TextureRect2" type="TextureRect" parent="Screen/Profit" unique_id=779948830]
+self_modulate = Color(0.91673136, 2.0193505, 0.22277522, 0.90588236)
+clip_children = 2
 offset_left = 842.8572
 offset_top = -332.85712
 offset_right = 1642.8572
@@ -66,15 +73,20 @@ rotation = 1.5742477
 scale = Vector2(1.4267163, 1.4267163)
 texture = ExtResource("2_hh5bm")
 
-[node name="TextureRect2" type="TextureRect" parent="Screen/Profit" unique_id=779948830]
-self_modulate = Color(0.91673136, 2.0193505, 0.22277522, 0.45882353)
-offset_left = 842.8572
-offset_top = -332.85712
-offset_right = 1642.8572
-offset_bottom = 267.14288
-rotation = 1.5742477
-scale = Vector2(1.4267163, 1.4267163)
-texture = ExtResource("2_hh5bm")
+[node name="Parallax2D" type="Parallax2D" parent="Screen/Profit/TextureRect2" unique_id=1811628727]
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(-20, 20)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Screen/Profit/TextureRect2/Parallax2D" unique_id=1042514185]
+self_modulate = Color(1.2318197, 3.2993073, 4.0650434, 0.078431375)
+offset_left = 363.8244
+offset_top = 217.67294
+offset_right = 1163.8245
+offset_bottom = 817.673
+texture = ExtResource("2_rtogq")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/Profit" unique_id=374040881]
 offset_left = 220.0
@@ -83,7 +95,8 @@ offset_right = 614.2857
 offset_bottom = 139.0
 theme = SubResource("Theme_3ypin")
 theme_override_fonts/normal_font = ExtResource("6_co2mp")
-text = "Profits!"
+bbcode_enabled = true
+text = "[wave]Profits!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -122,6 +135,7 @@ position = Vector2(-507, 77)
 scale = Vector2(0.7, 0.7)
 
 [node name="TextureRect" type="TextureRect" parent="Screen/Debt" unique_id=27492585]
+visible = false
 offset_left = 817.0
 offset_top = -241.0
 offset_right = 1617.0
@@ -131,7 +145,8 @@ scale = Vector2(1.4267163, 1.4267163)
 texture = ExtResource("2_hh5bm")
 
 [node name="TextureRect2" type="TextureRect" parent="Screen/Debt" unique_id=1768646179]
-self_modulate = Color(1, 1, 1, 0.3882353)
+self_modulate = Color(1, 1, 1, 0.85882354)
+clip_children = 2
 offset_left = 817.0
 offset_top = -241.0
 offset_right = 1617.0
@@ -140,14 +155,30 @@ rotation = 1.5742477
 scale = Vector2(1.4267163, 1.4267163)
 texture = ExtResource("2_hh5bm")
 
+[node name="Parallax2D" type="Parallax2D" parent="Screen/Debt/TextureRect2" unique_id=1691870614]
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(10, 10)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Screen/Debt/TextureRect2/Parallax2D" unique_id=261763541]
+self_modulate = Color(1, 0.22352941, 1, 0.43137255)
+offset_left = 363.8244
+offset_top = 217.67294
+offset_right = 1163.8245
+offset_bottom = 817.673
+texture = ExtResource("2_rtogq")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/Debt" unique_id=1105167198]
 offset_left = 196.0
 offset_top = 33.0
 offset_right = 591.0
 offset_bottom = 139.0
 theme = SubResource("Theme_3ypin")
-theme_override_fonts/normal_font = ExtResource("6_co2mp")
-text = "Debts..."
+theme_override_fonts/normal_font = ExtResource("11_3ypin")
+bbcode_enabled = true
+text = "[shake]Debts..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -183,10 +214,6 @@ theme_override_font_sizes/normal_font_size = 23
 text = "10,000 gold left"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debt" unique_id=566640764]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TransitionButton" type="TextureButton" parent="Screen" unique_id=327762804]
 offset_left = -112.0
 offset_top = -15.0
@@ -194,7 +221,327 @@ offset_right = 110.0
 offset_bottom = 612.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Screen1" type="Node2D" parent="." unique_id=875598573]
+position = Vector2(800, 0)
+
+[node name="Profit" type="Node2D" parent="Screen1" unique_id=806213888]
+position = Vector2(-840, 76.99999)
+scale = Vector2(0.7, 0.7)
+
+[node name="TextureRect2" type="TextureRect" parent="Screen1/Profit" unique_id=354755301]
+self_modulate = Color(3.4823272, 1.0235215, 0, 0.90588236)
+clip_children = 2
+offset_left = 1397.1427
+offset_top = -284.28568
+offset_right = 2197.1426
+offset_bottom = 835.9033
+rotation = 1.5742477
+scale = Vector2(1.4267163, 1.4267163)
+texture = ExtResource("2_hh5bm")
+
+[node name="Parallax2D" type="Parallax2D" parent="Screen1/Profit/TextureRect2" unique_id=542923584]
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(-20, 20)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Screen1/Profit/TextureRect2/Parallax2D" unique_id=391323658]
+self_modulate = Color(1.2318197, 3.2993073, 4.0650434, 0.078431375)
+offset_left = 363.8244
+offset_top = 217.67294
+offset_right = 1163.8245
+offset_bottom = 817.673
+texture = ExtResource("2_rtogq")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Blur3" type="ColorRect" parent="Screen1/Profit" unique_id=1869568369]
+z_index = 3
+material = ExtResource("3_ug5vd")
+offset_left = 245.7143
+offset_top = -177.14285
+offset_right = 941.2942
+offset_bottom = 109.68405
+scale = Vector2(1.0084083, 1.0608687)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen1/Profit" unique_id=505857348]
+z_index = 3
+offset_left = 45.714287
+offset_top = 27.14287
+offset_right = 1175.7141
+offset_bottom = 133.14287
+theme = SubResource("Theme_3ypin")
+theme_override_colors/default_color = Color(1.706018, 1.0776091, 0.24627632, 1)
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+bbcode_enabled = true
+text = "[wave]====== This Month's Budget  ======"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Screen1/Profit" unique_id=829480525]
+clip_contents = false
+offset_left = 404.28574
+offset_top = 122.857155
+offset_right = 694.9248
+offset_bottom = 380.55228
+scale = Vector2(1.9513645, 1.9513645)
+size_flags_horizontal = 4
+theme = ExtResource("14_3eb7d")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("15_0w6ok")
+
+[node name="thing" type="VBoxContainer" parent="Screen1/Profit/ScrollContainer" unique_id=1710842996]
+layout_mode = 2
+theme_override_constants/separation = 41
+
+[node name="Total_money" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=595562708]
+texture_filter = 1
+layout_mode = 2
+max_value = 3000.0
+step = 100.0
+value = 100.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+tint_under = Color(0.2976268, 0.46743762, 0.941711, 1)
+tint_over = Color(1.0349987, 0.97422373, 0.09501282, 1)
+tint_progress = Color(2.727554, 2.727554, 0.379669, 1)
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Total_money" unique_id=45579860]
+layout_mode = 0
+offset_left = 8.052996
+offset_top = 41.729046
+offset_right = 214.4495
+offset_bottom = 81.72905
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+text = "10,000 gold left"
+horizontal_alignment = 1
+
+[node name="Emergency" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1517358445]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=1582518747]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Emergency Fund"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=1631120534]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=22500968]
+layout_mode = 0
+offset_left = -38.0686
+offset_top = 3.4394171
+offset_right = 210.9314
+offset_bottom = 205.43942
+scale = Vector2(0.17898183, 0.17898183)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=225315151]
+layout_mode = 0
+offset_left = 204.98479
+offset_top = 7.099859
+offset_right = 453.9848
+offset_bottom = 209.09985
+scale = Vector2(0.1663945, 0.1663945)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="Emergency2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=812051099]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=334326244]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Emergency Fund"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=177688980]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=1513037517]
+layout_mode = 0
+offset_left = -38.0686
+offset_top = 3.4394171
+offset_right = 210.9314
+offset_bottom = 205.43942
+scale = Vector2(0.17898183, 0.17898183)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=1423819408]
+layout_mode = 0
+offset_left = 204.98479
+offset_top = 7.099859
+offset_right = 453.9848
+offset_bottom = 209.09985
+scale = Vector2(0.1663945, 0.1663945)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="Emergency3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1162440831]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=1461647504]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Emergency Fund"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=1131467292]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=468425062]
+layout_mode = 0
+offset_left = -38.0686
+offset_top = 3.4394171
+offset_right = 210.9314
+offset_bottom = 205.43942
+scale = Vector2(0.17898183, 0.17898183)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=549199622]
+layout_mode = 0
+offset_left = 204.98479
+offset_top = 7.099859
+offset_right = 453.9848
+offset_bottom = 209.09985
+scale = Vector2(0.1663945, 0.1663945)
+texture_normal = ExtResource("16_fwjy0")
+
+[node name="TransitionButton" type="TextureButton" parent="Screen1" unique_id=2072184100]
+offset_left = -112.0
+offset_top = -15.0
+offset_right = 110.0
+offset_bottom = 612.0
+metadata/_edit_use_anchors_ = true
+
 [node name="vines" type="TextureRect" parent="." unique_id=228047318]
+self_modulate = Color(0.99256206, 1.361005, 1.361005, 1)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -211,8 +558,15 @@ texture = ExtResource("10_ug5vd")
 metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=175469749]
-stream = ExtResource("12_2eqe0")
+stream = ExtResource("14_3ypin")
 volume_db = -9.668
 autoplay = true
 
 [connection signal="pressed" from="Screen/TransitionButton" to="." method="Transition"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency2/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency3/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency3/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/TransitionButton" to="." method="Transition"]
