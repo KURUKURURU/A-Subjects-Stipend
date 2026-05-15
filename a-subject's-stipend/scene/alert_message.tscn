@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://d13j35qkgx42s"]
+
+[ext_resource type="Script" uid="uid://betf7yk6bebn6" path="res://alert_message.gd" id="1_4snci"]
+[ext_resource type="Material" uid="uid://j2xqcyup455o" path="res://theme/blur.tres" id="2_qp0lk"]
+[ext_resource type="Texture2D" uid="uid://vjlmg2i685qi" path="res://img/Annocunecement/tug.png" id="3_ch7kl"]
+[ext_resource type="Texture2D" uid="uid://d0bowsdjmcdvg" path="res://scene/hover.png" id="4_4snci"]
+[ext_resource type="Texture2D" uid="uid://d2ww0770qt1fj" path="res://img/Annocunecement/side.png" id="5_phl7p"]
+[ext_resource type="BitMap" uid="uid://oic6wuspe5ra" path="res://img/Annocunecement/mask.png" id="5_qp0lk"]
+[ext_resource type="Texture2D" uid="uid://g4k4plt60kqm" path="res://img/Annocunecement/big.png" id="6_hw70i"]
+[ext_resource type="AudioStream" uid="uid://bri4xyid10rsh" path="res://sound/chain-lower.mp3" id="9_4ib1o"]
+[ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="9_phl7p"]
+
+[sub_resource type="Animation" id="Animation_pxk4l"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banners/Side:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banners/Main:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Banners/Main:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -564)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Banners/Side:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -564)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Blur:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 615)]
+}
+
+[sub_resource type="Animation" id="Animation_iehvy"]
+resource_name = "down"
+length = 1.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banners/Side:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(3, 2),
+"points": PackedFloat32Array(-564, -0.33333334, -655.4858, 0.33333334, 655.4858, 0, -0.3, -27.685532, 0, 0),
+"times": PackedFloat32Array(0, 0.9666667)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banners/Main:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-564, -0.75, -141, 0.26666665, 408.4233, 0, -0.36666667, 11.5538, 0.25, 0),
+"times": PackedFloat32Array(0.33333337, 0.9666667)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blur:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 615), Vector2(806, 615)]
+}
+
+[sub_resource type="Animation" id="Animation_0exps"]
+resource_name = "up"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Banners/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -564)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Banners/Side:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -564)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Blur:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666667, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(804, 615), Vector2(0, 615)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8p7mq"]
+_data = {
+&"RESET": SubResource("Animation_pxk4l"),
+&"down": SubResource("Animation_iehvy"),
+&"up": SubResource("Animation_0exps")
+}
+
+[sub_resource type="Animation" id="Animation_s4i3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(350, -600)]
+}
+
+[sub_resource type="Animation" id="Animation_440k6"]
+resource_name = "down"
+length = 2.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.7333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(350, -612), Vector2(350, -14)]
+}
+
+[sub_resource type="Animation" id="Animation_r0qsm"]
+resource_name = "tug"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(350, -14), Vector2(350, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ohh7e"]
+resource_name = "up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(350, 0), Vector2(350, -600)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mf7q"]
+_data = {
+&"RESET": SubResource("Animation_s4i3f"),
+&"down": SubResource("Animation_440k6"),
+&"tug": SubResource("Animation_r0qsm"),
+&"up": SubResource("Animation_ohh7e")
+}
+
+[sub_resource type="Theme" id="Theme_hw70i"]
+RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
+RichTextLabel/colors/font_outline_color = Color(0.11372549, 0, 0.08235294, 0.5764706)
+RichTextLabel/colors/font_shadow_color = Color(0.5294118, 0, 0, 0.57254905)
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/constants/shadow_offset_x = 2
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/font_sizes/normal_font_size = 66
+RichTextLabel/fonts/normal_font = ExtResource("9_phl7p")
+
+[node name="AlertMessage" type="CanvasLayer" unique_id=834170773]
+script = ExtResource("1_4snci")
+
+[node name="Blur" type="ColorRect" parent="." unique_id=1058700710]
+material = ExtResource("2_qp0lk")
+offset_top = -1.0
+offset_bottom = 614.0
+
+[node name="Banners" type="AnimationPlayer" parent="." unique_id=738279741]
+libraries/ = SubResource("AnimationLibrary_8p7mq")
+
+[node name="Tug" type="TextureButton" parent="Banners" unique_id=1548973877]
+texture_filter = 1
+offset_left = 350.0
+offset_top = -600.0
+offset_right = 450.0
+texture_normal = ExtResource("3_ch7kl")
+texture_pressed = ExtResource("3_ch7kl")
+texture_hover = ExtResource("4_4snci")
+texture_click_mask = ExtResource("5_qp0lk")
+metadata/_edit_use_anchors_ = true
+
+[node name="anim" type="AnimationPlayer" parent="Banners/Tug" unique_id=1394878233]
+libraries/ = SubResource("AnimationLibrary_0mf7q")
+
+[node name="Side" type="TextureRect" parent="Banners" unique_id=1093056323]
+texture_filter = 1
+offset_top = -564.0
+offset_right = 800.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("5_phl7p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Main" type="TextureRect" parent="Banners" unique_id=413945672]
+texture_filter = 1
+offset_top = -564.0
+offset_right = 800.0
+offset_bottom = 36.0
+mouse_filter = 2
+texture = ExtResource("6_hw70i")
+metadata/_edit_use_anchors_ = true
+
+[node name="message" type="RichTextLabel" parent="Banners/Main" unique_id=512573264]
+texture_filter = 5
+clip_contents = false
+layout_mode = 0
+offset_left = 323.0
+offset_top = 176.0
+offset_right = 481.0
+offset_bottom = 347.0
+theme = SubResource("Theme_hw70i")
+theme_override_colors/default_color = Color(1.3302628, 0.8359399, 0.1819918, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 23
+text = "Variable interest is a type of APR that may fluctuate based on current indexes. 
+"
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="." unique_id=2031356457]
+position = Vector2(398, -58)
+stream = ExtResource("9_4ib1o")
+volume_db = -26.251
+max_polyphony = 2
+panning_strength = 2.0
+
+[connection signal="mouse_entered" from="Banners/Tug" to="." method="HoverStart"]
+[connection signal="pressed" from="Banners/Tug" to="." method="Tug"]

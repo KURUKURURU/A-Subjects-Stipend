@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://t26laumt50od"]
 
 [ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="1_fs8fp"]
+[ext_resource type="Script" uid="uid://dw3emvtsball0" path="res://scene/story/budgeting.gd" id="1_hh5bm"]
 [ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="2_hh5bm"]
 [ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="3_rtogq"]
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
@@ -90,6 +91,7 @@ _data = {
 }
 
 [node name="Budgeting" type="Node2D" unique_id=1682666116]
+script = ExtResource("1_hh5bm")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=72166293]
 offset_right = 800.0

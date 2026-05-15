@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://oic6wuspe5ra"
+path="res://.godot/imported/mask.png-92093883e75c6c91bb0526e8b870edd9.res"
+
+[deps]
+
+source_file="res://img/Annocunecement/mask.png"
+dest_files=["res://.godot/imported/mask.png-92093883e75c6c91bb0526e8b870edd9.res"]
+
+[params]
+
+create_from=1
+threshold=0.5
