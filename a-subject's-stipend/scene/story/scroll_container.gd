@@ -6,6 +6,8 @@ extends ScrollContainer
 @onready var emergency_label: RichTextLabel = $thing/Emergency/label
 @onready var emergency_amount: RichTextLabel = $thing/Emergency/amount
 
+@onready var coin: AudioStreamPlayer = $coin
+
 #@onready var servants_salary_amount: RichTextLabel = $thing/Emergency/amount
 
 
@@ -20,9 +22,11 @@ func _process(delta: float) -> void:
 
 
 func subtracting() -> void:
+	coin.play()
 	emergency.value = emergency.value - 100
 	total_money.value = total_money.value + 100
 func adding() -> void:
+	coin.play()
 	if total_money.value != 0:
 		emergency.value = emergency.value + 100
 		total_money.value = total_money.value - 100

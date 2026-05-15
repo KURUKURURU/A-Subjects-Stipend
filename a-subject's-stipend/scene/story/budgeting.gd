@@ -9,7 +9,10 @@ extends Node2D
 @onready var bank: TextureProgressBar = $Screen/Debt/Bank
 @onready var scroll_container: ScrollContainer = $Screen1/Profit/ScrollContainer
 
-var page := "Profits"
+@onready var transition: TextureButton = $Transition
+@onready var transition_animation: AnimationPlayer = $Transition/animation
+
+var page := 1
 
 func _ready() -> void:
 	bank.value = 1025
@@ -22,3 +25,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
+
+func Transition() -> void:
+	if !transition_animation.is_playing():
+		if page == 1:
+			transition_animation.play("Page2")
+			page = 2
+		elif page == 2:
+			transition_animation.play("Page1")
+			page = 1

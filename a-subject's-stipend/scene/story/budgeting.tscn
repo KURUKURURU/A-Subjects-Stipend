@@ -17,7 +17,14 @@
 [ext_resource type="Theme" uid="uid://sde4e68oot4f" path="res://theme/scroll.tres" id="14_3eb7d"]
 [ext_resource type="AudioStream" uid="uid://cjqakxcb4b8sf" path="res://sound/Sun Theme.wav" id="14_3ypin"]
 [ext_resource type="Script" uid="uid://bt14djigx6rmo" path="res://scene/story/scroll_container.gd" id="15_0w6ok"]
-[ext_resource type="Texture2D" uid="uid://d3a0he1m0bifi" path="res://img/arrow.png" id="16_fwjy0"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="16_78cih"]
+[ext_resource type="Texture2D" uid="uid://c1ylas5qqfrx6" path="res://img/buttons/minus.png" id="17_78cih"]
+[ext_resource type="Texture2D" uid="uid://yxahwqqus2hb" path="res://img/buttons/766.png" id="18_83pxv"]
+[ext_resource type="Texture2D" uid="uid://bjqtvse7chf3x" path="res://img/buttons/add.png" id="18_qw8cp"]
+[ext_resource type="Texture2D" uid="uid://2rne8ux3v2v3" path="res://img/buttons/c2.png" id="19_gu60g"]
+[ext_resource type="Texture2D" uid="uid://c35e360bmyebd" path="res://img/buttons/gvcc.png" id="21_1wvy1"]
+[ext_resource type="Texture2D" uid="uid://pmma4e78rwmr" path="res://img/buttons/c1.png" id="22_wdgv3"]
+[ext_resource type="AudioStream" uid="uid://dux2yc6ausfxf" path="res://sound/coinshuffle.wav" id="23_gu60g"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -28,6 +35,132 @@ RichTextLabel/constants/shadow_offset_x = 2
 RichTextLabel/constants/shadow_offset_y = 3
 RichTextLabel/font_sizes/normal_font_size = 66
 RichTextLabel/fonts/normal_font = ExtResource("3_rtogq")
+
+[sub_resource type="Animation" id="Animation_fwjy0"]
+resource_name = "Page1"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 0), Vector2(1600, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Screen1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(800, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-166, -462), Vector2(624, -462)]
+}
+
+[sub_resource type="Animation" id="Animation_78cih"]
+resource_name = "Page2"
+length = 0.73333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1600, 0), Vector2(800, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Screen1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(624, -462), Vector2(-161, -462)]
+}
+
+[sub_resource type="Animation" id="Animation_qw8cp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Screen:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1600, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Screen1:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(800, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(624, -462)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ihf8c"]
+_data = {
+&"Page1": SubResource("Animation_fwjy0"),
+&"Page2": SubResource("Animation_78cih"),
+&"RESET": SubResource("Animation_qw8cp")
+}
 
 [node name="Budgeting" type="Node2D" unique_id=1682666116]
 script = ExtResource("1_hh5bm")
@@ -323,6 +456,19 @@ theme_override_constants/outline_size = 4
 text = "10,000 gold left"
 horizontal_alignment = 1
 
+[node name="Title" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1512099820]
+layout_mode = 2
+
+[node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title" unique_id=54205910]
+layout_mode = 0
+offset_left = -1.4641769
+offset_top = 6.367771
+offset_right = 214.53583
+offset_bottom = 40.77593
+theme = ExtResource("16_78cih")
+text = "Emergency"
+horizontal_alignment = 1
+
 [node name="Emergency" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1517358445]
 texture_filter = 1
 layout_mode = 2
@@ -376,24 +522,31 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=22500968]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
 layout_mode = 0
-offset_left = -38.0686
-offset_top = 3.4394171
-offset_right = 210.9314
-offset_bottom = 205.43942
-scale = Vector2(0.17898183, 0.17898183)
-texture_normal = ExtResource("16_fwjy0")
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
 
 [node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=225315151]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
 layout_mode = 0
-offset_left = 204.98479
-offset_top = 7.099859
-offset_right = 453.9848
-offset_bottom = 209.09985
-scale = Vector2(0.1663945, 0.1663945)
-texture_normal = ExtResource("16_fwjy0")
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
 
-[node name="Emergency2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=812051099]
+[node name="SSalary" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1010323127]
 texture_filter = 1
 layout_mode = 2
 max_value = 5000.0
@@ -403,7 +556,7 @@ texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
 
-[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=334326244]
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=763415156]
 texture_filter = 5
 layout_mode = 0
 offset_left = 2.130757
@@ -419,10 +572,10 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 40
-text = "Emergency Fund"
+text = "Servant's Salary"
 horizontal_alignment = 1
 
-[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=177688980]
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=1446646204]
 layout_mode = 0
 offset_left = 13.317287
 offset_top = 15.980786
@@ -445,100 +598,66 @@ scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=1513037517]
-layout_mode = 0
-offset_left = -38.0686
-offset_top = 3.4394171
-offset_right = 210.9314
-offset_bottom = 205.43942
-scale = Vector2(0.17898183, 0.17898183)
-texture_normal = ExtResource("16_fwjy0")
-
-[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency2" unique_id=1423819408]
-layout_mode = 0
-offset_left = 204.98479
-offset_top = 7.099859
-offset_right = 453.9848
-offset_bottom = 209.09985
-scale = Vector2(0.1663945, 0.1663945)
-texture_normal = ExtResource("16_fwjy0")
-
-[node name="Emergency3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1162440831]
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=2060173385]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
 texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=1684285907]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="Title2" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=932523163]
 layout_mode = 2
-max_value = 5000.0
-step = 50.0
-value = 50.0
-texture_under = ExtResource("4_ug5vd")
-texture_over = ExtResource("5_co2mp")
-texture_progress = ExtResource("6_2eqe0")
 
-[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=1461647504]
-texture_filter = 5
+[node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title2" unique_id=1304488905]
 layout_mode = 0
-offset_left = 2.130757
-offset_top = 45.900547
-offset_right = 495.39404
-offset_bottom = 109.80446
-scale = Vector2(0.43152103, 0.43152103)
-theme = ExtResource("7_o4uiu")
-theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
-theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
-theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/normal_font_size = 40
-text = "Emergency Fund"
+offset_left = -1.4641769
+offset_top = 6.367771
+offset_right = 214.53583
+offset_bottom = 40.77593
+theme = ExtResource("16_78cih")
+text = "Needs"
 horizontal_alignment = 1
 
-[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=1131467292]
-layout_mode = 0
-offset_left = 13.317287
-offset_top = 15.980786
-offset_right = 444.14157
-offset_bottom = 57.980785
-scale = Vector2(0.43152103, 0.43152103)
-theme = ExtResource("7_o4uiu")
-theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
-theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
-theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("13_w1771")
-theme_override_font_sizes/normal_font_size = 41
-theme_override_font_sizes/bold_font_size = 1
-text = "10,000"
-fit_content = true
-scroll_active = false
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="coin" type="AudioStreamPlayer" parent="Screen1/Profit/ScrollContainer" unique_id=245793998]
+stream = ExtResource("23_gu60g")
+volume_db = -9.668
 
-[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=468425062]
-layout_mode = 0
-offset_left = -38.0686
-offset_top = 3.4394171
-offset_right = 210.9314
-offset_bottom = 205.43942
-scale = Vector2(0.17898183, 0.17898183)
-texture_normal = ExtResource("16_fwjy0")
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=175469749]
+stream = ExtResource("14_3ypin")
+volume_db = -9.668
+pitch_scale = 0.65
+autoplay = true
 
-[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Emergency3" unique_id=549199622]
-layout_mode = 0
-offset_left = 204.98479
-offset_top = 7.099859
-offset_right = 453.9848
-offset_bottom = 209.09985
-scale = Vector2(0.1663945, 0.1663945)
-texture_normal = ExtResource("16_fwjy0")
+[node name="Transition" type="TextureButton" parent="." unique_id=1230102366]
+self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.4862745)
+offset_left = 624.0
+offset_top = -462.0
+offset_right = 931.00006
+offset_bottom = 1099.0
+texture_normal = ExtResource("2_hh5bm")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="TransitionButton" type="TextureButton" parent="Screen1" unique_id=2072184100]
-offset_left = -112.0
-offset_top = -15.0
-offset_right = 110.0
-offset_bottom = 612.0
-metadata/_edit_use_anchors_ = true
+[node name="animation" type="AnimationPlayer" parent="Transition" unique_id=511928315]
+libraries/ = SubResource("AnimationLibrary_ihf8c")
 
 [node name="vines" type="TextureRect" parent="." unique_id=228047318]
 self_modulate = Color(0.99256206, 1.361005, 1.361005, 1)
@@ -551,22 +670,16 @@ offset_right = 800.0
 offset_bottom = 600.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.1316695, 1.1316695)
+scale = Vector2(1.1215005, 1.1215005)
 pivot_offset = Vector2(400, 300)
 mouse_filter = 2
 texture = ExtResource("10_ug5vd")
 metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=175469749]
-stream = ExtResource("14_3ypin")
-volume_db = -9.668
-autoplay = true
-
 [connection signal="pressed" from="Screen/TransitionButton" to="." method="Transition"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
-[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
-[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency2/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
-[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency3/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
-[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency3/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
-[connection signal="pressed" from="Screen1/TransitionButton" to="." method="Transition"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="mouse_entered" from="Transition" to="." method="Transition"]
+[connection signal="pressed" from="Transition" to="." method="Transition"]
