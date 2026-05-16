@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://2rne8ux3v2v3" path="res://img/buttons/c2.png" id="19_gu60g"]
 [ext_resource type="Texture2D" uid="uid://c35e360bmyebd" path="res://img/buttons/gvcc.png" id="21_1wvy1"]
 [ext_resource type="Texture2D" uid="uid://pmma4e78rwmr" path="res://img/buttons/c1.png" id="22_wdgv3"]
+[ext_resource type="Script" uid="uid://bmvgr1pyjggae" path="res://scene/story/s_salary.gd" id="23_1wvy1"]
 [ext_resource type="AudioStream" uid="uid://dux2yc6ausfxf" path="res://sound/coinshuffle.wav" id="23_gu60g"]
+[ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="25_wdgv3"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -472,12 +474,13 @@ horizontal_alignment = 1
 [node name="Emergency" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1517358445]
 texture_filter = 1
 layout_mode = 2
-max_value = 5000.0
+max_value = 3000.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
 
 [node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=1582518747]
 texture_filter = 5
@@ -546,6 +549,19 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="Title2" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=932523163]
+layout_mode = 2
+
+[node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title2" unique_id=1304488905]
+layout_mode = 0
+offset_left = -1.4641769
+offset_top = 6.367771
+offset_right = 214.53583
+offset_bottom = 40.77593
+theme = ExtResource("16_78cih")
+text = "Servants"
+horizontal_alignment = 1
+
 [node name="SSalary" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1010323127]
 texture_filter = 1
 layout_mode = 2
@@ -555,6 +571,7 @@ value = 50.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
 
 [node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=763415156]
 texture_filter = 5
@@ -623,10 +640,88 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
-[node name="Title2" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=932523163]
+[node name="SFood" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=928488178]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SFood" unique_id=1233505162]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Servant's Food"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SFood" unique_id=1920046544]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SFood" unique_id=305175801]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SFood" unique_id=2072647971]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="Title3" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1563751244]
 layout_mode = 2
 
-[node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title2" unique_id=1304488905]
+[node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title3" unique_id=1643301210]
 layout_mode = 0
 offset_left = -1.4641769
 offset_top = 6.367771
@@ -636,9 +731,325 @@ theme = ExtResource("16_78cih")
 text = "Needs"
 horizontal_alignment = 1
 
+[node name="S2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=722297591]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S2" unique_id=1495405054]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Castle's Food"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S2" unique_id=272498278]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S2" unique_id=918517078]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S2" unique_id=973722416]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="S5" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=2001820365]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S5" unique_id=971164638]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Castle's Water"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S5" unique_id=357873503]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S5" unique_id=746509521]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S5" unique_id=1958573918]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="S3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1246939107]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S3" unique_id=1433600518]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Silversound Energy"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S3" unique_id=945462292]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S3" unique_id=630598809]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S3" unique_id=1565885801]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="S4" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1251232492]
+texture_filter = 1
+layout_mode = 2
+max_value = 5000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S4" unique_id=1080121161]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+text = "Horse Care and Treatment"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/S4" unique_id=1912877340]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S4" unique_id=425384271]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/S4" unique_id=1908632167]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
 [node name="coin" type="AudioStreamPlayer" parent="Screen1/Profit/ScrollContainer" unique_id=245793998]
 stream = ExtResource("23_gu60g")
 volume_db = -9.668
+
+[node name="bad" type="AudioStreamPlayer" parent="Screen1/Profit/ScrollContainer" unique_id=1009700090]
+stream = ExtResource("25_wdgv3")
+volume_db = 3.136
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=175469749]
 stream = ExtResource("14_3ypin")
@@ -681,5 +1092,15 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SFood/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SFood/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S2/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S5/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S5/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S3/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S3/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S4/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/S4/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="mouse_entered" from="Transition" to="." method="Transition"]
 [connection signal="pressed" from="Transition" to="." method="Transition"]

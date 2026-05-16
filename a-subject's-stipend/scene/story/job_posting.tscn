@@ -7,6 +7,7 @@
 script = ExtResource("1_sbbmk")
 
 [node name="imgph" type="TextureRect" parent="." unique_id=482779743]
+self_modulate = Color(1.3005794, 0.89005095, 0.38829377, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(3.2969012, 3.2969012)
