@@ -156,13 +156,12 @@ offset_top = 16.0
 offset_right = 748.0
 offset_bottom = 66.0
 scale = Vector2(0.9857764, 0.75629246)
-step = 50.0
-value = 100.0
+value = 79.0
 texture_under = ExtResource("2_e7rh6")
 texture_over = ExtResource("3_xyuwn")
 texture_progress = ExtResource("4_uag7b")
-tint_under = Color(0.027652124, 0.027652124, 0.00023692685, 1)
-tint_progress = Color(2.4412165, 1.7787136, 2.2314239, 1)
+tint_under = Color(4.1509075, 6.294977, 0, 1)
+tint_progress = Color(1.457, 0.7707397, 1.2670631, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Likability" unique_id=1990154992]

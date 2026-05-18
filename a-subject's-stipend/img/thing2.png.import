@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://dudp5i4315jal"
+path="res://.godot/imported/thing2.png-1a8e0d4614e629f28d4465a267e3f00a.res"
+
+[deps]
+
+source_file="res://img/thing2.png"
+dest_files=["res://.godot/imported/thing2.png-1a8e0d4614e629f28d4465a267e3f00a.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

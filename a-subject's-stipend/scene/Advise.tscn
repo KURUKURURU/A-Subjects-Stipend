@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bsfkblfod0s6r"]
+
+[ext_resource type="Material" uid="uid://di8hx5i4i12il" path="res://theme/blurless.tres" id="1_lru64"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="2_72wnq"]
+[ext_resource type="Texture2D" uid="uid://dkcyy6pd1v8t8" path="res://img/pattern.png" id="3_qmg3i"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="4_ld78p"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="5_72wnq"]
+[ext_resource type="Texture2D" uid="uid://bstpdgpbflev0" path="res://img/buttons/yes.png" id="6_qmg3i"]
+
+[sub_resource type="Animation" id="Animation_qmg3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ld78p"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yuwx"]
+_data = {
+&"RESET": SubResource("Animation_qmg3i"),
+&"fadein": SubResource("Animation_ld78p")
+}
+
+[node name="popup" type="Node2D" unique_id=131589283]
+modulate = Color(1, 1, 1, 0)
+
+[node name="Blur3" type="ColorRect" parent="." unique_id=1939351270]
+z_index = 3
+material = ExtResource("1_lru64")
+offset_left = 188.3575
+offset_top = -841.0019
+offset_right = 883.9374
+offset_bottom = -554.175
+scale = Vector2(1.0084083, 1.0608687)
+
+[node name="front2" type="TextureRect" parent="." unique_id=1846509185]
+self_modulate = Color(1.4565126, 0.6828473, 0.6828473, 0.5529412)
+offset_left = -224.99998
+offset_top = -543.0
+offset_right = 575.0
+offset_bottom = 58.783325
+scale = Vector2(1.6822687, 1.6822687)
+stretch_mode = 2
+
+[node name="back" type="TextureRect" parent="front2" unique_id=1952446554]
+modulate = Color(0.3278213, 0.0593021, 0.0593021, 1)
+layout_mode = 0
+offset_left = 133.74794
+offset_top = 311.48413
+offset_right = 933.7479
+offset_bottom = 911.48413
+scale = Vector2(0.59549, 0.59549)
+texture = ExtResource("2_72wnq")
+
+[node name="tile" type="TextureRect" parent="front2" unique_id=602631448]
+self_modulate = Color(1, 1, 1, 0.1764706)
+layout_mode = 0
+offset_left = 133.74794
+offset_top = 405.99936
+offset_right = 931.7479
+offset_bottom = 679.9994
+scale = Vector2(0.59549, 0.59549)
+texture = ExtResource("3_qmg3i")
+stretch_mode = 1
+
+[node name="front" type="TextureRect" parent="front2" unique_id=1468873807]
+self_modulate = Color(1.4565126, 0.6828473, 0.6828473, 0.5529412)
+layout_mode = 0
+offset_left = 133.74794
+offset_top = 311.48413
+offset_right = 933.7479
+offset_bottom = 911.48413
+scale = Vector2(0.59549, 0.59549)
+texture = ExtResource("2_72wnq")
+
+[node name="title" type="RichTextLabel" parent="." unique_id=352349812]
+offset_left = 92.0
+offset_top = 192.0
+offset_right = 798.0
+offset_bottom = 224.0
+theme = ExtResource("4_ld78p")
+theme_override_colors/font_outline_color = Color(0.51311773, 0.30716673, 0.1261423, 1)
+theme_override_colors/font_shadow_color = Color(0.52, 0.07799999, 0.07799999, 0.7490196)
+theme_override_constants/shadow_outline_size = 9
+theme_override_font_sizes/normal_font_size = 27
+text = "Variable interest:"
+
+[node name="message" type="RichTextLabel" parent="." unique_id=1938930094]
+offset_left = 92.0
+offset_top = 228.0
+offset_right = 705.0
+offset_bottom = 386.0
+theme = ExtResource("5_72wnq")
+theme_override_colors/default_color = Color(0.92, 0.92, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.83137256)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/normal_font_size = 25
+text = " A variable interest rate (sometimes called an “adjustable” or a “floating” rate) is an interest rate on a loan or security that fluctuates over time because it is based on an underlying benchmark interest rate or index that changes periodically. "
+
+[node name="accept" type="TextureButton" parent="." unique_id=560855805]
+offset_left = 348.0
+offset_top = 374.0
+offset_right = 448.0
+offset_bottom = 474.0
+texture_normal = ExtResource("6_qmg3i")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=163386791]
+libraries/ = SubResource("AnimationLibrary_3yuwx")

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ww0770qt1fj" path="res://img/Annocunecement/side.png" id="5_phl7p"]
 [ext_resource type="BitMap" uid="uid://oic6wuspe5ra" path="res://img/Annocunecement/mask.png" id="5_qp0lk"]
 [ext_resource type="Texture2D" uid="uid://g4k4plt60kqm" path="res://img/Annocunecement/big.png" id="6_hw70i"]
-[ext_resource type="FontFile" uid="uid://cklworxsnxsge" path="res://fonts/Old_Englished_Boots.ttf" id="9_hw70i"]
+[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="9_hw70i"]
 [ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="9_phl7p"]
 [ext_resource type="AudioStream" uid="uid://joxp762x6n4b" path="res://sound/wipe.wav" id="10_phl7p"]
 
@@ -296,7 +296,7 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 5
 theme_override_fonts/normal_font = ExtResource("9_hw70i")
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 20
 text = "Variable interest is a type of APR that may fluctuate based on current indexes. 
 "
 horizontal_alignment = 1

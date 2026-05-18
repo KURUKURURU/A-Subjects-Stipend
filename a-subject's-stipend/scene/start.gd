@@ -25,13 +25,16 @@ func _ready() -> void:
 	
 	# Have a view of mari from afar crosshanded
 	await Speak("Crown Princess Marigold", "A common noble like you should have better spending habits, it worries me how you've dug yourself this deep.")
-	await Speak("Crown Princess Marigold", "In this kingdom, there should be no shame in being a working noble, I have eliminated that problem for you.")
+	await Speak("Crown Princess Marigold", "You have the worst [wave]REDCARD debt[/wave] in the kingdom. I'm not kidding.")
+	await Speak("Crown Princess Marigold", "Credit card debt is something I expected from your character, but when I heard of your situation I was still surprised.")
+	await Speak("Crown Princess Marigold", "Fear not, I won't let you continue this. I command you, in under a year, [shake][font_size=25]to pay your debt.")
+	await Speak("Crown Princess Marigold", "...")
 	
-	await Speak("Crown Princess Marigold", "[font_size=12][wave] I just need him to become a suitable match for a crown princess...")
+	await Speak("Crown Princess Marigold", "[font_size=12][wave] If he can just pay them, he'd be a suitable match for me, a crown princess...")
 	
 	# he looks up smiling
-	Questbox.startQuest("hi")
-	await Speak("You","Yes, my Princess. I'll do everything you say.")
+	Questbox.startQuest("Debt")
+	await Speak("You","Yes, my Princess. I'll do as you say.")
 	
 	await Speak("Crown Princess Marigold","Do your best, and do it for me. To loose your debt, you must spend wisely and think about the future.")
 	await Speak("Crown Princess Marigold","Don't fall back onto your old habits.")

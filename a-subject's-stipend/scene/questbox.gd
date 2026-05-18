@@ -14,15 +14,35 @@ var debt_progress
 var like_progress
 
 func _ready() -> void:
+	debt_progressbar.value = 100
 	debt.hide()
 	likability.hide()
 	
-	await modify(debt, debt_progressbar, 50)
-	await modify(debt, debt_progressbar, 20)
+	#test system vvvv
+	#await modify(debt, debt_progressbar, 50)
+	#await modify(debt, debt_progressbar, 20)
+	#await modify(likability, like_progressbar, 20)
 	
 func startQuest(title: String):
+	
+	match title:
+		"Debt":
+			debt.show()
+			likability.hide()
+		"Like":
+			debt.hide()
+			likability.show()
+	
 	sfx.play()
+	
 	animation.play("down")
+	await animation.animation_finished
+	await wait(2.0)
+	animation.play("up")
+	await animation.animation_finished
+	
+	debt.hide()
+	likability.hide()
 	
 func drawTowards(bar: TextureProgressBar, target: float):
 	var old := bar.value
