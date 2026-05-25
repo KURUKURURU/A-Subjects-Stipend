@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dia8xmpa1d4wj"]
+
+[ext_resource type="Texture2D" uid="uid://ckwy63u8a1h1w" path="res://img/test_book.png" id="1_mftuw"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="2_7pxmv"]
+[ext_resource type="Texture2D" uid="uid://c2ha2gps5eay3" path="res://export/index.png" id="3_sem1a"]
+
+[node name="Book" type="Node2D" unique_id=1889699747]
+
+[node name="BookImg" type="TextureRect" parent="." unique_id=984523545]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_mftuw")
+
+[node name="Left_Text" type="RichTextLabel" parent="." unique_id=1074930021]
+offset_left = 42.0
+offset_top = 76.0
+offset_right = 360.3106
+offset_bottom = 515.428
+rotation = -0.024786303
+theme = ExtResource("2_7pxmv")
+
+[node name="Vocab" type="Control" parent="Left_Text" unique_id=1524129299]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Left_Text/Vocab" unique_id=1227353974]
+layout_mode = 0
+offset_left = 15.722467
+offset_top = 11.393161
+offset_right = 815.7225
+offset_bottom = 611.3932
+scale = Vector2(0.34966856, 0.34966856)
+texture = ExtResource("3_sem1a")
+
+[node name="Right_Text" type="RichTextLabel" parent="." unique_id=1966809912]
+offset_left = 450.00006
+offset_top = 76.0
+offset_right = 768.3106
+offset_bottom = 515.428
+rotation = 0.02443461
+theme = ExtResource("2_7pxmv")
+text = "Skip to main content
+Accessibility help
+how to skew text in godot
+All
+Videos
+Short videos
+Images
+Forums
+Shopping
+More
+Tools
+AI Overview
+In Godot, the easiest way to skew text is by using the built-in Skew property found on 2D nodes. Since UI elements like Label and RichTextLabel are inherited from
+"
+
+[node name="Next" type="TextureButton" parent="." unique_id=1582926985]
+offset_right = 799.0
+offset_bottom = 600.0
+
+[node name="Back" type="TextureButton" parent="." unique_id=280153107]
+visible = false
+offset_right = 799.0
+offset_bottom = 600.0

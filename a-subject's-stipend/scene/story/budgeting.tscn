@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://dkcyy6pd1v8t8" path="res://img/pattern.png" id="2_rtogq"]
 [ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="3_rtogq"]
 [ext_resource type="Material" uid="uid://di8hx5i4i12il" path="res://theme/blurless.tres" id="3_ug5vd"]
+[ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="4_7twk0"]
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="5_co2mp"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="6_2eqe0"]
-[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="6_co2mp"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
+[ext_resource type="Texture2D" uid="uid://cew8mvec6gsjb" path="res://icon.svg" id="7_wdgv3"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="10_ug5vd"]
 [ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="11_3ypin"]
 [ext_resource type="Script" uid="uid://dh17rmnybjgr3" path="res://scene/story/bank.gd" id="11_o4uiu"]
@@ -193,122 +194,29 @@ offset_right = 22.0
 offset_bottom = 588.0
 scale = Vector2(1.0084083, 1.0608687)
 
-[node name="Profit" type="Node2D" parent="Screen" unique_id=1103506440]
-position = Vector2(-840, 76.99999)
-scale = Vector2(0.7, 0.7)
-
-[node name="TextureRect2" type="TextureRect" parent="Screen/Profit" unique_id=779948830]
-self_modulate = Color(0.91673136, 2.0193505, 0.22277522, 0.90588236)
-clip_children = 2
-offset_left = 842.8572
-offset_top = -332.85712
-offset_right = 1642.8572
-offset_bottom = 267.14288
-rotation = 1.5742477
-scale = Vector2(1.4267163, 1.4267163)
-texture = ExtResource("2_hh5bm")
-
-[node name="Parallax2D" type="Parallax2D" parent="Screen/Profit/TextureRect2" unique_id=1811628727]
-repeat_size = Vector2(800, 600)
-autoscroll = Vector2(-20, 20)
-repeat_times = 2
-
-[node name="TextureRect" type="TextureRect" parent="Screen/Profit/TextureRect2/Parallax2D" unique_id=1042514185]
-self_modulate = Color(1.2318197, 3.2993073, 4.0650434, 0.078431375)
-offset_left = 363.8244
-offset_top = 217.67294
-offset_right = 1163.8245
-offset_bottom = 817.673
-texture = ExtResource("2_rtogq")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Screen/Profit" unique_id=374040881]
-offset_left = 220.0
-offset_top = 33.0
-offset_right = 614.2857
-offset_bottom = 139.0
-theme = SubResource("Theme_3ypin")
-theme_override_fonts/normal_font = ExtResource("6_co2mp")
-bbcode_enabled = true
-text = "[wave]Profits!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="progressbar2" type="TextureProgressBar" parent="Screen/Profit" unique_id=950611932]
-visible = false
-texture_filter = 1
-offset_left = 280.00003
-offset_top = 124.285736
-offset_right = 496.00003
-offset_bottom = 174.28574
-scale = Vector2(1.2742465, 1.2742465)
-step = 50.0
-value = 50.0
-texture_under = ExtResource("4_ug5vd")
-texture_over = ExtResource("5_co2mp")
-texture_progress = ExtResource("6_2eqe0")
-
-[node name="label" type="RichTextLabel" parent="Screen/Profit/progressbar2" unique_id=705193466]
-layout_mode = 0
-offset_left = 2.3543324
-offset_top = 51.79533
-offset_right = 208.75084
-offset_bottom = 91.795334
-theme = ExtResource("7_o4uiu")
-theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
-theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
-theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/outline_size = 4
-text = "10,000 gold left"
-horizontal_alignment = 1
-
 [node name="Debt" type="Node2D" parent="Screen" unique_id=729954405]
 position = Vector2(-507, 77)
 scale = Vector2(0.7, 0.7)
 
-[node name="TextureRect" type="TextureRect" parent="Screen/Debt" unique_id=27492585]
-visible = false
-offset_left = 817.0
-offset_top = -241.0
-offset_right = 1617.0
-offset_bottom = 359.0
-rotation = 1.5742477
-scale = Vector2(1.4267163, 1.4267163)
-texture = ExtResource("2_hh5bm")
-
-[node name="TextureRect2" type="TextureRect" parent="Screen/Debt" unique_id=1768646179]
-self_modulate = Color(1, 1, 1, 0.85882354)
-clip_children = 2
-offset_left = 817.0
-offset_top = -241.0
-offset_right = 1617.0
-offset_bottom = 359.0
-rotation = 1.5742477
-scale = Vector2(1.4267163, 1.4267163)
-texture = ExtResource("2_hh5bm")
-
-[node name="Parallax2D" type="Parallax2D" parent="Screen/Debt/TextureRect2" unique_id=1691870614]
-repeat_size = Vector2(800, 600)
-autoscroll = Vector2(10, 10)
-repeat_times = 2
-
-[node name="TextureRect" type="TextureRect" parent="Screen/Debt/TextureRect2/Parallax2D" unique_id=261763541]
-self_modulate = Color(1, 0.22352941, 1, 0.43137255)
-offset_left = 363.8244
-offset_top = 217.67294
-offset_right = 1163.8245
-offset_bottom = 817.673
-texture = ExtResource("2_rtogq")
-stretch_mode = 1
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="NinePatchRect" parent="Screen/Debt" unique_id=1000849061]
+texture_filter = 3
+offset_left = -141.42857
+offset_top = -55.714287
+offset_right = 133.52394
+offset_bottom = 285.27762
+scale = Vector2(2.2497392, 2.2497392)
+texture = ExtResource("4_7twk0")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/Debt" unique_id=1105167198]
-offset_left = 196.0
+offset_left = -128.57138
 offset_top = 33.0
-offset_right = 591.0
+offset_right = 219.2858
 offset_bottom = 139.0
 theme = SubResource("Theme_3ypin")
 theme_override_fonts/normal_font = ExtResource("11_3ypin")
@@ -317,16 +225,24 @@ text = "[shake]Debts..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="question" type="TextureButton" parent="Screen/Debt" unique_id=331335419]
+offset_left = 160.00002
+offset_top = 58.571426
+offset_right = 288.0
+offset_bottom = 186.57143
+scale = Vector2(0.42712435, 0.42712435)
+texture_normal = ExtResource("7_wdgv3")
+
 [node name="Bank" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
 texture_filter = 1
-offset_left = 244.28577
+offset_left = 137.14291
 offset_top = 151.42859
-offset_right = 460.28577
+offset_right = 353.1429
 offset_bottom = 201.42859
 scale = Vector2(1.4032681, 1.4032681)
-max_value = 10000.0
+max_value = 3000.0
 step = 10.0
-value = 5000.0
+value = 3000.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -334,10 +250,10 @@ script = ExtResource("11_o4uiu")
 
 [node name="label" type="RichTextLabel" parent="Screen/Debt/Bank" unique_id=746575871]
 layout_mode = 0
-offset_left = 2.3543324
-offset_top = 51.79533
-offset_right = 208.75084
-offset_bottom = 91.795334
+offset_left = 2.0360909
+offset_top = 57.009777
+offset_right = 208.43257
+offset_bottom = 97.00978
 theme = ExtResource("7_o4uiu")
 theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
 theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
@@ -684,6 +600,7 @@ mouse_filter = 2
 texture = ExtResource("10_ug5vd")
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="Screen/Debt/question" to="." method="debts_q"]
 [connection signal="pressed" from="Screen/TransitionButton" to="." method="Transition"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]

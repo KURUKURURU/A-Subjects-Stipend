@@ -10,6 +10,8 @@ extends Node2D
 
 
 func _ready() -> void:
+	Global.owed = 3000
+	
 	AudioServer.set_bus_volume_db(music, -80.0)
 	
 	await Fade.fade("out")

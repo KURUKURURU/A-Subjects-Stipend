@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://064233mxtxca"]
+
+[ext_resource type="Script" uid="uid://tlvol3fbh6ia" path="res://scene/info_session.gd" id="1_0yjwt"]
+[ext_resource type="Texture2D" uid="uid://cgv1vdhstgtki" path="res://img/Illustration3.png" id="1_wr52v"]
+[ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="3_0yjwt"]
+[ext_resource type="Texture2D" uid="uid://dhuvbkuat8bie" path="res://img/filter.png" id="3_hnwg7"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="5_8kjdn"]
+[ext_resource type="FontFile" uid="uid://chie8qmsmbskh" path="res://fonts/im-fell-dw-pica/IMFePIit29P.ttf" id="5_wr52v"]
+[ext_resource type="Texture2D" uid="uid://cmsehhingjlwd" path="res://img/zxzx/vhjhb.png" id="6_0yjwt"]
+[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="7_rlrfl"]
+[ext_resource type="AudioStream" uid="uid://buwoo045w88nn" path="res://sound/whoosh.wav" id="9_8kjdn"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="9_bdu1n"]
+[ext_resource type="AudioStream" uid="uid://cgpgf5n4vvqwu" path="res://sound/Barefoot.wav" id="10_bdu1n"]
+
+[sub_resource type="Animation" id="Animation_2houo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_av04f"]
+resource_name = "type"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_esvim"]
+_data = {
+&"RESET": SubResource("Animation_2houo"),
+&"type": SubResource("Animation_av04f")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdu1n"]
+texture = ExtResource("3_0yjwt")
+
+[sub_resource type="Animation" id="Animation_0yjwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(538.7641, 366.71603)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a386x"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fade:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rlrfl"]
+resource_name = "roll_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(538.7641, 366.71603), Vector2(64, 366.71603)]
+}
+
+[sub_resource type="Animation" id="Animation_y0gkp"]
+resource_name = "roll_out"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 366.71603), Vector2(538.7641, 366.71603)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlrfl"]
+_data = {
+&"RESET": SubResource("Animation_0yjwt"),
+&"fade": SubResource("Animation_a386x"),
+&"roll_in": SubResource("Animation_rlrfl"),
+&"roll_out": SubResource("Animation_y0gkp")
+}
+
+[node name="InfoSession" type="Node2D" unique_id=83722030]
+script = ExtResource("1_0yjwt")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1402915649]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_wr52v")
+
+[node name="filter" type="TextureRect" parent="." unique_id=1602302557]
+self_modulate = Color(1.1060278, 0.9986285, 1.1328776, 0.40784314)
+z_index = 10
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_hnwg7")
+
+[node name="Paper" type="NinePatchRect" parent="." unique_id=1419938287]
+self_modulate = Color(1.1873541, 1.0813712, 0.55145717, 1)
+texture_filter = 3
+clip_contents = true
+offset_left = 6.0
+offset_top = 38.0
+offset_right = 544.7641
+offset_bottom = 404.71603
+scale = Vector2(1.4588946, 1.4588946)
+texture = ExtResource("3_0yjwt")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="Paper" unique_id=1146687920]
+modulate = Color(12.756135, 7.5345354, 7.5345354, 0.14117648)
+repeat_size = Vector2(1230, 0)
+autoscroll = Vector2(500, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Paper/Parallax2D" unique_id=588050021]
+offset_left = -133.66284
+offset_top = -189.86978
+offset_right = 1093.2817
+offset_bottom = 953.349
+scale = Vector2(0.6631348, 0.6631348)
+texture = ExtResource("5_8kjdn")
+
+[node name="txt" type="RichTextLabel" parent="Paper" unique_id=1906053056]
+texture_filter = 1
+layout_mode = 0
+offset_left = 39.75613
+offset_top = 56.89239
+offset_right = 1253.725
+offset_bottom = 376.16803
+scale = Vector2(0.38, 0.38)
+theme_override_colors/default_color = Color(0.35, 0.03149999, 0.03149999, 1)
+theme_override_colors/font_shadow_color = Color(0.16858736, 0.018570421, 0.02027801, 0.1882353)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/normal_font = ExtResource("5_wr52v")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "How exactly is credit card debt calculated?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="img" type="TextureRect" parent="Paper" unique_id=455797252]
+layout_mode = 0
+offset_left = -4.7981534
+offset_top = -25.361668
+offset_right = 1088.267
+offset_bottom = 794.4371
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_0yjwt")
+
+[node name="LinkButton" type="LinkButton" parent="Paper" unique_id=1932501141]
+layout_mode = 0
+offset_left = 196.72429
+offset_top = 335.87073
+offset_right = 372.7243
+offset_bottom = 375.87073
+scale = Vector2(0.8813432, 0.8813432)
+theme_override_colors/font_color = Color(0.5307334, 0.23268676, 0, 0.46666667)
+theme_override_fonts/font = ExtResource("7_rlrfl")
+text = "Click Here to Learn More!"
+underline = 1
+uri = "https://www.navyfederal.org/makingcents/credit-debt/understanding-credit-card-debt.html"
+
+[node name="fade" type="TextureRect" parent="." unique_id=34539011]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_8kjdn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="fade" unique_id=591016983]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 181.0
+offset_right = 706.0
+offset_bottom = 377.0
+theme = ExtResource("9_bdu1n")
+text = "bbbb"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade/RichTextLabel" unique_id=1904307807]
+libraries/ = SubResource("AnimationLibrary_esvim")
+
+[node name="Q1" type="HBoxContainer" parent="fade" unique_id=598074513]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 352.0
+offset_right = 598.0
+offset_bottom = 414.0
+theme_override_constants/separation = 42
+alignment = 1
+
+[node name="hi" type="Button" parent="fade/Q1" unique_id=1707265193]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    YES    "
+
+[node name="Button3" type="Button" parent="fade/Q1" unique_id=512009608]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    NO    "
+
+[node name="Button" type="Button" parent="fade/Q1" unique_id=573619458]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    ?    "
+
+[node name="Q2" type="HBoxContainer" parent="fade" unique_id=1420428408]
+visible = false
+layout_mode = 0
+offset_left = 200.0
+offset_top = 352.0
+offset_right = 598.0
+offset_bottom = 414.0
+theme_override_constants/separation = 42
+alignment = 1
+
+[node name="Button" type="Button" parent="fade/Q2" unique_id=647561304]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    667    "
+
+[node name="corrrect" type="Button" parent="fade/Q2" unique_id=727553364]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    880    "
+
+[node name="Button3" type="Button" parent="fade/Q2" unique_id=1400356996]
+layout_mode = 2
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("5_wr52v")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdu1n")
+text = "    950    "
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=113088518]
+libraries/ = SubResource("AnimationLibrary_rlrfl")
+
+[node name="stretch" type="AudioStreamPlayer" parent="." unique_id=118474883]
+stream = ExtResource("9_8kjdn")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=557181888]
+stream = ExtResource("10_bdu1n")
+volume_db = -21.0
+autoplay = true
+
+[connection signal="pressed" from="fade/Q1/hi" to="." method="correct"]

@@ -2,11 +2,10 @@ extends TextureProgressBar
 @onready var label: RichTextLabel = $label
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.owed = 3000
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	value = Global.owed
 	label.text = str(int(value)) + " gold left!"
