@@ -242,8 +242,16 @@ script = ExtResource("1_4snci")
 
 [node name="Blur" type="ColorRect" parent="." unique_id=1058700710]
 material = ExtResource("2_qp0lk")
+clip_contents = true
 offset_top = -1.0
 offset_bottom = 614.0
+
+[node name="ColorRect" type="ColorRect" parent="Blur" unique_id=570279645]
+layout_mode = 0
+offset_right = 848.0
+offset_bottom = 624.0
+mouse_filter = 2
+color = Color(0.2954942, 0.113050275, 0.113050275, 0.42352942)
 
 [node name="Banners" type="AnimationPlayer" parent="." unique_id=738279741]
 libraries/ = SubResource("AnimationLibrary_8p7mq")

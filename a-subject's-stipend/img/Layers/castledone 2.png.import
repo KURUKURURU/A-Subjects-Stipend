@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyuuf1yvtwuen"
-path="res://.godot/imported/3.png-f60d796020c73b250d5015dbf4e03172.ctex"
+uid="uid://cjkqs5w3d5sas"
+path="res://.godot/imported/castledone 2.png-4a35b8fc4fa143ea213e84f304222089.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://img/Layers/3.png"
-dest_files=["res://.godot/imported/3.png-f60d796020c73b250d5015dbf4e03172.ctex"]
+source_file="res://img/Layers/castledone 2.png"
+dest_files=["res://.godot/imported/castledone 2.png-4a35b8fc4fa143ea213e84f304222089.ctex"]
 
 [params]
 
