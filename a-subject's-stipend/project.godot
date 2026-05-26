@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A Subject's Stipend"
-run/main_scene="uid://dvd1v3ehvftbj"
+run/main_scene="uid://bi7nhacbscss5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.03758735, 0.08744451, 0.07885607, 1)
 boot_splash/image="uid://c2nhrtg3qdc4e"

@@ -20,6 +20,8 @@ signal close
 signal close_2
 
 func _ready() -> void:
+	await Fade.fade("out")
+	
 	await roll("How do we calculate credit card debt?", card_img)
 	await roll("Credit debt is based on two core parts:
 		PRINCIPAL and INTEREST", card_img)
@@ -44,6 +46,9 @@ func _ready() -> void:
 	q_2.show()
 	await _fade("Using what was previously established, if you aim to pay off your 4000 gold from REDCARD in 1 year with a 22% APR, how much interest would you need to pay?")
 	q_2.hide()
+	
+	await Fade.fade("in")
+	get_tree().change_scene_to_file("")
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):

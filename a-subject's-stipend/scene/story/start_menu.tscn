@@ -1,3 +1,134 @@
 [gd_scene format=3 uid="uid://bi7nhacbscss5"]
 
+[ext_resource type="Texture2D" uid="uid://8dtku6si04cx" path="res://img/Layers/TILE_1.png" id="1_gsuil"]
+[ext_resource type="Texture2D" uid="uid://cdg7ktl5lmg80" path="res://img/Layers/title.png" id="1_rwd0e"]
+[ext_resource type="Script" uid="uid://do8t1g2tpqo87" path="res://scene/story/start_menu.gd" id="1_vrjf6"]
+[ext_resource type="Texture2D" uid="uid://c4tau16d0ej1s" path="res://img/Layers/dfdf.png" id="3_14ejr"]
+[ext_resource type="Texture2D" uid="uid://cfw0scp61y0f" path="res://img/Layers/jajja.png" id="3_db44p"]
+[ext_resource type="Texture2D" uid="uid://cyktolxfakbeh" path="res://img/Layers/ddxsa.png" id="4_vrjf6"]
+[ext_resource type="AudioStream" uid="uid://cjqakxcb4b8sf" path="res://sound/Sun Theme.wav" id="7_7usq3"]
+
+[sub_resource type="Animation" id="Animation_7usq3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-24, 52)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("card:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.87939227, 0.87939227)]
+}
+
+[sub_resource type="Animation" id="Animation_ahwqr"]
+resource_name = "in"
+length = 0.53333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("card:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.39999998),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-24, 52), Vector2(-21.97, -13.99)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("card:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.87939227, 0.87939227), Vector2(0.872, 0.872)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dnaoq"]
+_data = {
+&"RESET": SubResource("Animation_7usq3"),
+&"in": SubResource("Animation_ahwqr")
+}
+
 [node name="StartMenu" type="Node2D" unique_id=372408391]
+script = ExtResource("1_vrjf6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=303356096]
+offset_right = 810.0
+offset_bottom = 604.0
+color = Color(1.5999906, 0.62278414, 0.1699324, 1)
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=792050817]
+repeat_size = Vector2(800, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=462149265]
+self_modulate = Color(3.8136396, 3.8136396, 3.8136396, 0.13333334)
+offset_right = 800.0
+offset_bottom = 604.0
+texture = ExtResource("1_gsuil")
+stretch_mode = 1
+
+[node name="img" type="TextureRect" parent="." unique_id=2018792513]
+self_modulate = Color(1.389089, 1.1251377, 0.17085281, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rwd0e")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=179866484]
+position = Vector2(442, 200)
+
+[node name="bottom" type="TextureRect" parent="Node2D" unique_id=1950296929]
+modulate = Color(2.3312464, 1.5622189, 0.97413933, 1)
+offset_right = 378.0
+offset_bottom = 304.0
+texture = ExtResource("3_14ejr")
+
+[node name="card" type="TextureRect" parent="Node2D" unique_id=1438548773]
+modulate = Color(2.3312464, 1.5622189, 0.97413933, 1)
+offset_left = -24.0
+offset_top = 52.0
+offset_right = 428.0
+offset_bottom = 484.0
+scale = Vector2(0.87939227, 0.87939227)
+texture = ExtResource("4_vrjf6")
+
+[node name="top" type="TextureRect" parent="Node2D" unique_id=1544334809]
+modulate = Color(2.3312464, 1.5622189, 0.97413933, 1)
+offset_right = 378.0
+offset_bottom = 304.0
+texture = ExtResource("3_db44p")
+
+[node name="animation" type="AnimationPlayer" parent="Node2D" unique_id=1860212461]
+libraries/ = SubResource("AnimationLibrary_dnaoq")
+
+[node name="TextureButton" type="TextureButton" parent="Node2D" unique_id=908435649]
+offset_right = 358.0
+offset_bottom = 394.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2074486508]
+stream = ExtResource("7_7usq3")
+volume_db = -18.43
+pitch_scale = 2.32
+autoplay = true
+
+[connection signal="pressed" from="Node2D/TextureButton" to="." method="_on_texture_button_pressed"]

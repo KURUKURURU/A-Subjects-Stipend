@@ -42,7 +42,7 @@ func _ready() -> void:
 	await Speak("Crown Princess Marigold","Don't fall back onto your old habits.")
 	
 	await Fade.fade("in")
-	get_tree().change_scene_to_file("res://scene/story/job_posting.tscn")
+	get_tree().change_scene_to_file("res://scene/story/info_session.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
