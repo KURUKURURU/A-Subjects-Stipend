@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dx6pvn53q36xp" path="res://scene/textbox.tscn" id="3_ytdjg"]
 [ext_resource type="PackedScene" uid="uid://yujeky7jgxja" path="res://scene/questbox.tscn" id="5_ytdjg"]
 [ext_resource type="AudioStream" uid="uid://b1bp1fqn7svou" path="res://sound/happy-open.wav" id="6_ajaei"]
+[ext_resource type="Texture2D" uid="uid://c8xebknn14hjn" path="res://img/hammer.png" id="7_vqisl"]
+[ext_resource type="Script" uid="uid://22ku7xe1lbnn" path="res://scene/settings.gd" id="8_n2xhd"]
+[ext_resource type="Texture2D" uid="uid://blaovh8cvwmoi" path="res://img/knighf.png" id="8_xcrjw"]
+[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="9_n2xhd"]
 
 [sub_resource type="Animation" id="Animation_xh8xk"]
 length = 0.001
@@ -30,6 +34,42 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Settings:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20.265095, -163.2236)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Pause:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-20.265095, -112.2236)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../hover:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(29, 15.000008)]
 }
 
 [sub_resource type="Animation" id="Animation_ytdjg"]
@@ -57,6 +97,42 @@ tracks/1/keys = {
 "points": PackedFloat32Array(-123, -0.25, 0, 0.25, 0, 0, -0.14, -20.5, 0, 0, -5, -0.026666671, 0.8333333, 0, 0),
 "times": PackedFloat32Array(0, 0.43333334, 0.59333336)
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Settings:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.265095, -163.2236), Vector2(-20.265095, -47.9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Pause:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.265095, -112.2236), Vector2(-20.265095, 3.0999985)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../hover:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, 15.000008), Vector2(29, 131)]
+}
 
 [sub_resource type="Animation" id="Animation_ajaei"]
 resource_name = "up"
@@ -71,6 +147,42 @@ tracks/0/keys = {
 "points": PackedFloat32Array(-5.04, -0.058333334, 1.25, 0.058333334, -1.25, -1, -0.25, 0, 0.25, 0, -123, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0.03333333, 0.24, 1)
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Settings:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.265095, -47.9), Vector2(-20.265095, -171.9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Pause:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-20.265095, 3.0999985), Vector2(-20.265095, -120.899994)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../hover:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(29, 135), Vector2(29, 15.000008)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0oc5v"]
 _data = {
@@ -79,7 +191,78 @@ _data = {
 &"up": SubResource("Animation_ajaei")
 }
 
+[sub_resource type="Animation" id="Animation_d87ij"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_1ipsn"]
+resource_name = "tilt_left"
+length = 0.33333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.19373155, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.498, 0.498), Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="Animation" id="Animation_j2m3p"]
+resource_name = "tilt_right"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.04617416, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.498, 0.498)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.04617416, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.19373155]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4auga"]
+_data = {
+&"RESET": SubResource("Animation_d87ij"),
+&"tilt_left": SubResource("Animation_1ipsn"),
+&"tilt_right": SubResource("Animation_j2m3p")
+}
+
+[sub_resource type="Theme" id="Theme_d87ij"]
+TooltipLabel/colors/font_color = Color(0.9292611, 0.90672916, 0, 1)
+TooltipLabel/fonts/font = ExtResource("9_n2xhd")
+
 [node name="UI" type="Node2D" unique_id=2040788229]
+z_index = 1000
 script = ExtResource("1_ytdjg")
 
 [node name="Textbox" parent="." unique_id=2072839090 instance=ExtResource("3_ytdjg")]
@@ -96,22 +279,8 @@ position = Vector2(3, -123)
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
 texture = ExtResource("1_kee8w")
-metadata/_edit_use_anchors_ = true
-
-[node name="hover" type="TextureButton" parent="SettingsBanner" unique_id=1064502870]
-self_modulate = Color(1, 1, 1, 0)
-z_index = 10
-anchors_preset = -1
-anchor_left = -66.0
-anchor_right = -66.0
-offset_left = 19.0
-offset_top = -1.0
-offset_right = 147.0
-offset_bottom = 220.0
-texture_normal = ExtResource("3_ajaei")
-ignore_texture_size = true
-stretch_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="animation" type="AnimationPlayer" parent="SettingsBanner" unique_id=570463665]
@@ -121,5 +290,61 @@ libraries/ = SubResource("AnimationLibrary_0oc5v")
 stream = ExtResource("6_ajaei")
 volume_db = -7.786
 
-[connection signal="mouse_entered" from="SettingsBanner/hover" to="." method="onHover"]
-[connection signal="mouse_exited" from="SettingsBanner/hover" to="." method="offHover"]
+[node name="Settings" type="TextureButton" parent="." unique_id=297552237]
+modulate = Color(1.0259073, 0.96139175, 0.75960314, 1)
+z_index = 10
+offset_left = -20.265095
+offset_top = -163.2236
+offset_right = 132.73491
+offset_bottom = -0.2236023
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_vqisl")
+script = ExtResource("8_n2xhd")
+
+[node name="animation" type="AnimationPlayer" parent="Settings" unique_id=498455191]
+libraries/ = SubResource("AnimationLibrary_4auga")
+
+[node name="Pause" type="TextureButton" parent="." unique_id=725452026]
+modulate = Color(1.0259073, 0.96139175, 0.75960314, 1)
+z_index = 10
+offset_left = -20.265095
+offset_top = -112.2236
+offset_right = 132.73491
+offset_bottom = 50.776398
+scale = Vector2(0.4, 0.4)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_xcrjw")
+script = ExtResource("8_n2xhd")
+
+[node name="animation" type="AnimationPlayer" parent="Pause" unique_id=758238860]
+libraries/ = SubResource("AnimationLibrary_4auga")
+
+[node name="hover" type="TextureButton" parent="." unique_id=38207863]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 10
+anchors_preset = -1
+anchor_left = -66.0
+anchor_right = -66.0
+offset_left = 29.0
+offset_top = 15.000008
+offset_right = 157.0
+offset_bottom = 236.0
+scale = Vector2(0.40303722, 0.37067547)
+tooltip_text = "Settings Banner"
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_d87ij")
+texture_normal = ExtResource("3_ajaei")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="Settings" to="Settings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Settings" to="Settings" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Pause" to="Pause" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Pause" to="Pause" method="_on_mouse_exited"]
+[connection signal="pressed" from="hover" to="." method="onHover"]

@@ -1,12 +1,12 @@
 extends Node2D
 @onready var settings_img: TextureRect = $SettingsBanner/img
-@onready var settings_hover: TextureButton = $SettingsBanner/hover
 @onready var settings_animation: AnimationPlayer = $SettingsBanner/animation
 @onready var settings_banner: Sprite2D = $SettingsBanner
 @onready var questbox: Control = $Questbox
 @onready var textbox: Control = $Textbox
 @onready var audio: AudioStreamPlayer2D = $SettingsBanner/audio
 var pull = false
+var down = false
 
 func _ready() -> void:
 	#
@@ -24,6 +24,12 @@ func Speak(n, m):
 	await textbox.Speak(n, m)
 
 func onHover() -> void:
+	get_viewport().gui_release_focus()
+	if down:
+		audio.play()
+		settings_animation.play("up")
+		down = false
+		return
 	
 	if pull:
 		return
@@ -32,8 +38,7 @@ func onHover() -> void:
 	audio.play()
 	settings_animation.play("down")
 	pull = false
-
-func offHover() -> void:
+	down = true
+	get_viewport().gui_release_focus()
 	
-	audio.play()
-	settings_animation.play("up")
+	
