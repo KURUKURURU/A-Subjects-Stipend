@@ -75,14 +75,15 @@ script = ExtResource("1_vrjf6")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=303356096]
 offset_right = 810.0
 offset_bottom = 604.0
-color = Color(1.5999906, 0.62278414, 0.1699324, 1)
+color = Color(0.94544715, 0.90637964, 0.6591549, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=792050817]
+modulate = Color(1, 1, 1, 0.37254903)
 repeat_size = Vector2(800, 0)
 autoscroll = Vector2(100, 0)
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=462149265]
-self_modulate = Color(3.8136396, 3.8136396, 3.8136396, 0.13333334)
+self_modulate = Color(3.8136396, 1.8334826, 1.8334826, 0.13333334)
 offset_right = 800.0
 offset_bottom = 604.0
 texture = ExtResource("1_gsuil")
@@ -90,6 +91,12 @@ stretch_mode = 1
 
 [node name="img" type="TextureRect" parent="." unique_id=2018792513]
 self_modulate = Color(1.389089, 1.1251377, 0.17085281, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_rwd0e")
+
+[node name="img2" type="TextureRect" parent="." unique_id=558172994]
+self_modulate = Color(1.1823409, 1.1823409, 1.1823409, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_rwd0e")

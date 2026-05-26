@@ -46,6 +46,10 @@ func _ready() -> void:
 	q_2.show()
 	await _fade("Using what was previously established, if you aim to pay off your 4000 gold from REDCARD in 1 year with a 22% APR, how much interest would you need to pay?")
 	q_2.hide()
+	fade.hide()
+	await Global.wait(1)
+	await roll("Looks like you're ready to manage your finances!", holdgirl_img)
+	await roll("You must pay your debt in full before a year passes, in order to keep your favor with Princess Mari.", pointgirl_img)
 	
 	await Fade.fade("in")
 	get_tree().change_scene_to_file("")
