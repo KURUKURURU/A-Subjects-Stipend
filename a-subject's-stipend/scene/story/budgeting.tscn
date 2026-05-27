@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="5_co2mp"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="6_2eqe0"]
+[ext_resource type="Texture2D" uid="uid://dxqbuvhb4odyx" path="res://img/buttons/define.png" id="6_4d67x"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
-[ext_resource type="Texture2D" uid="uid://cew8mvec6gsjb" path="res://icon.svg" id="7_wdgv3"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="10_ug5vd"]
 [ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="11_3ypin"]
 [ext_resource type="Script" uid="uid://dh17rmnybjgr3" path="res://scene/story/bank.gd" id="11_o4uiu"]
+[ext_resource type="FontFile" uid="uid://vljjclvsd640" path="res://fonts/im-fell-dw-pica/IMFePIsc29P.ttf" id="12_0hasm"]
+[ext_resource type="Texture2D" uid="uid://bstpdgpbflev0" path="res://img/buttons/yes.png" id="13_w43jp"]
 [ext_resource type="FontFile" uid="uid://ib2vssxydydh" path="res://fonts/celtic-hand/CelticHand.ttf" id="13_w1771"]
 [ext_resource type="Theme" uid="uid://sde4e68oot4f" path="res://theme/scroll.tres" id="14_3eb7d"]
 [ext_resource type="AudioStream" uid="uid://cjqakxcb4b8sf" path="res://sound/Sun Theme.wav" id="14_3ypin"]
@@ -28,6 +30,7 @@
 [ext_resource type="Script" uid="uid://bmvgr1pyjggae" path="res://scene/story/s_salary.gd" id="23_1wvy1"]
 [ext_resource type="AudioStream" uid="uid://dux2yc6ausfxf" path="res://sound/coinshuffle.wav" id="23_gu60g"]
 [ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="25_wdgv3"]
+[ext_resource type="Script" uid="uid://62ux4euxbjmo" path="res://scene/story/debt_payment.gd" id="26_0hasm"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -175,7 +178,7 @@ color = Color(0.28233004, 0.09477242, 0.113822974, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="bg" type="TextureRect" parent="." unique_id=1509573940]
-self_modulate = Color(0.86078215, 0.768872, 0.20719914, 1)
+self_modulate = Color(0.3778214, 0.33659852, 0.06864974, 1)
 offset_left = 1.0
 offset_right = 801.0
 offset_bottom = 601.0
@@ -205,38 +208,40 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Screen/Debt" unique_id=1105167198]
-offset_left = -128.57138
-offset_top = 33.0
-offset_right = 219.2858
-offset_bottom = 139.0
+offset_left = -84.28572
+offset_top = -25.71428
+offset_right = 431.42853
+offset_bottom = 80.28572
 theme = SubResource("Theme_3ypin")
 theme_override_fonts/normal_font = ExtResource("11_3ypin")
 bbcode_enabled = true
-text = "[shake]Debts..."
-horizontal_alignment = 1
+text = "[shake]Debt..."
 vertical_alignment = 1
 
 [node name="question" type="TextureButton" parent="Screen/Debt" unique_id=331335419]
-offset_left = 160.00002
-offset_top = 58.571426
-offset_right = 288.0
-offset_bottom = 186.57143
+offset_left = 118.57144
+offset_top = -17.142868
+offset_right = 329.28287
+offset_bottom = 193.56859
 scale = Vector2(0.42712435, 0.42712435)
-texture_normal = ExtResource("7_wdgv3")
+texture_normal = ExtResource("6_4d67x")
+stretch_mode = 0
 
 [node name="Bank" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
 texture_filter = 1
-offset_left = 137.14291
-offset_top = 151.42859
-offset_right = 353.1429
-offset_bottom = 201.42859
+offset_left = 18.571472
+offset_top = 114.285706
+offset_right = 234.57147
+offset_bottom = 164.2857
 scale = Vector2(1.4032681, 1.4032681)
-max_value = 3000.0
+max_value = 4000.0
 step = 10.0
-value = 3000.0
+value = 4000.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
+tint_under = Color(0.25892526, 0.25892526, 0.25892526, 1)
+tint_progress = Color(1, 0.19999999, 0.19999999, 1)
 script = ExtResource("11_o4uiu")
 
 [node name="label" type="RichTextLabel" parent="Screen/Debt/Bank" unique_id=746575871]
@@ -253,8 +258,183 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 23
-text = "10,000 gold left"
+text = "10,000 owed"
 horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/Debt" unique_id=104182289]
+offset_left = 28.571411
+offset_top = 161.42857
+offset_right = 68.57141
+offset_bottom = 347.4286
+theme_override_constants/separation = 62
+
+[node name="Principal" type="Control" parent="Screen/Debt/VBoxContainer" unique_id=1640913351]
+layout_mode = 2
+
+[node name="title" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Principal" unique_id=453715405]
+clip_contents = false
+layout_mode = 0
+offset_left = -65.714294
+offset_top = 75.71429
+offset_right = 185.7143
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_colors/font_outline_color = Color(0.595111, 0.2744227, 0.022145439, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Current Principal"
+vertical_alignment = 1
+
+[node name="num" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Principal" unique_id=908313701]
+layout_mode = 0
+offset_left = 179.99997
+offset_top = 75.71429
+offset_right = 431.42856
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = -1
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "4000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Interest" type="Control" parent="Screen/Debt/VBoxContainer" unique_id=250987289]
+layout_mode = 2
+
+[node name="title" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Interest" unique_id=1714291340]
+clip_contents = false
+layout_mode = 0
+offset_left = -65.714294
+offset_top = 75.71429
+offset_right = 185.7143
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_colors/font_outline_color = Color(0.595111, 0.2744227, 0.022145439, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Month Interest"
+vertical_alignment = 1
+
+[node name="num" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Interest" unique_id=1351093206]
+layout_mode = 0
+offset_left = 179.99997
+offset_top = 75.71429
+offset_right = 431.42856
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = -1
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "4000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="extra" type="Control" parent="Screen/Debt/VBoxContainer" unique_id=2051003833]
+layout_mode = 2
+
+[node name="title" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/extra" unique_id=1759703758]
+clip_contents = false
+layout_mode = 0
+offset_left = -65.714294
+offset_top = 75.71429
+offset_right = 185.7143
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_colors/font_outline_color = Color(0.595111, 0.2744227, 0.022145439, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Extra Expenses"
+vertical_alignment = 1
+
+[node name="num" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/extra" unique_id=207096905]
+layout_mode = 0
+offset_left = 179.99997
+offset_top = 75.71429
+offset_right = 431.42856
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = -1
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "4000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total" type="Control" parent="Screen/Debt/VBoxContainer" unique_id=219686426]
+layout_mode = 2
+
+[node name="title" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Total" unique_id=1899217672]
+clip_contents = false
+layout_mode = 0
+offset_left = -65.714294
+offset_top = 75.71429
+offset_right = 185.7143
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_colors/font_outline_color = Color(0.595111, 0.2744227, 0.022145439, 1)
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Total Owed"
+vertical_alignment = 1
+
+[node name="num" type="RichTextLabel" parent="Screen/Debt/VBoxContainer/Total" unique_id=895762207]
+layout_mode = 0
+offset_left = 179.99997
+offset_top = 75.71429
+offset_right = 431.42856
+offset_bottom = 155.71428
+theme = SubResource("Theme_3ypin")
+theme_override_constants/shadow_outline_size = 2
+theme_override_constants/shadow_offset_x = -1
+theme_override_constants/shadow_offset_y = -1
+theme_override_fonts/normal_font = ExtResource("12_0hasm")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "4000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Screen/Debt/VBoxContainer" unique_id=2098517154]
+layout_mode = 2
+
+[node name="done" type="TextureButton" parent="Screen/Debt/VBoxContainer/Control" unique_id=1466700922]
+layout_mode = 0
+offset_left = 77.14285
+offset_top = 220.57143
+offset_right = 177.14285
+offset_bottom = 320.5714
+scale = Vector2(1.3633838, 1.3633838)
+texture_normal = ExtResource("13_w43jp")
 
 [node name="Screen1" type="Node2D" parent="." unique_id=875598573]
 position = Vector2(800, 0)
@@ -465,7 +645,7 @@ horizontal_alignment = 1
 [node name="SSalary2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1570903246]
 texture_filter = 1
 layout_mode = 2
-max_value = 5000.0
+max_value = 500.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")
@@ -543,7 +723,7 @@ texture_hover = ExtResource("22_wdgv3")
 [node name="SSalary3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=183540849]
 texture_filter = 1
 layout_mode = 2
-max_value = 5000.0
+max_value = 500.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")
@@ -621,7 +801,7 @@ texture_hover = ExtResource("22_wdgv3")
 [node name="SSalary" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1010323127]
 texture_filter = 1
 layout_mode = 2
-max_value = 5000.0
+max_value = 500.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")
@@ -699,7 +879,7 @@ texture_hover = ExtResource("22_wdgv3")
 [node name="SSalary4" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=318886040]
 texture_filter = 1
 layout_mode = 2
-max_value = 5000.0
+max_value = 500.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")
@@ -774,6 +954,172 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="SSalary5" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=426176867]
+texture_filter = 1
+layout_mode = 2
+max_value = 500.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+script = ExtResource("23_1wvy1")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SSalary5" unique_id=1729722577]
+texture_filter = 5
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 40
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/SSalary5" unique_id=650415358]
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
+theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SSalary5" unique_id=1842568579]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/SSalary5" unique_id=174764793]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
+[node name="Control" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=974660089]
+layout_mode = 2
+
+[node name="DebtPayment" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing/Control" unique_id=997865202]
+texture_filter = 1
+layout_mode = 0
+offset_left = 630.3282
+offset_top = -514.01514
+offset_right = 846.3282
+offset_bottom = -464.01514
+scale = Vector2(0.7467703, 0.7467703)
+max_value = 1000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+tint_progress = Color(4.659951, 3.3341043, 0.6824095, 1)
+script = ExtResource("26_0hasm")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Control/DebtPayment" unique_id=326737128]
+texture_filter = 5
+clip_contents = false
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.0851297, 1.9196078, 0, 1)
+theme_override_colors/font_outline_color = Color(0.48, 0.29576, 0.25439999, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/normal_font_size = 40
+text = "Debt Payment"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Control/DebtPayment" unique_id=1946978392]
+clip_contents = false
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.0851297, 1.9196078, 0, 1)
+theme_override_colors/font_outline_color = Color(0.48, 0.29576, 0.25439999, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Control/DebtPayment" unique_id=520732466]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Control/DebtPayment" unique_id=703861838]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
+
 [node name="coin" type="AudioStreamPlayer" parent="Screen1/Profit/ScrollContainer" unique_id=245793998]
 stream = ExtResource("23_gu60g")
 volume_db = -9.668
@@ -789,7 +1135,7 @@ pitch_scale = 0.65
 autoplay = true
 
 [node name="Transition" type="TextureButton" parent="." unique_id=1230102366]
-self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.4862745)
+self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.24313726)
 offset_left = 624.0
 offset_top = -462.0
 offset_right = 931.0
@@ -829,5 +1175,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary4/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary4/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="mouse_entered" from="Transition" to="." method="Transition"]
 [connection signal="pressed" from="Transition" to="." method="Transition"]

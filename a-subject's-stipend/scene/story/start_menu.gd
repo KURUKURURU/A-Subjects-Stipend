@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_texture_button_pressed() -> void:
+func start() -> void:
 	animation.play("in")
 	await animation.animation_finished
 	

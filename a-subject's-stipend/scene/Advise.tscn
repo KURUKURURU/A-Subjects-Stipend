@@ -50,7 +50,7 @@ script = ExtResource("1_ld78p")
 [node name="ColorRect" type="ColorRect" parent="." unique_id=617421044]
 offset_right = 816.0
 offset_bottom = 608.0
-color = Color(0.3, 0.041999996, 0.10650001, 0.5921569)
+color = Color(0.3, 0.041999996, 0.10650001, 0.7058824)
 
 [node name="front2" type="TextureRect" parent="." unique_id=1846509185]
 self_modulate = Color(1.4565126, 0.6828473, 0.6828473, 0.5529412)
@@ -69,6 +69,7 @@ offset_top = 312.07855
 offset_right = 933.7479
 offset_bottom = 912.07855
 scale = Vector2(0.59549, 0.59549)
+mouse_filter = 2
 texture = ExtResource("2_72wnq")
 
 [node name="tile" type="TextureRect" parent="front2" unique_id=602631448]
@@ -79,6 +80,7 @@ offset_top = 405.40488
 offset_right = 931.7479
 offset_bottom = 679.4049
 scale = Vector2(0.59549, 0.59549)
+mouse_filter = 2
 texture = ExtResource("3_qmg3i")
 stretch_mode = 1
 
@@ -94,16 +96,17 @@ mouse_filter = 2
 texture = ExtResource("2_72wnq")
 
 [node name="title" type="RichTextLabel" parent="." unique_id=352349812]
+z_index = 4096
 offset_left = 92.0
 offset_top = 192.0
 offset_right = 798.0
 offset_bottom = 224.0
-mouse_filter = 2
 theme = ExtResource("4_ld78p")
 theme_override_colors/font_outline_color = Color(0.51311773, 0.30716673, 0.1261423, 1)
 theme_override_colors/font_shadow_color = Color(0.52, 0.07799999, 0.07799999, 0.7490196)
 theme_override_constants/shadow_outline_size = 9
 theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
 text = "Variable interest:"
 
 [node name="message" type="RichTextLabel" parent="." unique_id=1938930094]
@@ -119,6 +122,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
 text = " A variable interest rate (sometimes called an “adjustable” or a “floating” rate) is an interest rate on a loan or security that fluctuates over time because it is based on an underlying benchmark interest rate or index that changes periodically. "
 
 [node name="message2" type="RichTextLabel" parent="." unique_id=697654661]

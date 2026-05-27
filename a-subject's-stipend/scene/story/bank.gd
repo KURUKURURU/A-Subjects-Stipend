@@ -8,4 +8,4 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	value = Global.owed
-	label.text = str(int(value)) + " gold left!"
+	label.text = str(int(value)) + " principal left!"

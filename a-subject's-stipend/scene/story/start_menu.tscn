@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cfw0scp61y0f" path="res://img/Layers/jajja.png" id="3_db44p"]
 [ext_resource type="Texture2D" uid="uid://cyktolxfakbeh" path="res://img/Layers/ddxsa.png" id="4_vrjf6"]
 [ext_resource type="AudioStream" uid="uid://cjqakxcb4b8sf" path="res://sound/Sun Theme.wav" id="7_7usq3"]
+[ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="8_mih3u"]
+[ext_resource type="FontFile" uid="uid://cednmuxsx2m3q" path="res://fonts/fenwick-woodtype/FenwickWoodtype.ttf" id="9_8cq3o"]
+[ext_resource type="FontFile" uid="uid://chie8qmsmbskh" path="res://fonts/im-fell-dw-pica/IMFePIit29P.ttf" id="10_pgn15"]
 
 [sub_resource type="Animation" id="Animation_7usq3"]
 length = 0.001
@@ -69,6 +72,14 @@ _data = {
 &"in": SubResource("Animation_ahwqr")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7toi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8cq3o"]
+bg_color = Color(0.16383271, 0.03196437, 0.03196437, 0.69803923)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mih3u"]
+bg_color = Color(1.509642, 0.8720548, 0.35039255, 0.35686275)
+
 [node name="StartMenu" type="Node2D" unique_id=372408391]
 script = ExtResource("1_vrjf6")
 
@@ -78,9 +89,9 @@ offset_bottom = 604.0
 color = Color(0.94544715, 0.90637964, 0.6591549, 1)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=792050817]
-modulate = Color(1, 1, 1, 0.37254903)
-repeat_size = Vector2(800, 0)
-autoscroll = Vector2(100, 0)
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(100, 80)
+repeat_times = 2
 
 [node name="TextureRect" type="TextureRect" parent="Parallax2D" unique_id=462149265]
 self_modulate = Color(3.8136396, 1.8334826, 1.8334826, 0.13333334)
@@ -96,13 +107,15 @@ offset_bottom = 40.0
 texture = ExtResource("1_rwd0e")
 
 [node name="img2" type="TextureRect" parent="." unique_id=558172994]
-self_modulate = Color(1.1823409, 1.1823409, 1.1823409, 1)
+self_modulate = Color(1.1656649, 1.0543289, 0.77430034, 1)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_rwd0e")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=179866484]
-position = Vector2(442, 200)
+visible = false
+position = Vector2(497, 205)
+scale = Vector2(0.837643, 0.837643)
 
 [node name="bottom" type="TextureRect" parent="Node2D" unique_id=1950296929]
 modulate = Color(2.3312464, 1.5622189, 0.97413933, 1)
@@ -138,4 +151,119 @@ volume_db = -18.43
 pitch_scale = 2.32
 autoplay = true
 
+[node name="Q1" type="VBoxContainer" parent="." unique_id=2143624872]
+offset_left = 322.0
+offset_top = 338.0
+offset_right = 426.0
+offset_bottom = 557.0
+theme_override_constants/separation = 102
+
+[node name="Button_1" type="Control" parent="Q1" unique_id=98663008]
+layout_mode = 2
+
+[node name="Paper" type="NinePatchRect" parent="Q1/Button_1" unique_id=1380786905]
+self_modulate = Color(1.1873541, 1.0813712, 0.55145717, 1)
+texture_filter = 3
+clip_contents = true
+layout_mode = 0
+offset_left = -20.000004
+offset_top = -97.0
+offset_right = 295.30725
+offset_bottom = -22.971344
+scale = Vector2(1.4588946, 1.4588946)
+texture = ExtResource("8_mih3u")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button3" type="Button" parent="Q1/Button_1" unique_id=77734243]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -88.0
+offset_right = 429.0
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("9_8cq3o")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7toi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8cq3o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mih3u")
+text = "Start Journey!"
+
+[node name="Button_2" type="Control" parent="Q1" unique_id=2146807373]
+layout_mode = 2
+
+[node name="Paper" type="NinePatchRect" parent="Q1/Button_2" unique_id=180895131]
+self_modulate = Color(1.0901815, 1.0901815, 1.0901815, 1)
+texture_filter = 3
+clip_contents = true
+layout_mode = 0
+offset_left = -10.0
+offset_top = -89.00003
+offset_right = 288.17096
+offset_bottom = -25.00003
+scale = Vector2(1.4588946, 1.4588946)
+texture = ExtResource("8_mih3u")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button3" type="Button" parent="Q1/Button_2" unique_id=849096418]
+layout_mode = 0
+offset_top = -79.0
+offset_right = 416.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("10_pgn15")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7toi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x7toi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x7toi")
+
+[node name="Button_3" type="Control" parent="Q1" unique_id=2059457136]
+layout_mode = 2
+
+[node name="Paper" type="NinePatchRect" parent="Q1/Button_3" unique_id=1441674042]
+self_modulate = Color(0.98, 0.98, 0.98, 1)
+texture_filter = 3
+clip_contents = true
+layout_mode = 0
+offset_left = -10.0
+offset_top = -89.00003
+offset_right = 147.65361
+offset_bottom = -25.00003
+scale = Vector2(1.4588946, 1.4588946)
+texture = ExtResource("8_mih3u")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button3" type="Button" parent="Q1/Button_3" unique_id=130575020]
+layout_mode = 0
+offset_top = -79.0
+offset_right = 209.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
+theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("10_pgn15")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x7toi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_x7toi")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x7toi")
+text = "Credits"
+
 [connection signal="pressed" from="Node2D/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Q1/Button_1/Button3" to="." method="start"]
