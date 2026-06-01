@@ -52,7 +52,7 @@ func _ready() -> void:
 	await roll("You must pay your debt in full before a year passes, in order to keep your favor with Princess Mari.", pointgirl_img)
 	
 	await Fade.fade("in")
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("uid://t26laumt50od")
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):

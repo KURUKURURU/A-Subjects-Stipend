@@ -42,6 +42,13 @@ RichTextLabel/constants/shadow_offset_y = 3
 RichTextLabel/font_sizes/normal_font_size = 66
 RichTextLabel/fonts/normal_font = ExtResource("3_rtogq")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w43jp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ry7p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nb7bw"]
+texture = ExtResource("13_w43jp")
+
 [sub_resource type="Animation" id="Animation_fwjy0"]
 resource_name = "Page1"
 length = 0.6
@@ -428,13 +435,23 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="done" type="TextureButton" parent="Screen/Debt/VBoxContainer/Control" unique_id=1466700922]
+clip_contents = true
 layout_mode = 0
-offset_left = 77.14285
-offset_top = 220.57143
-offset_right = 177.14285
-offset_bottom = 320.5714
-scale = Vector2(1.3633838, 1.3633838)
+offset_left = 97.14285
+offset_top = 223.42857
+offset_right = 197.14285
+offset_bottom = 323.4286
+scale = Vector2(0.91918015, 0.91918015)
 texture_normal = ExtResource("13_w43jp")
+
+[node name="Button" type="Button" parent="Screen/Debt/VBoxContainer/Control/done" unique_id=80362466]
+self_modulate = Color(0.11415407, 0.013341467, 0.013341467, 0.7254902)
+layout_mode = 0
+offset_right = 101.02173
+offset_bottom = 101.02173
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w43jp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5ry7p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_nb7bw")
 
 [node name="Screen1" type="Node2D" parent="." unique_id=875598573]
 position = Vector2(800, 0)
