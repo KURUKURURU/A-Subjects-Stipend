@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://cprifyr84vsky"
+path="res://.godot/imported/mask.png-f26c50d2d77b2844376b13054ff30e00.res"
+
+[deps]
+
+source_file="res://img/talkfolder/mask.png"
+dest_files=["res://.godot/imported/mask.png-f26c50d2d77b2844376b13054ff30e00.res"]
+
+[params]
+
+create_from=1
+threshold=0.5

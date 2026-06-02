@@ -8,8 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://dk3afepdj6reu" path="res://img/Layers/5.png" id="6_qycei"]
 [ext_resource type="Texture2D" uid="uid://dhxwc0byn2vn8" path="res://img/Layers/4.png" id="7_78nn2"]
 [ext_resource type="Texture2D" uid="uid://dyuuf1yvtwuen" path="res://img/Layers/3.png" id="8_0yog5"]
+[ext_resource type="Texture2D" uid="uid://btxks08uw1tx7" path="res://img/talkfolder/k.png" id="8_4edp0"]
 [ext_resource type="Texture2D" uid="uid://nw0ts7lcx410" path="res://img/Layers/2.png" id="9_47sc8"]
+[ext_resource type="Texture2D" uid="uid://xiu2jy2sk5k3" path="res://img/talkfolder/2.png" id="9_jw3r5"]
+[ext_resource type="Texture2D" uid="uid://ykniejbtv8wq" path="res://img/talkfolder/5.png" id="10_i1pu1"]
 [ext_resource type="Texture2D" uid="uid://b2cas7jue0pt3" path="res://img/Layers/1.png" id="10_lecm5"]
+[ext_resource type="Texture2D" uid="uid://c5y68t7yh5il1" path="res://img/talkfolder/Illustration13.png" id="11_peif2"]
+[ext_resource type="Texture2D" uid="uid://bq5fvbksqtxl" path="res://img/test.png" id="12_0yog5"]
+[ext_resource type="Texture2D" uid="uid://bcdyawvhvcaow" path="res://img/talkfolder/p.png" id="12_7xulv"]
 
 [sub_resource type="Animation" id="Animation_nh031"]
 length = 0.001
@@ -68,6 +74,18 @@ tracks/4/path = NodePath("zoom/1:scale")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("zoom/girl:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -149,12 +167,67 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("zoom/girl:scale")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.23, 1.23), Vector2(0.95, 0.95)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jw3r5"]
 _data = {
 &"RESET": SubResource("Animation_nh031"),
 &"intro": SubResource("Animation_4edp0")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jred4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jw3r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4edp0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_jw3r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i1pu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_peif2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4edp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7xulv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_peif2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4edp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_peif2")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 6.9
+}]
 
 [node name="Start" type="Node2D" unique_id=1564351414]
 script = ExtResource("1_2sa14")
@@ -171,7 +244,7 @@ libraries/ = SubResource("AnimationLibrary_jw3r5")
 autoplay = &"intro"
 
 [node name="5" type="TextureRect" parent="zoom" unique_id=627308759]
-self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+modulate = Color(1.0987998, 0.7446907, 0.3399945, 1)
 texture_filter = 1
 offset_right = 800.0
 offset_bottom = 600.0
@@ -179,7 +252,7 @@ pivot_offset = Vector2(400, 300)
 texture = ExtResource("6_qycei")
 
 [node name="4" type="TextureRect" parent="zoom" unique_id=172028320]
-self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+modulate = Color(1.0987998, 0.7446907, 0.3399945, 1)
 texture_filter = 1
 offset_right = 800.0
 offset_bottom = 600.0
@@ -187,7 +260,7 @@ pivot_offset = Vector2(400, 300)
 texture = ExtResource("7_78nn2")
 
 [node name="3" type="TextureRect" parent="zoom" unique_id=161360401]
-self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+modulate = Color(1.0987998, 0.7446907, 0.3399945, 1)
 texture_filter = 1
 offset_right = 800.0
 offset_bottom = 600.0
@@ -195,7 +268,7 @@ pivot_offset = Vector2(400, 300)
 texture = ExtResource("8_0yog5")
 
 [node name="2" type="TextureRect" parent="zoom" unique_id=1856246297]
-self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+modulate = Color(1.0987998, 0.7446907, 0.3399945, 1)
 texture_filter = 1
 offset_right = 800.0
 offset_bottom = 600.0
@@ -203,12 +276,19 @@ pivot_offset = Vector2(400, 300)
 texture = ExtResource("9_47sc8")
 
 [node name="1" type="TextureRect" parent="zoom" unique_id=1193672878]
-self_modulate = Color(1, 0.6901961, 0.08627451, 1)
+modulate = Color(1.0987998, 0.7446907, 0.3399945, 1)
 texture_filter = 1
 offset_right = 40.0
 offset_bottom = 40.0
 pivot_offset = Vector2(400, 300)
 texture = ExtResource("10_lecm5")
+
+[node name="girl" type="AnimatedSprite2D" parent="zoom" unique_id=935252158]
+self_modulate = Color(1.1902428, 0.9327564, 0.80401325, 1)
+position = Vector2(441.00006, 305.00003)
+sprite_frames = SubResource("SpriteFrames_jred4")
+frame = 1
+frame_progress = 1.0
 
 [node name="UI" parent="." unique_id=2040788229 instance=ExtResource("3_t5eaj")]
 z_index = 20
@@ -231,3 +311,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 texture = ExtResource("5_bnx4a")
+
+[node name="filter2" type="TextureRect" parent="." unique_id=1598372809]
+visible = false
+z_index = 10
+offset_left = -140.0
+offset_right = 660.0
+offset_bottom = 600.0
+mouse_filter = 2
+texture = ExtResource("12_0yog5")

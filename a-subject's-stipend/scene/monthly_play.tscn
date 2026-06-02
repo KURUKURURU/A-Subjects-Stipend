@@ -49,3 +49,4 @@ max_value = 30.0
 
 [node name="ProgressAnimation" type="AnimationPlayer" parent="." unique_id=894543329]
 libraries/ = SubResource("AnimationLibrary_d5t03")
+autoplay = &"ProgressMonth"

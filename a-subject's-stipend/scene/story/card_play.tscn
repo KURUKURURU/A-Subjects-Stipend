@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c7wi08267vk7u"]
+
+[ext_resource type="Script" uid="uid://bgqxrbolx0eqk" path="res://scene/story/card_play.gd" id="1_1c5ae"]
+[ext_resource type="Texture2D" uid="uid://biq2db8wcbln1" path="res://img/talkfolder/down0.png" id="1_cgrft"]
+[ext_resource type="Texture2D" uid="uid://bwj21610qysff" path="res://img/talkfolder/down1.png" id="2_1c5ae"]
+[ext_resource type="Texture2D" uid="uid://d3jh6opbeqj00" path="res://img/talkfolder/down2.png" id="3_dkn5y"]
+[ext_resource type="BitMap" uid="uid://cprifyr84vsky" path="res://img/talkfolder/mask.png" id="4_sy5b1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0rif"]
+animations = [{
+"frames": [{
+"duration": 0.85,
+"texture": ExtResource("1_cgrft")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_1c5ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkn5y")
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="CardPlay" type="Node2D" unique_id=387277677]
+script = ExtResource("1_1c5ae")
+
+[node name="CardDown" type="AnimatedSprite2D" parent="." unique_id=1343341260]
+visible = false
+position = Vector2(399, 300)
+sprite_frames = SubResource("SpriteFrames_k0rif")
+frame = 2
+frame_progress = 1.0
+
+[node name="CardButton" type="TextureButton" parent="." unique_id=1767907443]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_dkn5y")
+texture_click_mask = ExtResource("4_sy5b1")
+metadata/_edit_use_anchors_ = true

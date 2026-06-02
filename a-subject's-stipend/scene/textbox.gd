@@ -32,6 +32,7 @@ func Speak(n: String, m: String):
 	sfx.play()
 	animation.play("text")
 	await animation.animation_finished
+	
 	message.text = m
 	
 	await advance

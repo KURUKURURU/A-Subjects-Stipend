@@ -6,6 +6,7 @@ extends Node2D
 @onready var sad = $sad
 @onready var zoom = $zoom
 @onready var music = AudioServer.get_bus_index("Music")
+@onready var girl: AnimatedSprite2D = $zoom/girl
 
 
 
@@ -49,7 +50,15 @@ func _process(delta: float) -> void:
 	pass
 
 func Speak(n, m):
-	await textbox.Speak(n,m)
+	if m != "..." or n != "You":
+		Animate()
+	await textbox.Speak(n,m) 
+
+func Animate():
+	girl.play("talk")
+	await textbox.animation.animation_finished
+	await  Global.wait(1)
+	girl.play("default")
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
