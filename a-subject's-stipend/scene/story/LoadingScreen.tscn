@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bqxtbn528kkqt"]
+
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="1_jm4bb"]
+[ext_resource type="Script" uid="uid://dkw7qlusehx4g" path="res://scene/story/loading_screen.gd" id="1_tsbap"]
+[ext_resource type="Texture2D" uid="uid://dkcyy6pd1v8t8" path="res://img/pattern.png" id="2_dl8up"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="4_245q0"]
+
+[node name="Node2D" type="Node2D" unique_id=1472603456 node_paths=PackedStringArray("progress_bar")]
+script = ExtResource("1_tsbap")
+progress_bar = NodePath("ProgressBar")
+
+[node name="Background" type="TextureRect" parent="." unique_id=147199910]
+self_modulate = Color(3.4823272, 1.0235215, 0, 0.90588236)
+clip_children = 2
+offset_left = 1397.1427
+offset_top = -284.28568
+offset_right = 2197.1426
+offset_bottom = 835.9033
+rotation = 1.5742477
+scale = Vector2(1.4091264, 1.7745903)
+texture = ExtResource("1_jm4bb")
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=936098192]
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(-20, 20)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/Parallax2D" unique_id=1822420798]
+self_modulate = Color(1.2318197, 3.2993073, 4.0650434, 0.078431375)
+offset_left = 363.8244
+offset_top = 217.67294
+offset_right = 1163.8245
+offset_bottom = 817.673
+texture = ExtResource("2_dl8up")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=930495649]
+offset_left = 66.0
+offset_top = 428.0
+offset_right = 743.0
+offset_bottom = 522.0
+theme = ExtResource("4_245q0")
+max_value = 1.0
+step = 0.0
+value = 0.74

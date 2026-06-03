@@ -19,4 +19,4 @@ func start() -> void:
 	
 	#await Global.wait(1)
 	await Fade.fade("in")
-	get_tree().change_scene_to_file("res://scene/story/introduction.tscn")
+	Loader.change_level("res://scene/story/introduction.tscn")

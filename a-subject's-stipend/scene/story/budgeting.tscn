@@ -31,6 +31,7 @@
 [ext_resource type="AudioStream" uid="uid://dux2yc6ausfxf" path="res://sound/coinshuffle.wav" id="23_gu60g"]
 [ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="25_wdgv3"]
 [ext_resource type="Script" uid="uid://62ux4euxbjmo" path="res://scene/story/debt_payment.gd" id="26_0hasm"]
+[ext_resource type="Script" uid="uid://mythueyu7omg" path="res://scene/story/debt_payment_2.gd" id="30_5ry7p"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -1049,6 +1050,7 @@ texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
 [node name="Control" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=974660089]
+visible = false
 layout_mode = 2
 
 [node name="DebtPayment" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing/Control" unique_id=997865202]
@@ -1144,6 +1146,91 @@ volume_db = -9.668
 [node name="bad" type="AudioStreamPlayer" parent="Screen1/Profit/ScrollContainer" unique_id=1009700090]
 stream = ExtResource("25_wdgv3")
 volume_db = 3.136
+
+[node name="DebtPayment2" type="TextureProgressBar" parent="Screen1/Profit" unique_id=1252916955]
+texture_filter = 1
+offset_left = 1638.5714
+offset_top = 524.2857
+offset_right = 1854.5714
+offset_bottom = 574.2857
+scale = Vector2(1.4424827, 1.4424827)
+max_value = 1000.0
+step = 50.0
+value = 50.0
+texture_under = ExtResource("4_ug5vd")
+texture_over = ExtResource("5_co2mp")
+texture_progress = ExtResource("6_2eqe0")
+tint_progress = Color(4.659951, 3.3341043, 0.6824095, 1)
+script = ExtResource("30_5ry7p")
+
+[node name="label" type="RichTextLabel" parent="Screen1/Profit/DebtPayment2" unique_id=1929815057]
+texture_filter = 5
+clip_contents = false
+layout_mode = 0
+offset_left = 2.130757
+offset_top = 45.900547
+offset_right = 495.39404
+offset_bottom = 109.80446
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.0851297, 1.9196078, 0, 1)
+theme_override_colors/font_outline_color = Color(0.48, 0.29576, 0.25439999, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 13
+theme_override_font_sizes/normal_font_size = 40
+text = "Debt Payment"
+horizontal_alignment = 1
+
+[node name="amount" type="RichTextLabel" parent="Screen1/Profit/DebtPayment2" unique_id=671080336]
+clip_contents = false
+layout_mode = 0
+offset_left = 13.317287
+offset_top = 15.980786
+offset_right = 444.14157
+offset_bottom = 57.980785
+scale = Vector2(0.43152103, 0.43152103)
+theme = ExtResource("7_o4uiu")
+theme_override_colors/default_color = Color(2.0851297, 1.9196078, 0, 1)
+theme_override_colors/font_outline_color = Color(0.48, 0.29576, 0.25439999, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0, 0, 0.5647059)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("13_w1771")
+theme_override_font_sizes/normal_font_size = 41
+theme_override_font_sizes/bold_font_size = 1
+text = "10,000"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="minus" type="TextureButton" parent="Screen1/Profit/DebtPayment2" unique_id=505262368]
+self_modulate = Color(0.72, 0.3816, 0.3816, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = -55.63872
+offset_top = -6.8128815
+offset_right = 44.36128
+offset_bottom = 93.18712
+scale = Vector2(0.667219, 0.667219)
+texture_normal = ExtResource("17_78cih")
+texture_pressed = ExtResource("18_83pxv")
+texture_hover = ExtResource("19_gu60g")
+
+[node name="plus" type="TextureButton" parent="Screen1/Profit/DebtPayment2" unique_id=1942069801]
+self_modulate = Color(1.3234327, 1.3920115, 0.706224, 1)
+layout_mode = 0
+offset_left = 203.52061
+offset_top = -4.6166162
+offset_right = 303.52063
+offset_bottom = 95.383385
+scale = Vector2(0.623117, 0.623117)
+texture_normal = ExtResource("18_qw8cp")
+texture_pressed = ExtResource("21_1wvy1")
+texture_hover = ExtResource("22_wdgv3")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=175469749]
 stream = ExtResource("14_3ypin")

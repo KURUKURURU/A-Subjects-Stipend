@@ -50,8 +50,9 @@ func _process(delta: float) -> void:
 	pass
 
 func Speak(n, m):
-	if m != "..." or n != "You":
+	if !(m == "..." or n == "You"):
 		Animate()
+		
 	await textbox.Speak(n,m) 
 
 func Animate():

@@ -1,8 +1,30 @@
 [gd_resource type="Theme" format=3 uid="uid://c0107gwsduunx"]
 
+[ext_resource type="FontFile" uid="uid://bu72hx04slgy4" path="res://fonts/chomsky/Chomsky.woff2" id="1_cajw8"]
 [ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="1_y1ci1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8tmb"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.74509805)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21ih"]
+bg_color = Color(0.86299014, 0.64335907, 0, 1)
+
 [resource]
+ProgressBar/colors/font_outline_color = Color(0.51350456, 0, 0.008391115, 1)
+ProgressBar/constants/outline_size = 7
+ProgressBar/font_sizes/font_size = 44
+ProgressBar/fonts/font = ExtResource("1_cajw8")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_i8tmb")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_j21ih")
 RichTextLabel/colors/default_color = Color(0.6198598, 0, 0, 1)
 RichTextLabel/font_sizes/normal_font_size = 18
 RichTextLabel/fonts/normal_font = ExtResource("1_y1ci1")
