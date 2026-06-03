@@ -5,9 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://bwj21610qysff" path="res://img/talkfolder/down1.png" id="2_1c5ae"]
 [ext_resource type="Texture2D" uid="uid://dkcyy6pd1v8t8" path="res://img/pattern.png" id="2_k0rif"]
 [ext_resource type="Texture2D" uid="uid://d3jh6opbeqj00" path="res://img/talkfolder/down2.png" id="3_dkn5y"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="3_glos8"]
 [ext_resource type="Material" uid="uid://j2xqcyup455o" path="res://theme/blur.tres" id="3_grg0q"]
 [ext_resource type="BitMap" uid="uid://cprifyr84vsky" path="res://img/talkfolder/mask.png" id="4_sy5b1"]
 [ext_resource type="Texture2D" uid="uid://bqom5g8y2pa61" path="res://img/talkfolder/card.png" id="6_dkn5y"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="10_1y3hv"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="11_vpox4"]
+[ext_resource type="AudioStream" uid="uid://dy4k84oguuph2" path="res://sound/game_event.mp3" id="12_1y3hv"]
+[ext_resource type="AudioStream" uid="uid://dwo2kpn8d8hpn" path="res://sound/weirdeventwhattt.wav" id="13_vpox4"]
+[ext_resource type="AudioStream" uid="uid://br8irjxxmrxoj" path="res://sound/OMG_veryscarytensehahaahahha.ogg" id="14_3b8qe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0rif"]
 animations = [{
@@ -64,6 +70,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Control:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_k0rif"]
 resource_name = "slide"
@@ -104,6 +134,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Control:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.41, 1.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Control:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_grg0q"]
 _data = {
@@ -114,18 +168,40 @@ _data = {
 [node name="CardPlay" type="Node2D" unique_id=387277677]
 script = ExtResource("1_1c5ae")
 
-[node name="blur" type="TextureRect" parent="." unique_id=907575336]
-visible = false
-offset_right = 803.0
-offset_bottom = 602.0
-texture = ExtResource("2_k0rif")
-
 [node name="blur2" type="ColorRect" parent="." unique_id=366952987]
 material = ExtResource("3_grg0q")
 offset_right = 803.0
 offset_bottom = 602.0
 
+[node name="Background" type="TextureRect" parent="." unique_id=2012339186]
+modulate = Color(2.240809, 2.3133948, 0.13418867, 0.8235294)
+self_modulate = Color(3.4823272, 1.0235215, 0, 0.90588236)
+clip_children = 2
+offset_left = 1397.1427
+offset_top = -284.28568
+offset_right = 2197.1426
+offset_bottom = 835.9033
+rotation = 1.5742477
+scale = Vector2(1.4091264, 1.7745903)
+texture = ExtResource("3_glos8")
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1297559304]
+repeat_size = Vector2(800, 600)
+autoscroll = Vector2(-20, 20)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Background/Parallax2D" unique_id=354395124]
+self_modulate = Color(1.2318197, 3.2993073, 4.0650434, 0.078431375)
+offset_left = 363.8244
+offset_top = 217.67294
+offset_right = 1163.8245
+offset_bottom = 817.673
+texture = ExtResource("2_k0rif")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="CardDown" type="AnimatedSprite2D" parent="." unique_id=1343341260]
+visible = false
 position = Vector2(399, 300)
 sprite_frames = SubResource("SpriteFrames_k0rif")
 frame = 2
@@ -150,7 +226,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 248.0
 offset_top = 72.0
-offset_right = 564.00085
+offset_right = 564.0008
 offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -161,5 +237,46 @@ texture = ExtResource("6_dkn5y")
 
 [node name="animation" type="AnimationPlayer" parent="Preview" unique_id=980145905]
 libraries/ = SubResource("AnimationLibrary_grg0q")
+
+[node name="Control" type="Control" parent="." unique_id=1549287649]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 306.0
+offset_top = 2.0
+offset_right = 799.0
+offset_bottom = 603.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1243295597]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 77.0
+offset_right = 400.0
+offset_bottom = 135.0
+theme = ExtResource("10_1y3hv")
+theme_override_font_sizes/normal_font_size = 55
+text = "Situation"
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=525797906]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 156.0
+offset_right = 431.0
+offset_bottom = 388.0
+theme = ExtResource("11_vpox4")
+theme_override_colors/default_color = Color(0.8848981, 0.8848981, 0, 1)
+text = "Description!"
+scroll_active = false
+
+[node name="event_sfx" type="AudioStreamPlayer" parent="." unique_id=103035715]
+stream = ExtResource("12_1y3hv")
+
+[node name="event_sfx2" type="AudioStreamPlayer" parent="." unique_id=403627227]
+stream = ExtResource("13_vpox4")
+
+[node name="event_sfx3" type="AudioStreamPlayer" parent="." unique_id=307577357]
+stream = ExtResource("14_3b8qe")
+volume_db = -15.509
 
 [connection signal="pressed" from="CardButton" to="." method="click"]

@@ -2,17 +2,27 @@ extends Node2D
 @onready var card_down: AnimatedSprite2D = $CardDown
 @onready var card_button: TextureButton = $CardButton
 @onready var animation: AnimationPlayer = $Preview/animation
+@onready var background: TextureRect = $Background
+@onready var panel: Control = $Control
+@onready var event_sfx: AudioStreamPlayer = $event_sfx
+@onready var event_sfx_2: AudioStreamPlayer = $event_sfx2
+@onready var music: AudioStreamPlayer = $event_sfx3
 
+signal finish
 
 func _ready() -> void:
 	card_button.hide()
 	card_down.hide()
+	background.hide()
+	panel.hide()
 	
+	hide()
 	#card_down.show()
 	#await card_place() #test!
 
 
 func card_place():
+	event_sfx.play()
 	card_button.hide()
 	card_down.show()
 	
@@ -24,7 +34,10 @@ func card_place():
 	return
 
 func click():
+	event_sfx_2.play()
+	background.show()
 	animation.play("slide")
 	await animation.animation_finished
 	
+	music.play()
 	card_button.hide()

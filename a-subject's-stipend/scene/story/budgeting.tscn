@@ -31,6 +31,8 @@
 [ext_resource type="AudioStream" uid="uid://dux2yc6ausfxf" path="res://sound/coinshuffle.wav" id="23_gu60g"]
 [ext_resource type="AudioStream" uid="uid://bnmj56e6sh56b" path="res://sound/small-negative.wav" id="25_wdgv3"]
 [ext_resource type="Script" uid="uid://62ux4euxbjmo" path="res://scene/story/debt_payment.gd" id="26_0hasm"]
+[ext_resource type="Texture2D" uid="uid://hnulr8xgrynh" path="res://img/emotefaces/1.png" id="27_nb7bw"]
+[ext_resource type="Script" uid="uid://dtmiyaoxtf6fk" path="res://scene/story/faces.gd" id="28_73vw4"]
 [ext_resource type="Script" uid="uid://mythueyu7omg" path="res://scene/story/debt_payment_2.gd" id="30_5ry7p"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
@@ -525,7 +527,7 @@ script = ExtResource("15_0w6ok")
 
 [node name="thing" type="VBoxContainer" parent="Screen1/Profit/ScrollContainer" unique_id=1710842996]
 layout_mode = 2
-theme_override_constants/separation = 41
+theme_override_constants/separation = 94
 
 [node name="Total_money" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=595562708]
 texture_filter = 1
@@ -543,9 +545,9 @@ tint_progress = Color(2.727554, 2.727554, 0.379669, 1)
 [node name="amount" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Total_money" unique_id=45579860]
 layout_mode = 0
 offset_left = 8.052996
-offset_top = 41.729046
+offset_top = 62.227524
 offset_right = 214.4495
-offset_bottom = 81.72905
+offset_bottom = 102.22752
 theme = ExtResource("7_o4uiu")
 theme_override_colors/default_color = Color(2.6679294, 0.9371575, 0.12718928, 1)
 theme_override_colors/font_outline_color = Color(0.7840486, 0.2694384, 0.082307376, 1)
@@ -556,15 +558,31 @@ theme_override_constants/outline_size = 4
 text = "10,000 gold left"
 horizontal_alignment = 1
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Total_money" unique_id=1631744609]
+layout_mode = 0
+offset_left = -26.355185
+offset_top = 116.40207
+offset_right = 242.32127
+offset_bottom = 183.75421
+theme = ExtResource("16_78cih")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.22352941)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave]Spending:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Title" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1512099820]
 layout_mode = 2
 
 [node name="Needs" type="RichTextLabel" parent="Screen1/Profit/ScrollContainer/thing/Title" unique_id=54205910]
 layout_mode = 0
 offset_left = -1.4641769
-offset_top = 6.367771
+offset_top = 51.467617
 offset_right = 214.53583
-offset_bottom = 40.77593
+offset_bottom = 85.87578
 theme = ExtResource("16_78cih")
 text = "Emergency"
 horizontal_alignment = 1
@@ -646,6 +664,17 @@ scale = Vector2(0.623117, 0.623117)
 texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
+
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/Emergency" unique_id=1102683756]
+visible = false
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
 
 [node name="Title2" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=932523163]
 layout_mode = 2
@@ -738,6 +767,20 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/SSalary2" unique_id=904895720]
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
+b = 0
+c = 200
+d = 0
+e = 300
+
 [node name="SSalary3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=183540849]
 texture_filter = 1
 layout_mode = 2
@@ -815,6 +858,19 @@ scale = Vector2(0.623117, 0.623117)
 texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
+
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/SSalary3" unique_id=1349281819]
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
+c = 400
+d = 500
+e = 0
 
 [node name="SSalary" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1010323127]
 texture_filter = 1
@@ -894,6 +950,16 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/SSalary" unique_id=1436504765]
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
+
 [node name="SSalary4" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=318886040]
 texture_filter = 1
 layout_mode = 2
@@ -972,6 +1038,19 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/SSalary4" unique_id=324689698]
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
+b = 300
+c = 400
+d = 0
+
 [node name="SSalary5" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=426176867]
 texture_filter = 1
 layout_mode = 2
@@ -1048,6 +1127,16 @@ scale = Vector2(0.623117, 0.623117)
 texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
+
+[node name="faces" type="TextureRect" parent="Screen1/Profit/ScrollContainer/thing/SSalary5" unique_id=1014228705]
+layout_mode = 0
+offset_left = 84.19017
+offset_top = -54.81897
+offset_right = 149.19017
+offset_bottom = 10.18103
+scale = Vector2(0.77357423, 0.77357423)
+texture = ExtResource("27_nb7bw")
+script = ExtResource("28_73vw4")
 
 [node name="Control" type="Control" parent="Screen1/Profit/ScrollContainer/thing" unique_id=974660089]
 visible = false
