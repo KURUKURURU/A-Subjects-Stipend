@@ -8,6 +8,7 @@ var beginning := true
 var current_principal := 4000
 var month_interest := 0
 var extra := 0
+var emergency := 0
 
 var APR := 0.22
 

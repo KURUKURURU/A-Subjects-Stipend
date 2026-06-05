@@ -7,9 +7,13 @@ extends Node2D
 @onready var event_sfx: AudioStreamPlayer = $event_sfx
 @onready var event_sfx_2: AudioStreamPlayer = $event_sfx2
 @onready var music: AudioStreamPlayer = $event_sfx3
-@onready var title: RichTextLabel = $Control/title
-@onready var body: RichTextLabel = $Control/body
+@onready var title: RichTextLabel = $Control/setting/title
+@onready var body: RichTextLabel = $Control/setting/body
 @onready var img = $Preview/img
+@onready var control: Control = $Control
+@onready var pre: Control = $Preview
+@onready var add: Control = $Control/setting/Add
+@onready var take: Control = $Control/setting/Take
 
 var Data = SituationData.new()
 
@@ -19,18 +23,26 @@ func _process(delta: float) -> void:
 	if Data.img != "":
 		img.texture = load(Data.img)
 	title.text = Data.title
+	
 	body.text = Data.body
+	
 
 func _ready() -> void:
+	finished()
+	#card_down.show()
+	#await card_place() #test!
+
+func finished():
+	control.hide()
+	animation.play("RESET")
 	card_button.hide()
 	card_down.hide()
 	background.hide()
 	panel.hide()
+	music.stop()
+	pre.hide()
 	
 	hide()
-	#card_down.show()
-	#await card_place() #test!
-
 
 func card_place():
 	event_sfx.play()
@@ -47,6 +59,7 @@ func card_place():
 func click():
 	event_sfx_2.play()
 	background.show()
+	pre.show()
 	animation.play("slide")
 	
 	event("Servants")
@@ -60,13 +73,18 @@ func event(area):
 	randomize()
 	var chance = randf()
 	
-	chance = 0.6
 	match area:
 		"Servants":
 			Data.servant(chance)
+			
+	if Data.servant(chance):
+		add.show()
+		take.hide()
+	else:
+		take.show()
+		add.hide()
 
 
 func EmergencyFundAccess() -> void:
-	hide()
-	
 	emit_signal("finish")
+	finished()
