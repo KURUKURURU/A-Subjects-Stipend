@@ -16,7 +16,7 @@ corner_radius_bottom_left = 6
 corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j21ih"]
-bg_color = Color(0.86299014, 0.64335907, 0, 1)
+bg_color = Color(1, 1, 1, 1)
 
 [resource]
 ProgressBar/colors/font_outline_color = Color(0.51350456, 0, 0.008391115, 1)

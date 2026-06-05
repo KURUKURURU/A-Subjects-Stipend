@@ -2,6 +2,7 @@ extends Node2D
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var progress_animation: AnimationPlayer = $ProgressAnimation
 @onready var card_play: Node2D = $CardPlay
+@onready var month: RichTextLabel = $month
 
 #I want to make a system where in each 10 second there will be a random event, good or bad.
 #The good events introduce risks, whereas the bad event introduce issues to solve with money or wit.
@@ -16,7 +17,7 @@ func random_situation() -> String:
 	var situation := ""
 	
 	var chance = randf()
-	randomize()
+	#randomize()
 	
 	if chance < 0.5:
 		situation = "Good"
@@ -31,6 +32,8 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	month.text = "Month " + str(Global.month)
 	
 	if progress_bar.value == 0 or progress_bar.value == 10:
 		card_play.hide()

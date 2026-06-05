@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d3tifs44j1ddj" path="res://scene/monthly_play.gd" id="1_w7xjw"]
 [ext_resource type="PackedScene" uid="uid://c7wi08267vk7u" path="res://scene/story/card_play.tscn" id="2_d5t03"]
+[ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="2_kv73j"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="2_ru4vb"]
 
 [sub_resource type="Animation" id="Animation_e1cbd"]
 resource_name = "ProgressMonth"
@@ -49,11 +51,21 @@ script = ExtResource("1_w7xjw")
 offset_top = 536.0
 offset_right = 800.0
 offset_bottom = 598.0
+theme = ExtResource("2_kv73j")
 max_value = 20.0
 
 [node name="ProgressAnimation" type="AnimationPlayer" parent="." unique_id=894543329]
 libraries/ = SubResource("AnimationLibrary_d5t03")
 autoplay = &"ProgressMonth"
+
+[node name="month" type="RichTextLabel" parent="." unique_id=676694554]
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 269.0
+offset_bottom = 63.0
+theme = ExtResource("2_ru4vb")
+theme_override_font_sizes/normal_font_size = 34
+text = "Month"
 
 [node name="CardPlay" parent="." unique_id=387277677 instance=ExtResource("2_d5t03")]
 visible = false
