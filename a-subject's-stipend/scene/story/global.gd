@@ -1,5 +1,8 @@
 extends Node
 
+var before
+var after
+
 var month := 1
 var beginning := true
 

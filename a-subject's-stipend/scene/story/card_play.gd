@@ -88,3 +88,8 @@ func event(area):
 func EmergencyFundAccess() -> void:
 	emit_signal("finish")
 	finished()
+
+
+func _on_accept_pressed() -> void:
+	emit_signal("finish")
+	finished()

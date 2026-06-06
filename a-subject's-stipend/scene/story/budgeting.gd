@@ -19,6 +19,8 @@ extends Node2D
 @onready var total_num: RichTextLabel = $Screen/Debt/VBoxContainer/Total/num
 @onready var extra_num: RichTextLabel = $Screen/Debt/VBoxContainer/extra/num
 @onready var DEBT_PAYMENT: TextureProgressBar = $Screen1/Profit/DebtPayment2
+@onready var animation: AnimationPlayer = $animation
+
 
 #var GS = GameSummary.new()
 
@@ -66,7 +68,6 @@ func debts_q() -> void:
 
 func FINISH() -> void: # next month
 	
-	await Fade.fade("in")
 	
 	Global.paid = DEBT_PAYMENT.value 
 	
@@ -83,7 +84,12 @@ func FINISH() -> void: # next month
 		Global.antileft = 4074 - Global.owed 
 		Loader.change_level("res://scene/story/game_summary.tscn")
 	else:
-		Global.month += 1 # remove this!
-		Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
+		#Global.month += 1 # remove this!
+		#Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
 		
-		#Loader.change_level("res://scene/monthly_play.tscn")
+		#animation.play("in")
+		#await animation.animation_finished
+		
+		#await Questbox.drawTowards(Questbox.debt_progressbar, float((4074 - Global.owed )/4074.0))
+		await Fade.fade("in")
+		Loader.change_level("res://scene/monthly_play.tscn")

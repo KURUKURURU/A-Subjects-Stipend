@@ -287,7 +287,6 @@ fit_content = true
 scroll_active = false
 
 [node name="Add" type="Control" parent="Control/setting" unique_id=87410175]
-visible = false
 layout_mode = 2
 
 [node name="title" type="RichTextLabel" parent="Control/setting/Add" unique_id=1687917781]
@@ -397,5 +396,7 @@ stream = ExtResource("13_vpox4")
 stream = ExtResource("14_3b8qe")
 volume_db = -15.509
 
+[connection signal="pressed" from="Control/setting/Add/accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="Control/setting/Take/accept" to="." method="_on_accept_pressed"]
 [connection signal="pressed" from="Control/EmergencyFunds" to="." method="EmergencyFundAccess"]
 [connection signal="pressed" from="CardButton" to="." method="click"]

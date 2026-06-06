@@ -179,6 +179,42 @@ _data = {
 &"RESET": SubResource("Animation_qw8cp")
 }
 
+[sub_resource type="Animation" id="Animation_ojyjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animation/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.83, 0.49689332, 0.116199985, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vdskt"]
+resource_name = "in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animation/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.83, 0.49689332, 0.116199985, 0), Color(0.83, 0.49689332, 0.116199985, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0qj6o"]
+_data = {
+&"RESET": SubResource("Animation_ojyjd"),
+&"in": SubResource("Animation_vdskt")
+}
+
 [node name="Budgeting" type="Node2D" unique_id=1682666116]
 script = ExtResource("1_hh5bm")
 
@@ -1369,6 +1405,17 @@ theme = ExtResource("16_78cih")
 theme_override_font_sizes/normal_font_size = 34
 text = "Month"
 script = ExtResource("35_ojyjd")
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=194712852]
+libraries/ = SubResource("AnimationLibrary_0qj6o")
+
+[node name="ColorRect" type="ColorRect" parent="animation" unique_id=1947476101]
+offset_left = -7.0
+offset_top = -25.0
+offset_right = 814.0
+offset_bottom = 619.0
+mouse_filter = 2
+color = Color(0.83, 0.49689332, 0.116199985, 0)
 
 [connection signal="pressed" from="Screen/Debt/question" to="." method="debts_q"]
 [connection signal="pressed" from="Screen/Debt/VBoxContainer/Control/done/FINISH" to="." method="FINISH"]

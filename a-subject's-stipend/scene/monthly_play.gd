@@ -30,7 +30,11 @@ var ticks := 3
 
 
 func _ready() -> void:
+	Global.before = Global.owed
 	card_play.hide()
+	
+	Questbox.startQuest("Debt")
+	await Questbox.drawTowards(Questbox.debt_progressbar, float((Global.owed)/4074.0))
 	
 	for i in range(ticks):
 		await play()
@@ -40,6 +44,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	
+	if progress_bar.value >= 20:
+		await finished_month()
 	
 	month.text = "Month " + str(Global.month)
 	
@@ -59,3 +66,7 @@ func play():
 	
 	return
 		
+func finished_month():
+	Global.after = Global.owed
+	await Fade.fade("in")
+	Loader.change_level("res://scene/story/month_summary.tscn")
