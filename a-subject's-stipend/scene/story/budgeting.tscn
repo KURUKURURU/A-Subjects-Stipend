@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://hnulr8xgrynh" path="res://img/emotefaces/1.png" id="27_nb7bw"]
 [ext_resource type="Script" uid="uid://dtmiyaoxtf6fk" path="res://scene/story/faces.gd" id="28_73vw4"]
 [ext_resource type="Script" uid="uid://mythueyu7omg" path="res://scene/story/debt_payment_2.gd" id="30_5ry7p"]
+[ext_resource type="Script" uid="uid://bq4emy6hpgblt" path="res://scene/story/month.gd" id="35_ojyjd"]
 
 [sub_resource type="Theme" id="Theme_3ypin"]
 RichTextLabel/colors/default_color = Color(1.1088537, 0.6935393, 0.14411297, 1)
@@ -447,7 +448,7 @@ offset_bottom = 323.4286
 scale = Vector2(0.91918015, 0.91918015)
 texture_normal = ExtResource("13_w43jp")
 
-[node name="Button" type="Button" parent="Screen/Debt/VBoxContainer/Control/done" unique_id=80362466]
+[node name="FINISH" type="Button" parent="Screen/Debt/VBoxContainer/Control/done" unique_id=80362466]
 self_modulate = Color(0.11415407, 0.013341467, 0.013341467, 0.7254902)
 layout_mode = 0
 offset_right = 101.02173
@@ -1357,7 +1358,19 @@ mouse_filter = 2
 texture = ExtResource("10_ug5vd")
 metadata/_edit_use_anchors_ = true
 
+[node name="month" type="RichTextLabel" parent="." unique_id=1225683044]
+z_index = 1000
+offset_left = 24.0
+offset_top = 23.0
+offset_right = 269.0
+offset_bottom = 63.0
+theme = ExtResource("16_78cih")
+theme_override_font_sizes/normal_font_size = 34
+text = "Month"
+script = ExtResource("35_ojyjd")
+
 [connection signal="pressed" from="Screen/Debt/question" to="." method="debts_q"]
+[connection signal="pressed" from="Screen/Debt/VBoxContainer/Control/done/FINISH" to="." method="FINISH"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]

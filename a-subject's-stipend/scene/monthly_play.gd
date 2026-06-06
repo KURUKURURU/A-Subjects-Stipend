@@ -34,6 +34,8 @@ func _ready() -> void:
 	
 	for i in range(ticks):
 		await play()
+	
+	Global.month += 1
 
 
 

@@ -32,5 +32,4 @@ func servant(random: float):
 				img = "res://img/situations/oldguy.png"
 				title = "House Guest Complimented Service!"
 				body = "A good friend complimented your houseworkers' service at a casual get-together! "
-				return "House Guest Complimented Service!"
 		return true

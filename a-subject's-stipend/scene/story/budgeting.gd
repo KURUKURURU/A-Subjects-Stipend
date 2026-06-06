@@ -18,6 +18,7 @@ extends Node2D
 @onready var total_title: RichTextLabel = $Screen/Debt/VBoxContainer/Total/title
 @onready var total_num: RichTextLabel = $Screen/Debt/VBoxContainer/Total/num
 @onready var extra_num: RichTextLabel = $Screen/Debt/VBoxContainer/extra/num
+@onready var DEBT_PAYMENT: TextureProgressBar = $Screen1/Profit/DebtPayment2
 
 
 var page := 1
@@ -60,3 +61,19 @@ func Transition() -> void:
 func debts_q() -> void:
 	print("ggg")
 	PopUp.popup("Debt", "An obligation or liability to pay or render something to someone else. ")
+
+
+func FINISH() -> void: # next month
+	
+	await Fade.fade("in")
+	
+	Global.current_principal = Global.owed - DEBT_PAYMENT.value 
+	Global.extra = 0
+	
+	Global.month += 1 # remove this!
+	Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
+	
+	if Global.current_principal <= 0:
+		Loader.change_level("res://scene/game_summary.tscn")
+	else:
+		Loader.change_level("res://scene/monthly_play.tscn")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://jn7yr7q0el0y"]
+
+[ext_resource type="Texture2D" uid="uid://c1ake7s0jvbbi" path="res://img/windows.png" id="1_qka2m"]
+
+[node name="game_summary" type="Node2D" unique_id=1937327398]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1581847794]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qka2m")

@@ -192,7 +192,7 @@ texture = ExtResource("3_glos8")
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=1297559304]
 repeat_size = Vector2(800, 600)
-autoscroll = Vector2(-20, 20)
+autoscroll = Vector2(0, -200)
 repeat_times = 2
 
 [node name="TextureRect" type="TextureRect" parent="Background/Parallax2D" unique_id=354395124]
@@ -222,7 +222,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 248.0
 offset_top = 72.0
-offset_right = 564.00134
+offset_right = 564.0014
 offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -336,6 +336,7 @@ offset_bottom = 58.0
 theme = ExtResource("10_1y3hv")
 text = "Pay with..."
 script = ExtResource("13_s82h1")
+metadata/_edit_use_anchors_ = true
 
 [node name="Emergency" type="CheckButton" parent="Control/setting/Take" unique_id=1160676513]
 layout_mode = 0

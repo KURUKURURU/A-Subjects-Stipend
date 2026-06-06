@@ -1,6 +1,5 @@
 extends RichTextLabel
-
-var Data = SituationData.new()
+@onready var card_play: Node2D = $"../../../.."
 
 func _process(delta: float) -> void:
-	text = str(Data.payment)
+	text = str(card_play.payment)

@@ -16,6 +16,7 @@ extends Node2D
 @onready var take: Control = $Control/setting/Take
 
 var Data = SituationData.new()
+var payment = 0
 
 signal finish
 
@@ -25,12 +26,11 @@ func _process(delta: float) -> void:
 	title.text = Data.title
 	
 	body.text = Data.body
+	payment = Data.payment
 	
 
 func _ready() -> void:
 	finished()
-	#card_down.show()
-	#await card_place() #test!
 
 func finished():
 	control.hide()
