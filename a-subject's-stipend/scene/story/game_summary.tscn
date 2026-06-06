@@ -1,10 +1,720 @@
 [gd_scene format=3 uid="uid://jn7yr7q0el0y"]
 
+[ext_resource type="Script" uid="uid://x2j3bsqqwdhw" path="res://scene/story/game_summary.gd" id="1_aroqw"]
 [ext_resource type="Texture2D" uid="uid://c1ake7s0jvbbi" path="res://img/windows.png" id="1_qka2m"]
+[ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="3_44lfx"]
+[ext_resource type="Script" uid="uid://6dt2eyb2syex" path="res://scene/story/month_1.gd" id="4_44lfx"]
+[ext_resource type="AudioStream" uid="uid://c21frre162s1m" path="res://sound/smacking.wav" id="4_84neg"]
+[ext_resource type="Script" uid="uid://ce7s7mqq7rl36" path="res://scene/story/summary.gd" id="5_jchh8"]
+[ext_resource type="AudioStream" uid="uid://cugq73kudoryi" path="res://sound/Granddaughter.wav" id="6_5g31q"]
+[ext_resource type="FontFile" uid="uid://chie8qmsmbskh" path="res://fonts/im-fell-dw-pica/IMFePIit29P.ttf" id="6_5jl4a"]
+[ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="7_5nctv"]
+[ext_resource type="Texture2D" uid="uid://8dtku6si04cx" path="res://img/Layers/TILE_1.png" id="8_5nctv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g31q"]
+texture = ExtResource("7_5nctv")
+texture_margin_left = 38.0
+texture_margin_top = 38.0
+texture_margin_right = 38.0
+texture_margin_bottom = 38.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.12447148, 0.017420981, 0.017420981, 0.8509804)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nctv"]
+load_path = "res://.godot/imported/9SLICETAB.png-8d51977ca92442928a5ff06c9d29c732.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jchh8"]
+texture = SubResource("CompressedTexture2D_5nctv")
+texture_margin_left = 38.0
+texture_margin_top = 38.0
+texture_margin_right = 38.0
+texture_margin_bottom = 38.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="Theme" id="Theme_jchh8"]
+Button/colors/font_color = Color(0.3707421, 0, 0, 1)
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("6_5jl4a")
+Button/styles/hover = SubResource("StyleBoxTexture_5g31q")
+Button/styles/normal = SubResource("StyleBoxTexture_jchh8")
 
 [node name="game_summary" type="Node2D" unique_id=1937327398]
+script = ExtResource("1_aroqw")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1581847794]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="img" type="TextureRect" parent="." unique_id=1581847794]
+offset_right = 800.0
+offset_bottom = 615.0
 texture = ExtResource("1_qka2m")
+
+[node name="Extras" type="Control" parent="." unique_id=1090559911]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 219.0
+offset_top = 491.0
+offset_right = 586.0
+offset_bottom = 491.0
+
+[node name="ColorRect" type="ColorRect" parent="Extras" unique_id=1125019252]
+layout_mode = 0
+offset_left = 255.0
+offset_top = -473.0
+offset_right = 362.0
+offset_bottom = -4.0
+color = Color(0.43, 0.17199999, 0.17199999, 0.08627451)
+
+[node name="ColorRect3" type="ColorRect" parent="Extras" unique_id=395688944]
+layout_mode = 0
+offset_left = 75.0
+offset_top = -473.0
+offset_right = 158.0
+offset_bottom = -4.0
+color = Color(0.49, 0.08330001, 0.08330001, 0.34901962)
+
+[node name="ColorRect4" type="ColorRect" parent="Extras" unique_id=591709364]
+layout_mode = 0
+offset_left = 158.0
+offset_top = -473.0
+offset_right = 243.0
+offset_bottom = -4.0
+color = Color(0, 0, 1, 0.21568628)
+
+[node name="ColorRect2" type="ColorRect" parent="Extras" unique_id=1050652700]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -46.0
+offset_right = 362.0
+offset_bottom = -43.0
+color = Color(0.43, 0.17199999, 0.17199999, 0.08627451)
+
+[node name="title" type="RichTextLabel" parent="." unique_id=822684383]
+visible = false
+clip_contents = false
+custom_minimum_size = Vector2(96.135, 0)
+offset_left = 216.0
+offset_top = 24.0
+offset_right = 579.0
+offset_bottom = 85.0
+theme = ExtResource("3_44lfx")
+theme_override_colors/font_shadow_color = Color(0.25, 0, 0, 0.22745098)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/normal_font_size = 39
+text = "GAME SUMMARY"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=160641621]
+offset_left = 219.0
+offset_top = 27.0
+offset_right = 586.0
+offset_bottom = 434.0
+theme_override_constants/separation = 9
+
+[node name="title" type="HBoxContainer" parent="VBoxContainer" unique_id=653916054]
+layout_mode = 2
+theme_override_constants/separation = -17
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/title" unique_id=661844120]
+clip_contents = false
+custom_minimum_size = Vector2(96.135, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+theme_override_colors/font_shadow_color = Color(0.25, 0, 0, 0.22745098)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+text = "month"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/title" unique_id=1201323847]
+clip_contents = false
+custom_minimum_size = Vector2(101.345, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+theme_override_colors/font_shadow_color = Color(0.25, 0, 0, 0.22745098)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+text = "principal"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/title" unique_id=1443119708]
+clip_contents = false
+custom_minimum_size = Vector2(101.345, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+theme_override_colors/font_shadow_color = Color(0.25, 0, 0, 0.22745098)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+text = "interest"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/title" unique_id=1135472400]
+clip_contents = false
+custom_minimum_size = Vector2(120.925, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+theme_override_colors/font_shadow_color = Color(0.25, 0, 0, 0.22745098)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+text = "paid"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_1" type="HBoxContainer" parent="VBoxContainer" unique_id=1326186560]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_1" unique_id=843102017]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_1" unique_id=268633371]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_1" unique_id=1076845685]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_1" unique_id=810536791]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_2" type="HBoxContainer" parent="VBoxContainer" unique_id=1134846195]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_2" unique_id=1994179321]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_2" unique_id=1757388956]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_2" unique_id=907193518]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_2" unique_id=806899480]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_3" type="HBoxContainer" parent="VBoxContainer" unique_id=1294863955]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_3" unique_id=1270791466]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_3" unique_id=1897100622]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_3" unique_id=828923445]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_3" unique_id=855177230]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_4" type="HBoxContainer" parent="VBoxContainer" unique_id=637088445]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_4" unique_id=1948032371]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_4" unique_id=1111670452]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_4" unique_id=950033410]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_4" unique_id=1216183285]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_5" type="HBoxContainer" parent="VBoxContainer" unique_id=1501418983]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_5" unique_id=58953501]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_5" unique_id=1067901567]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_5" unique_id=1009203682]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_5" unique_id=839574005]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_6" type="HBoxContainer" parent="VBoxContainer" unique_id=256206318]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_6" unique_id=576636810]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_6" unique_id=1839164591]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_6" unique_id=1353360010]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_6" unique_id=1192295349]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_7" type="HBoxContainer" parent="VBoxContainer" unique_id=1729894086]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=811142675]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1133486497]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1249835964]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1549917804]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_8" type="HBoxContainer" parent="VBoxContainer" unique_id=938028115]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=149738462]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=923323242]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=608945503]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=59151879]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_9" type="HBoxContainer" parent="VBoxContainer" unique_id=1186960802]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=432628408]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=717906219]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=371398055]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=623337922]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_10" type="HBoxContainer" parent="VBoxContainer" unique_id=1324567077]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=791467400]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=1781665669]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=919113325]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=13139963]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_11" type="HBoxContainer" parent="VBoxContainer" unique_id=849095776]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=2060294990]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=1174071059]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=25537221]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=136270395]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Month_12" type="HBoxContainer" parent="VBoxContainer" unique_id=100674869]
+layout_mode = 2
+theme_override_constants/separation = -17
+script = ExtResource("4_44lfx")
+
+[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=434903154]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=529719956]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "1"
+fit_content = true
+
+[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=2100433751]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "100"
+fit_content = true
+
+[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=1952656921]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="summary" type="HBoxContainer" parent="." unique_id=1156234149]
+custom_minimum_size = Vector2(0, 37.92)
+offset_left = 219.0
+offset_top = 443.0
+offset_right = 586.0
+offset_bottom = 480.91998
+theme_override_constants/separation = -17
+script = ExtResource("5_jchh8")
+
+[node name="m" type="RichTextLabel" parent="summary" unique_id=1435545464]
+clip_contents = false
+custom_minimum_size = Vector2(100.265, 11.4)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+theme_override_font_sizes/normal_font_size = 15
+text = "1"
+fit_content = true
+vertical_alignment = 2
+
+[node name="p" type="RichTextLabel" parent="summary" unique_id=2035771301]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+fit_content = true
+vertical_alignment = 2
+
+[node name="i" type="RichTextLabel" parent="summary" unique_id=128669647]
+clip_contents = false
+custom_minimum_size = Vector2(100.13, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+fit_content = true
+vertical_alignment = 2
+
+[node name="total" type="RichTextLabel" parent="summary" unique_id=638367427]
+clip_contents = false
+custom_minimum_size = Vector2(117.68, 0)
+layout_mode = 2
+theme = ExtResource("3_44lfx")
+text = "200
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="smack" type="AudioStreamPlayer" parent="." unique_id=1415156363]
+stream = ExtResource("4_84neg")
+volume_db = 3.649
+pitch_scale = 0.55
+max_polyphony = 5
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=766655761]
+stream = ExtResource("6_5g31q")
+autoplay = true
+
+[node name="Continue" type="Button" parent="." unique_id=1726013683]
+clip_contents = true
+offset_left = 255.0
+offset_top = 503.0
+offset_right = 637.0
+offset_bottom = 615.0
+scale = Vector2(0.7749904, 0.7749904)
+theme = SubResource("Theme_jchh8")
+text = "Approach Princess Marigold?"
+
+[node name="ColorRect" type="ColorRect" parent="Continue" unique_id=1236151337]
+modulate = Color(1, 1, 1, 0.45882353)
+self_modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
+offset_left = 9.032371
+offset_top = 7.742032
+offset_right = 375.48856
+offset_bottom = 103.22708
+mouse_filter = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="Continue/ColorRect" unique_id=726531033]
+modulate = Color(2.5032542, 1.6646479, 0.49059922, 0.21568628)
+scroll_offset = Vector2(9.032371, 6.451693)
+repeat_size = Vector2(100, 100)
+autoscroll = Vector2(100, 50)
+repeat_times = 9
+
+[node name="TextureRect" type="TextureRect" parent="Continue/ColorRect/Parallax2D" unique_id=1881782058]
+offset_left = -40.000496
+offset_top = -30.968124
+offset_right = 59.999504
+offset_bottom = 69.031876
+texture = ExtResource("8_5nctv")

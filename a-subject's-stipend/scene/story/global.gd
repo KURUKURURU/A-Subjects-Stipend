@@ -4,6 +4,7 @@ var month := 1
 var beginning := true
 
 var current_principal := 4000
+var paid := 0
 var extra := 0
 var emergency := 0
 

@@ -20,6 +20,7 @@ extends Node2D
 @onready var extra_num: RichTextLabel = $Screen/Debt/VBoxContainer/extra/num
 @onready var DEBT_PAYMENT: TextureProgressBar = $Screen1/Profit/DebtPayment2
 
+var GS = GameSummary.new()
 
 var page := 1
 
@@ -67,11 +68,17 @@ func FINISH() -> void: # next month
 	
 	await Fade.fade("in")
 	
+	Global.paid = DEBT_PAYMENT.value 
+	
+	GS.month_principal[Global.month] = Global.current_principal
+	GS.month_interest[Global.month] = Global.month_interest
+	GS.month_paid[Global.month] = Global.paid
+	
 	Global.current_principal = Global.owed - DEBT_PAYMENT.value 
 	Global.extra = 0
 	
-	Global.month += 1 # remove this!
-	Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
+	#Global.month += 1 # remove this!
+	#Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
 	
 	if Global.current_principal <= 0:
 		Loader.change_level("res://scene/game_summary.tscn")
