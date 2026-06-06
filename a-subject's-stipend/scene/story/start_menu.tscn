@@ -184,6 +184,7 @@ layout_mode = 0
 offset_left = -10.0
 offset_top = -88.0
 offset_right = 429.0
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(2.3029718, 1.5180657, 0.7930966, 1)
 theme_override_colors/font_outline_color = Color(0.41492757, 0.06627025, 0.0032650698, 1)
 theme_override_constants/outline_size = 11

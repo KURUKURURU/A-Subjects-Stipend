@@ -1329,11 +1329,12 @@ pitch_scale = 0.65
 autoplay = true
 
 [node name="Transition" type="TextureButton" parent="." unique_id=1230102366]
-self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.24313726)
+self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.3529412)
 offset_left = 624.0
 offset_top = -462.0
 offset_right = 931.0
 offset_bottom = 1099.0
+mouse_default_cursor_shape = 10
 texture_normal = ExtResource("2_hh5bm")
 ignore_texture_size = true
 stretch_mode = 0

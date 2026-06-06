@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bkpw6v77yoyvm" path="res://sound/Her Silver Sword.wav" id="6_qij5q"]
 [ext_resource type="AudioStream" uid="uid://cwmnyaphedwgi" path="res://sound/scroll_paper.wav" id="8_3ahhr"]
 [ext_resource type="AudioStream" uid="uid://c7skcf1jtmsaw" path="res://sound/desert_ambience.wav" id="8_lue14"]
+[ext_resource type="Texture2D" uid="uid://bagf41eopaa53" path="res://img/keybind.png" id="10_bfnh6"]
 
 [sub_resource type="Theme" id="Theme_0me4j"]
 RichTextLabel/colors/default_color = Color(2.041636, 2.041636, 0, 1)
@@ -376,6 +377,34 @@ stream = ExtResource("8_3ahhr")
 volume_db = -9.905
 pitch_scale = 1.4
 autoplay = true
+
+[node name="keybind" type="NinePatchRect" parent="." unique_id=1719367730]
+modulate = Color(1.1291975, 0.7980712, 0.4669449, 0.74509805)
+offset_left = 499.0
+offset_top = 522.0
+offset_right = 856.0
+offset_bottom = 600.0
+scale = Vector2(0.5918149, 0.5918149)
+pivot_offset_ratio = Vector2(0.5, 0.51)
+texture = ExtResource("10_bfnh6")
+patch_margin_left = 39
+patch_margin_top = 39
+patch_margin_right = 39
+patch_margin_bottom = 39
+axis_stretch_vertical = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="keybind" unique_id=55904347]
+layout_mode = 0
+offset_left = 20.511463
+offset_top = 2.9779468
+offset_right = 337.51147
+offset_bottom = 49.977947
+theme_override_colors/default_color = Color(0, 0, 0, 0.654902)
+theme_override_font_sizes/normal_font_size = 23
+text = "space"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="darkcolor" type="ColorRect" parent="." unique_id=456434537]
 offset_left = -14.0

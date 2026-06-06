@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	var percentage =  str(int((Global.owed)/4074 * 100)) + "%"
+	var percentage =  str(int((Global.antileft)/4074 * 100)) + "%"
 	
 	m.text = name.replace("Month_", "") 
 	

@@ -356,6 +356,7 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Month_6" type="HBoxContainer" parent="VBoxContainer" unique_id=256206318]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = -17
 script = ExtResource("4_44lfx")

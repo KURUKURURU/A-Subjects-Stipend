@@ -7,14 +7,23 @@ var current_principal := 4000
 var paid := 0
 var extra := 0
 var emergency := 0
+var antileft
 
 var APR := 0.22
 
+var arrow_click = load("res://img/cendrillion.png")
+var spark = load("res://img/spark.png")
+var arrown = load("res://img/arrows.png")
+
+func _ready():
+	Input.set_custom_mouse_cursor(arrow_click, Input.CURSOR_ARROW, Vector2(16, 16))
+	
+	Input.set_custom_mouse_cursor(arrown, Input.CURSOR_HSIZE, Vector2(16, 16))
+	Input.set_custom_mouse_cursor(spark, Input.CURSOR_POINTING_HAND, Vector2(16, 16))
 
 var month_interest: float:
 	get:
 		return int((current_principal * APR) / 12.0)
-
 
 var owed: int:
 	get:

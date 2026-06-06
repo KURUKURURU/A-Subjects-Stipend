@@ -13,7 +13,7 @@ extends Node2D
 @onready var month_11: HBoxContainer = $VBoxContainer/Month_11
 @onready var month_12: HBoxContainer = $VBoxContainer/Month_12
 @onready var _continue: Button = $Continue
-@onready var final_tally= $summary
+@onready var final_tally = $summary
 @onready var extras = $Extras
 
 func _ready() -> void:
@@ -27,7 +27,6 @@ func _ready() -> void:
 		month_node.visible = false
 	
 	await Fade.fade("out")
-	Global.month = 4
 	await reveal()
 
 

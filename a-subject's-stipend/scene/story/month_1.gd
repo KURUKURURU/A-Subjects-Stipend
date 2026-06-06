@@ -14,6 +14,6 @@ func _process(delta: float) -> void:
 	
 	var month = int(m.text) 
 	
-	p.text = str(GameSummary.month_principal[month]) + " g"
-	i.text = str(GameSummary.month_interest[month]) + " g"
+	p.text = str(GameSummary.month_principal[month]) 
+	i.text = str(GameSummary.month_interest[month])
 	total.text = str(GameSummary.month_paid[month]) + " g"
