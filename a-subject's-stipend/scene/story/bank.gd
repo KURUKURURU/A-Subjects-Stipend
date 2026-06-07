@@ -3,9 +3,9 @@ extends TextureProgressBar
 
 
 func _ready() -> void:
-	Global.owed = 3000
+	#Global.owed = 3000
+	pass
 
 
 func _process(delta: float) -> void:
-	value = Global.owed
-	label.text = str(int(value)) + " principal left!"
+	label.text = str(Global.current_principal) + " principal left!"

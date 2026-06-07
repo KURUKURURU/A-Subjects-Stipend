@@ -9,14 +9,18 @@ extends Node2D
 @onready var music: AudioStreamPlayer = $Music
 @onready var sfx: AudioStreamPlayer = $sfx
 @onready var darkcolor: ColorRect = $darkcolor
+@onready var keybind: NinePatchRect = $keybind
 
 signal advance
 
 func _ready() -> void:
+	keybind.show()
 	await Speak("AMBERWOOD, 
 kingdom of honey.
 
 –A kingdom revered for its beauty.")
+
+	keybind.hide()
 
 	await Speak("a testament to this beauty 
 would be the kingdom's castle,

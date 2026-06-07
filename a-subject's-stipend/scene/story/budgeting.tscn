@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cvp3yuphgwvkb" path="res://img/Under.png" id="4_ug5vd"]
 [ext_resource type="Texture2D" uid="uid://cx4egeb2p75yu" path="res://img/Over.png" id="5_co2mp"]
 [ext_resource type="Texture2D" uid="uid://bgbwgxirdw7e7" path="res://img/Progress.png" id="6_2eqe0"]
-[ext_resource type="Texture2D" uid="uid://dxqbuvhb4odyx" path="res://img/buttons/define.png" id="6_4d67x"]
+[ext_resource type="Texture2D" uid="uid://b4yi8xnekubub" path="res://img/question.png" id="6_3k4bp"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="7_o4uiu"]
+[ext_resource type="Texture2D" uid="uid://c3dndekan433u" path="res://img/m?.png" id="7_uug3u"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="10_ug5vd"]
 [ext_resource type="FontFile" uid="uid://ccxq8tfc54s1" path="res://fonts/im-fell-dw-pica/IMFePIrm29P.ttf" id="11_3ypin"]
 [ext_resource type="Script" uid="uid://dh17rmnybjgr3" path="res://scene/story/bank.gd" id="11_o4uiu"]
@@ -298,12 +299,15 @@ text = "[shake]Debt..."
 vertical_alignment = 1
 
 [node name="question" type="TextureButton" parent="Screen/Debt" unique_id=331335419]
-offset_left = 118.57144
-offset_top = -17.142868
-offset_right = 329.28287
-offset_bottom = 193.56859
-scale = Vector2(0.42712435, 0.42712435)
-texture_normal = ExtResource("6_4d67x")
+offset_left = 107.14287
+offset_top = -10.0
+offset_right = 317.8543
+offset_bottom = 200.71146
+scale = Vector2(0.32840565, 0.32840565)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_3k4bp")
+texture_pressed = ExtResource("6_3k4bp")
+texture_hover = ExtResource("7_uug3u")
 stretch_mode = 0
 
 [node name="Bank" type="TextureProgressBar" parent="Screen/Debt" unique_id=613228399]
@@ -797,6 +801,19 @@ offset_bottom = 40.77593
 theme = ExtResource("16_78cih")
 text = "needs"
 horizontal_alignment = 1
+
+[node name="spending_question2" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Title2" unique_id=1078846573]
+layout_mode = 0
+offset_left = 174.23706
+offset_top = -249.49196
+offset_right = 390.237
+offset_bottom = -149.49196
+scale = Vector2(0.19583824, 0.38254791)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_3k4bp")
+texture_pressed = ExtResource("6_3k4bp")
+texture_hover = ExtResource("7_uug3u")
+stretch_mode = 0
 
 [node name="SSalary2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1570903246]
 texture_filter = 1
@@ -1430,6 +1447,19 @@ texture_normal = ExtResource("18_qw8cp")
 texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
+[node name="spending_question3" type="TextureButton" parent="Screen1" unique_id=2146721950]
+visible = false
+offset_left = -318.0
+offset_top = 339.99997
+offset_right = -107.288574
+offset_bottom = 550.7114
+scale = Vector2(0.25106344, 0.25106344)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_3k4bp")
+texture_pressed = ExtResource("6_3k4bp")
+texture_hover = ExtResource("7_uug3u")
+stretch_mode = 0
+
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=175469749]
 stream = ExtResource("14_3ypin")
 volume_db = -9.668
@@ -1494,6 +1524,7 @@ color = Color(0.83, 0.49689332, 0.116199985, 0)
 [connection signal="pressed" from="Screen/Debt/VBoxContainer/Control/Continue" to="." method="FINISH"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Title2/spending_question2" to="." method="debts_q"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary2/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary3/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
@@ -1504,5 +1535,6 @@ color = Color(0.83, 0.49689332, 0.116199985, 0)
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary4/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
+[connection signal="pressed" from="Screen1/spending_question3" to="." method="debts_q"]
 [connection signal="mouse_entered" from="Transition" to="." method="Transition"]
 [connection signal="pressed" from="Transition" to="." method="Transition"]

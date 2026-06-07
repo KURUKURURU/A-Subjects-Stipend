@@ -2,15 +2,8 @@ extends Node2D
 @onready var animation: AnimationPlayer = $animation
 @onready var paper = $Paper
 @onready var txt: RichTextLabel = $Paper/txt
-@onready var img: TextureRect = $Paper/img
 @onready var stretch: AudioStreamPlayer = $stretch
-@onready var fade: TextureRect = $fade
-@onready var fadetxt: RichTextLabel = $fade/RichTextLabel
-@onready var fadeanimation: AnimationPlayer = $fade/RichTextLabel/AnimationPlayer
-@onready var q_1: HBoxContainer = $fade/Q1
-@onready var q_2: HBoxContainer = $fade/Q2
 @onready var wrong: AudioStreamPlayer = $wrong
-@onready var right: AudioStreamPlayer = $right
 
 signal close
 
@@ -45,8 +38,21 @@ func roll(words, imgs):
 
 
 func _on_y_pressed() -> void:
+	animation.play("roll_in")
+	await animation.animation_finished
+	stretch.play()
+	paper.hide()
+	
+	await Fade.fade("in")
 	Loader.change_level("res://scene/story/budgeting.tscn")
 
 
 func _on_n_pressed() -> void:
+	animation.play("roll_in")
+	stretch.play()
+
+	await animation.animation_finished
+	
+	paper.hide()
+	await Fade.fade("in")
 	Loader.change_level("res://scene/story/info_session.tscn")

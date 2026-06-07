@@ -308,6 +308,15 @@ offset_right = 125.16036
 offset_bottom = 79.99849
 texture = ExtResource("1_gsuil")
 
+[node name="labeling" type="RichTextLabel" parent="." unique_id=947839432]
+offset_left = 263.0
+offset_top = 566.0
+offset_right = 687.0
+offset_bottom = 600.0
+theme = ExtResource("17_simr7")
+text = "This skips the introduction cutscene."
+scroll_active = false
+
 [node name="Window" type="Control" parent="." unique_id=1046120332]
 visible = false
 layout_mode = 3
@@ -364,15 +373,6 @@ offset_top = 8.0
 offset_right = 1067.0
 offset_bottom = 608.0
 texture = ExtResource("14_y1soa")
-
-[node name="labeling" type="RichTextLabel" parent="." unique_id=947839432]
-offset_left = 263.0
-offset_top = 566.0
-offset_right = 687.0
-offset_bottom = 600.0
-theme = ExtResource("17_simr7")
-text = "This skips the introduction cutscene."
-scroll_active = false
 
 [node name="Story" type="Area2D" parent="." unique_id=476750021]
 visible = false
