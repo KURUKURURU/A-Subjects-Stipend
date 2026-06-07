@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bc6njscy52dli"]
 
+[ext_resource type="Script" uid="uid://qctdnu03oir7" path="res://scene/story/month_summary.gd" id="1_8u4ad"]
 [ext_resource type="Texture2D" uid="uid://ckwy63u8a1h1w" path="res://img/test_book.png" id="1_ionu1"]
 [ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="2_uw38i"]
 [ext_resource type="FontFile" uid="uid://chie8qmsmbskh" path="res://fonts/im-fell-dw-pica/IMFePIit29P.ttf" id="3_35qjv"]
@@ -7,6 +8,7 @@
 [ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="5_35qjv"]
 [ext_resource type="Texture2D" uid="uid://d0ngsyj0dd73" path="res://img/rightarrow.png" id="6_f4i5g"]
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="7_f4i5g"]
+[ext_resource type="AudioStream" uid="uid://cugq73kudoryi" path="res://sound/Granddaughter.wav" id="9_5usi3"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g31q"]
 texture = ExtResource("2_uw38i")
@@ -78,7 +80,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Panel/After:modulate")
+tracks/3/path = NodePath("Panel/removed:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -166,7 +168,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Panel/After:modulate")
+tracks/3/path = NodePath("Panel/removed:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -219,6 +221,7 @@ _data = {
 }
 
 [node name="month_summary" type="Node2D" unique_id=660273300]
+script = ExtResource("1_8u4ad")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=375868375]
 offset_left = -61.0
@@ -295,13 +298,13 @@ offset_top = 208.75531
 offset_right = 180.391
 offset_bottom = 248.75531
 
-[node name="Before3" type="RichTextLabel" parent="Panel/Control" unique_id=343818965]
+[node name="earned" type="RichTextLabel" parent="Panel/Control" unique_id=343818965]
 modulate = Color(0.23000002, 1, 0.5251666, 1)
 clip_contents = false
 layout_mode = 0
-offset_left = -119.02715
+offset_left = -136.11823
 offset_top = -175.18355
-offset_right = 20.753456
+offset_right = 44.4606
 offset_bottom = -126.35188
 scale = Vector2(0.76054883, 0.76054883)
 theme = ExtResource("5_35qjv")
@@ -310,12 +313,12 @@ text = "+100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Before4" type="RichTextLabel" parent="Panel/Control" unique_id=1590674671]
+[node name="title" type="RichTextLabel" parent="Panel/Control" unique_id=1590674671]
 clip_contents = false
 layout_mode = 0
-offset_left = -117.90941
+offset_left = -117.806366
 offset_top = -150.15732
-offset_right = 21.8712
+offset_right = 21.974243
 offset_bottom = -101.32566
 scale = Vector2(0.76054883, 0.76054883)
 theme = ExtResource("5_35qjv")
@@ -324,12 +327,13 @@ text = "gold earned"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="After3" type="RichTextLabel" parent="Panel/Control" unique_id=1010146212]
+[node name="debt" type="RichTextLabel" parent="Panel/Control" unique_id=1010146212]
+modulate = Color(0.7686409, 0, 0.15890214, 1)
 clip_contents = false
 layout_mode = 0
-offset_left = -113.81099
+offset_left = -130.90207
 offset_top = -98.27368
-offset_right = 25.96962
+offset_right = 43.704285
 offset_bottom = -49.44204
 scale = Vector2(0.7077481, 0.7077481)
 theme = ExtResource("5_35qjv")
@@ -338,7 +342,7 @@ text = "-100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="After4" type="RichTextLabel" parent="Panel/Control" unique_id=1828845812]
+[node name="title2" type="RichTextLabel" parent="Panel/Control" unique_id=1828845812]
 clip_contents = false
 layout_mode = 0
 offset_left = -113.81099
@@ -352,7 +356,7 @@ text = "gold added to debt"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Before" type="RichTextLabel" parent="Panel" unique_id=1561094378]
+[node name="earn" type="RichTextLabel" parent="Panel" unique_id=1561094378]
 clip_contents = false
 layout_mode = 0
 offset_left = 111.09201
@@ -360,12 +364,12 @@ offset_top = 70.8059
 offset_right = 250.87262
 offset_bottom = 119.63756
 theme = ExtResource("5_35qjv")
-theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/normal_font_size = 25
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Before2" type="RichTextLabel" parent="Panel" unique_id=698318621]
+[node name="title" type="RichTextLabel" parent="Panel" unique_id=698318621]
 clip_contents = false
 layout_mode = 0
 offset_left = 112.9232
@@ -378,7 +382,7 @@ text = "Before"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="After" type="RichTextLabel" parent="Panel" unique_id=1106592159]
+[node name="removed" type="RichTextLabel" parent="Panel" unique_id=1106592159]
 modulate = Color(1, 1, 1, 0)
 clip_contents = false
 layout_mode = 0
@@ -387,12 +391,12 @@ offset_top = 70.8059
 offset_right = 437.6537
 offset_bottom = 119.63756
 theme = ExtResource("5_35qjv")
-theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/normal_font_size = 25
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="After2" type="RichTextLabel" parent="Panel" unique_id=1136573554]
+[node name="title2" type="RichTextLabel" parent="Panel" unique_id=1136573554]
 clip_contents = false
 layout_mode = 0
 offset_left = 297.87308
@@ -438,3 +442,9 @@ metadata/_edit_use_anchors_ = true
 [node name="animation" type="AnimationPlayer" parent="." unique_id=828706543]
 libraries/ = SubResource("AnimationLibrary_tslwy")
 autoplay = &"up"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1754144026]
+stream = ExtResource("9_5usi3")
+autoplay = true
+
+[connection signal="pressed" from="Panel/Continue" to="." method="_on_continue_pressed"]

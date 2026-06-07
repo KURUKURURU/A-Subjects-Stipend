@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bfyajw05e3i6d" path="res://scene/story/title.gd" id="13_s82h1"]
 [ext_resource type="AudioStream" uid="uid://dwo2kpn8d8hpn" path="res://sound/weirdeventwhattt.wav" id="13_vpox4"]
 [ext_resource type="AudioStream" uid="uid://br8irjxxmrxoj" path="res://sound/OMG_veryscarytensehahaahahha.ogg" id="14_3b8qe"]
+[ext_resource type="Texture2D" uid="uid://dcas3kfeqmawl" path="res://img/buttons/dd.png" id="16_kit5w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k0rif"]
 animations = [{
@@ -220,9 +221,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 248.0
+offset_left = 54.0
 offset_top = 72.0
-offset_right = 564.0014
+offset_right = 370.0014
 offset_bottom = 516.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -335,7 +336,6 @@ offset_bottom = 58.0
 theme = ExtResource("10_1y3hv")
 text = "Pay with..."
 script = ExtResource("13_s82h1")
-metadata/_edit_use_anchors_ = true
 
 [node name="Emergency" type="CheckButton" parent="Control/setting/Take" unique_id=1160676513]
 layout_mode = 0
@@ -361,6 +361,7 @@ offset_top = 27.0
 offset_right = 374.0
 offset_bottom = 127.0
 texture_normal = ExtResource("13_og7me")
+texture_disabled = ExtResource("16_kit5w")
 
 [node name="Credit" type="TextureButton" parent="Control" unique_id=500644352]
 visible = false
@@ -397,6 +398,6 @@ stream = ExtResource("14_3b8qe")
 volume_db = -15.509
 
 [connection signal="pressed" from="Control/setting/Add/accept" to="." method="_on_accept_pressed"]
-[connection signal="pressed" from="Control/setting/Take/accept" to="." method="_on_accept_pressed"]
+[connection signal="pressed" from="Control/setting/Take/accept" to="." method="_complete_payment"]
 [connection signal="pressed" from="Control/EmergencyFunds" to="." method="EmergencyFundAccess"]
 [connection signal="pressed" from="CardButton" to="." method="click"]

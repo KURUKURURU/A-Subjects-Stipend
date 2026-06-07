@@ -78,18 +78,11 @@ func FINISH() -> void: # next month
 	Global.current_principal = Global.owed - DEBT_PAYMENT.value 
 	Global.extra = 0
 	
-	#Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
 	
 	if Global.current_principal <= 0 or Global.month >= 12:
 		Global.antileft = 4074 - Global.owed 
 		Loader.change_level("res://scene/story/game_summary.tscn")
 	else:
-		#Global.month += 1 # remove this!
-		#Loader.change_level("res://scene/story/budgeting.tscn") # remove this!
 		
-		#animation.play("in")
-		#await animation.animation_finished
-		
-		#await Questbox.drawTowards(Questbox.debt_progressbar, float((4074 - Global.owed )/4074.0))
 		await Fade.fade("in")
 		Loader.change_level("res://scene/monthly_play.tscn")

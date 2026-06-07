@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="7_5nctv"]
 [ext_resource type="Texture2D" uid="uid://8dtku6si04cx" path="res://img/Layers/TILE_1.png" id="8_5nctv"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g31q"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jchh8"]
 texture = ExtResource("7_5nctv")
 texture_margin_left = 38.0
 texture_margin_top = 38.0
@@ -24,7 +24,7 @@ modulate_color = Color(0.12447148, 0.017420981, 0.017420981, 0.8509804)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nctv"]
 load_path = "res://.godot/imported/9SLICETAB.png-8d51977ca92442928a5ff06c9d29c732.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jchh8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekkgb"]
 texture = SubResource("CompressedTexture2D_5nctv")
 texture_margin_left = 38.0
 texture_margin_top = 38.0
@@ -37,8 +37,8 @@ axis_stretch_vertical = 1
 Button/colors/font_color = Color(0.3707421, 0, 0, 1)
 Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("6_5jl4a")
-Button/styles/hover = SubResource("StyleBoxTexture_5g31q")
-Button/styles/normal = SubResource("StyleBoxTexture_jchh8")
+Button/styles/hover = SubResource("StyleBoxTexture_jchh8")
+Button/styles/normal = SubResource("StyleBoxTexture_ekkgb")
 
 [node name="game_summary" type="Node2D" unique_id=1937327398]
 script = ExtResource("1_aroqw")

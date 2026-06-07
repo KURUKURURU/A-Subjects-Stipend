@@ -28,6 +28,7 @@ var ticks := 3
 		#
 	#return situation
 
+#var added := 0
 
 func _ready() -> void:
 	Global.before = Global.owed
@@ -39,11 +40,13 @@ func _ready() -> void:
 	for i in range(ticks):
 		await play()
 	
-	Global.month += 1
+	#Global.month += 1
 
 
 
 func _process(delta: float) -> void:
+	
+	#Global.added = addedK
 	
 	if progress_bar.value >= 20:
 		await finished_month()
@@ -61,6 +64,7 @@ func play():
 	card_play.show()
 	await card_play.card_place()
 	await card_play.finish
+	
 	progress_animation.play()
 	ticks += 1
 	

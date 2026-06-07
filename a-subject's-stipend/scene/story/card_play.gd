@@ -13,20 +13,36 @@ extends Node2D
 @onready var control: Control = $Control
 @onready var pre: Control = $Preview
 @onready var add: Control = $Control/setting/Add
-@onready var take: Control = $Control/setting/Take
 
-var Data = SituationData.new()
-var payment = 0
+@onready var take: Control = $Control/setting/Take
+@onready var emergency_option: CheckButton = $Control/setting/Take/Emergency
+@onready var credit_option: CheckButton = $Control/setting/Take/Credit
+@onready var accept_option: TextureButton = $Control/setting/Take/accept
+
+#var Data = SituationData.new()
+var payment:
+	get:
+		return SituationData.payment
 
 signal finish
+signal complete_payment
 
 func _process(delta: float) -> void:
-	if Data.img != "":
-		img.texture = load(Data.img)
-	title.text = Data.title
 	
-	body.text = Data.body
-	payment = Data.payment
+	if Global.emergency == 0:
+		emergency_option.disabled = true
+		if credit_option.button_pressed == true:
+			accept_option.disabled = false
+		else:
+			accept_option.disabled = true
+		
+	
+	
+	if SituationData.img != "":
+		img.texture = load(SituationData.img)
+	title.text = SituationData.title
+	
+	body.text = SituationData.body
 	
 
 func _ready() -> void:
@@ -57,34 +73,59 @@ func card_place():
 	return
 
 func click():
+	await event("Servants")
 	event_sfx_2.play()
 	background.show()
 	pre.show()
 	animation.play("slide")
 	
-	event("Servants")
+	#event("Servants")
 	
 	await animation.animation_finished
 	music.play()
 	card_button.hide()
 
 func event(area):
-	
+
 	randomize()
 	var chance = randf()
-	
+
 	match area:
 		"Servants":
-			Data.servant(chance)
-			
-	if Data.servant(chance):
+			SituationData.servant(chance)
+
+	print("Payment =", SituationData.payment)
+	print("Global.added BEFORE =", Global.added)
+
+	if SituationData.payment >= 0:
+		Global.added += SituationData.payment
 		add.show()
 		take.hide()
 	else:
-		take.show()
-		add.hide()
+		SituationData.payment = abs(SituationData.payment)
+		pick_payment()
+		
+	print("Global.added AFTER =", Global.added)
 
-
+func pick_payment():
+	add.hide()
+	take.show()
+	
+	#payment = abs(payment)
+	
+	await complete_payment
+	var need_to_pay = payment
+	
+	if emergency_option.button_pressed == true:
+		need_to_pay -= Global.emergency
+		Global.emergency -= payment
+		
+	if credit_option.button_pressed == true:
+		Global.current_principal += need_to_pay
+	
+	emit_signal("finish")
+	finished()
+	
 func EmergencyFundAccess() -> void:
 	emit_signal("finish")
 	finished()
@@ -93,3 +134,8 @@ func EmergencyFundAccess() -> void:
 func _on_accept_pressed() -> void:
 	emit_signal("finish")
 	finished()
+
+
+func _complete_payment() -> void:
+	emit_signal("complete_payment")
+	
