@@ -181,7 +181,7 @@ offset_bottom = 602.0
 
 [node name="Background" type="TextureRect" parent="." unique_id=2012339186]
 modulate = Color(0.66813457, 0.69099766, 0.013058246, 1)
-self_modulate = Color(3.4823272, 1.0235215, 0, 0.90588236)
+self_modulate = Color(3.4823272, 1.0235215, 0, 1)
 clip_children = 2
 offset_left = 1397.1427
 offset_top = -284.28568

@@ -14,7 +14,7 @@ var debt_progress
 var like_progress
 
 func _ready() -> void:
-	debt_progressbar.value = 100
+	debt_progressbar.value = 4000
 	debt.hide()
 	likability.hide()
 	

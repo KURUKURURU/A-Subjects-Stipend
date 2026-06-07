@@ -7,7 +7,9 @@ extends Node2D
 
 func _ready() -> void:
 	
-	earned.text = str(Global.added) + " g"
+	earned.text = "+" + str(Global.added) + " g"
+	Global.leftover = Global.added
+	
 	debt.text = str(Global.difference) + " g"
 	
 	before.text = str(Global.before) + " g"

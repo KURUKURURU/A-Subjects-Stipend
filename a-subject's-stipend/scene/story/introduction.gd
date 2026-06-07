@@ -51,7 +51,8 @@ your PRINCESS has called for you.")
 	
 	await Fade.fade("in")
 	
-	Loader.change_level("res://scene/story/Start.tscn")
+	#get_tree().change_scene_to_file("res://scene/story/doYouKnow.tscn")
+	Loader.change_level("res://scene/story/doYouKnow.tscn")
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):

@@ -35,9 +35,5 @@ func servant(random: float):
 				body = "A good friend complimented your houseworkers' service at a casual get-together! "
 		
 	
-	if payment >= 0:
-		return payment
-	
-	if payment < 0:
-		return -1
+	return payment
 	

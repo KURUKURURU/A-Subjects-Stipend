@@ -81,6 +81,7 @@ axis_stretch_vertical = 1
 Button/colors/font_color = Color(0.3707421, 0, 0, 1)
 Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("14_0qj6o")
+Button/styles/disabled = SubResource("StyleBoxTexture_5g31q")
 Button/styles/hover = SubResource("StyleBoxTexture_5g31q")
 Button/styles/normal = SubResource("StyleBoxTexture_jchh8")
 
@@ -640,7 +641,7 @@ theme_override_constants/separation = 94
 [node name="Total_money" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=595562708]
 texture_filter = 1
 layout_mode = 2
-max_value = 3000.0
+max_value = 5000.0
 step = 100.0
 value = 100.0
 texture_under = ExtResource("4_ug5vd")
@@ -698,7 +699,7 @@ horizontal_alignment = 1
 [node name="Emergency" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1517358445]
 texture_filter = 1
 layout_mode = 2
-max_value = 3000.0
+max_value = 1000.0
 step = 50.0
 value = 50.0
 texture_under = ExtResource("4_ug5vd")

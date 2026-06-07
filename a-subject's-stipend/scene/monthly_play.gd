@@ -4,7 +4,9 @@ extends Node2D
 @onready var card_play: Node2D = $CardPlay
 @onready var month: RichTextLabel = $month
 
-var ticks := 3
+var ticks := 2
+
+
 
 #I want to make a system where in each 10 second there will be a random event, good or bad.
 #The good events introduce risks, whereas the bad event introduce issues to solve with money or wit.
@@ -31,11 +33,13 @@ var ticks := 3
 #var added := 0
 
 func _ready() -> void:
+	ticks += Global.month
 	Global.before = Global.owed
 	card_play.hide()
 	
 	Questbox.startQuest("Debt")
-	await Questbox.drawTowards(Questbox.debt_progressbar, float((Global.owed)/4074.0))
+	#await Questbox.drawTowards(Questbox.debt_progressbar, float((Global.current_principal)))
+	await Questbox.modify(Questbox.debt, Questbox.debt_progressbar, Global.owed)
 	
 	for i in range(ticks):
 		await play()

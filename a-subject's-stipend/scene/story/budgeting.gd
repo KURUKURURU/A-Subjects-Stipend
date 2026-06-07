@@ -20,14 +20,17 @@ extends Node2D
 @onready var extra_num: RichTextLabel = $Screen/Debt/VBoxContainer/extra/num
 @onready var DEBT_PAYMENT: TextureProgressBar = $Screen1/Profit/DebtPayment2
 @onready var animation: AnimationPlayer = $animation
+@onready var total_money: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/Total_money
 
+@onready var _continue: Button = $Screen/Debt/VBoxContainer/Control/Continue
+@onready var emergency: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/Emergency
 
 #var GS = GameSummary.new()
 
 var page := 1
 
 func _ready() -> void:
-	bank.value = 1025
+	#bank.value = 1025
 	
 	await Fade.fade("out")
 	
@@ -48,7 +51,12 @@ func _process(delta: float) -> void:
 	extra_num.text = "+" + str(Global.extra)
 	total_num.text = "[wave]" + str(Global.owed)
 	
-	
+	if total_money.value == 0:
+		_continue.disabled = false
+		_continue.text = "Progress through the Month?"
+	else: 
+		_continue.disabled = true
+		_continue.text = "You must allocate all your money."
 
 func Transition() -> void:
 	if !transition_animation.is_playing():
@@ -68,8 +76,9 @@ func debts_q() -> void:
 
 func FINISH() -> void: # next month
 	
-	
+	#Global.shown_paid = Global.current_principal
 	Global.paid = DEBT_PAYMENT.value 
+	Global.emergency += emergency.value 
 	
 	GameSummary.month_principal[Global.month] = Global.current_principal
 	GameSummary.month_interest[Global.month] = Global.month_interest
@@ -78,6 +87,7 @@ func FINISH() -> void: # next month
 	Global.current_principal = Global.owed - DEBT_PAYMENT.value 
 	Global.extra = 0
 	
+	Global.shown_paid = Global.current_principal
 	
 	if Global.current_principal <= 0 or Global.month >= 12:
 		Global.antileft = 4074 - Global.owed 

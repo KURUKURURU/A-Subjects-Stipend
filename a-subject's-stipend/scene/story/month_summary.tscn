@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cgphdicsihvhk" path="res://img/vines.png" id="7_f4i5g"]
 [ext_resource type="AudioStream" uid="uid://cugq73kudoryi" path="res://sound/Granddaughter.wav" id="9_5usi3"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5g31q"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5usi3"]
 texture = ExtResource("2_uw38i")
 texture_margin_left = 38.0
 texture_margin_top = 38.0
@@ -23,7 +23,7 @@ modulate_color = Color(0.12447148, 0.017420981, 0.017420981, 0.8509804)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8sjdh"]
 load_path = "res://.godot/imported/9SLICETAB.png-8d51977ca92442928a5ff06c9d29c732.ctex"
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jchh8"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tslwy"]
 texture = SubResource("CompressedTexture2D_8sjdh")
 texture_margin_left = 38.0
 texture_margin_top = 38.0
@@ -36,8 +36,8 @@ axis_stretch_vertical = 1
 Button/colors/font_color = Color(0.3707421, 0, 0, 1)
 Button/font_sizes/font_size = 28
 Button/fonts/font = ExtResource("3_35qjv")
-Button/styles/hover = SubResource("StyleBoxTexture_5g31q")
-Button/styles/normal = SubResource("StyleBoxTexture_jchh8")
+Button/styles/hover = SubResource("StyleBoxTexture_5usi3")
+Button/styles/normal = SubResource("StyleBoxTexture_tslwy")
 
 [sub_resource type="Animation" id="Animation_8u4ad"]
 length = 0.001
@@ -231,9 +231,9 @@ offset_bottom = 634.0
 color = Color(0.99215686, 0.7882353, 0.27450982, 1)
 
 [node name="bookimg" type="TextureRect" parent="." unique_id=1811962925]
-offset_top = 621.0
+offset_top = 341.0
 offset_right = 800.0
-offset_bottom = 1221.0013
+offset_bottom = 941.00134
 texture = ExtResource("1_ionu1")
 
 [node name="Panel" type="NinePatchRect" parent="." unique_id=2046583353]
@@ -293,9 +293,9 @@ texture = ExtResource("4_f4i5g")
 
 [node name="Control" type="Control" parent="Panel" unique_id=662579426]
 anchors_preset = 0
-offset_left = 140.391
+offset_left = 152.59892
 offset_top = 208.75531
-offset_right = 180.391
+offset_right = 192.59892
 offset_bottom = 248.75531
 
 [node name="earned" type="RichTextLabel" parent="Panel/Control" unique_id=343818965]
@@ -359,9 +359,9 @@ vertical_alignment = 1
 [node name="earn" type="RichTextLabel" parent="Panel" unique_id=1561094378]
 clip_contents = false
 layout_mode = 0
-offset_left = 111.09201
+offset_left = 123.29993
 offset_top = 70.8059
-offset_right = 250.87262
+offset_right = 263.08054
 offset_bottom = 119.63756
 theme = ExtResource("5_35qjv")
 theme_override_font_sizes/normal_font_size = 25
@@ -372,9 +372,9 @@ vertical_alignment = 1
 [node name="title" type="RichTextLabel" parent="Panel" unique_id=698318621]
 clip_contents = false
 layout_mode = 0
-offset_left = 112.9232
+offset_left = 125.13112
 offset_top = 104.98806
-offset_right = 252.70381
+offset_right = 264.91174
 offset_bottom = 153.81972
 theme = ExtResource("5_35qjv")
 theme_override_font_sizes/normal_font_size = 18
@@ -386,9 +386,9 @@ vertical_alignment = 1
 modulate = Color(1, 1, 1, 0)
 clip_contents = false
 layout_mode = 0
-offset_left = 297.87308
+offset_left = 310.081
 offset_top = 70.8059
-offset_right = 437.6537
+offset_right = 449.8616
 offset_bottom = 119.63756
 theme = ExtResource("5_35qjv")
 theme_override_font_sizes/normal_font_size = 25
@@ -399,9 +399,9 @@ vertical_alignment = 1
 [node name="title2" type="RichTextLabel" parent="Panel" unique_id=1136573554]
 clip_contents = false
 layout_mode = 0
-offset_left = 297.87308
+offset_left = 310.081
 offset_top = 104.98806
-offset_right = 437.6537
+offset_right = 449.8616
 offset_bottom = 153.81972
 theme = ExtResource("5_35qjv")
 theme_override_font_sizes/normal_font_size = 18
@@ -411,9 +411,9 @@ vertical_alignment = 1
 
 [node name="arrow" type="NinePatchRect" parent="Panel" unique_id=763671225]
 layout_mode = 0
-offset_left = 232.56078
+offset_left = 244.76869
 offset_top = 74.46828
-offset_right = 288.5608
+offset_right = 350.83688
 offset_bottom = 114.46828
 scale = Vector2(0.76506287, 0.76506287)
 texture = ExtResource("6_f4i5g")

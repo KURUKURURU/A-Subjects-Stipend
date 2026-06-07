@@ -4,6 +4,8 @@ var before := 0
 var after := 0
 
 var added : int
+var leftover : int
+var shown_paid : int 
 
 var month := 1
 var beginning := true

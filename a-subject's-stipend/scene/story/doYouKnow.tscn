@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://bj10vku1d3n3h"]
+
+[ext_resource type="Script" uid="uid://bq8fd8r8tqryh" path="res://do_you_know.gd" id="1_e6yby"]
+[ext_resource type="Texture2D" uid="uid://4ympex3awx2a" path="res://img/banner.png" id="2_bmhvi"]
+[ext_resource type="Texture2D" uid="uid://vogjc4iiwyiq" path="res://img/9SLICETAB.png" id="3_h41c2"]
+[ext_resource type="Texture2D" uid="uid://deyuilo0pmqnb" path="res://img/message.png" id="4_i1gx4"]
+[ext_resource type="FontFile" uid="uid://chie8qmsmbskh" path="res://fonts/im-fell-dw-pica/IMFePIit29P.ttf" id="5_bcs4r"]
+[ext_resource type="Texture2D" uid="uid://de81bfxend6x0" path="res://img/e-gabi-wallet-367975_1920.jpg" id="6_h41c2"]
+[ext_resource type="AudioStream" uid="uid://buwoo045w88nn" path="res://sound/whoosh.wav" id="7_bmhvi"]
+[ext_resource type="FontFile" uid="uid://cq5hk50bcnl3u" path="res://fonts/mordred/Mordred-Bold.ttf" id="7_d6hy8"]
+[ext_resource type="AudioStream" uid="uid://drt44kyqcl8w6" path="res://sound/strongwrong.wav" id="8_h41c2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5usi3"]
+texture = ExtResource("3_h41c2")
+texture_margin_left = 38.0
+texture_margin_top = 38.0
+texture_margin_right = 38.0
+texture_margin_bottom = 38.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+modulate_color = Color(0.12447148, 0.017420981, 0.017420981, 0.8509804)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_txkuu"]
+load_path = "res://.godot/imported/9SLICETAB.png-8d51977ca92442928a5ff06c9d29c732.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tslwy"]
+texture = SubResource("CompressedTexture2D_txkuu")
+texture_margin_left = 38.0
+texture_margin_top = 38.0
+texture_margin_right = 38.0
+texture_margin_bottom = 38.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="Theme" id="Theme_e6yby"]
+Button/colors/font_color = Color(0.3707421, 0, 0, 1)
+Button/font_sizes/font_size = 28
+Button/fonts/font = ExtResource("5_bcs4r")
+Button/styles/hover = SubResource("StyleBoxTexture_5usi3")
+Button/styles/normal = SubResource("StyleBoxTexture_tslwy")
+
+[sub_resource type="Animation" id="Animation_0yjwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(64, 366.71603)]
+}
+
+[sub_resource type="Animation" id="Animation_a386x"]
+resource_name = "fade"
+
+[sub_resource type="Animation" id="Animation_rlrfl"]
+resource_name = "roll_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(538.7641, 366.71603), Vector2(64, 366.71603)]
+}
+
+[sub_resource type="Animation" id="Animation_y0gkp"]
+resource_name = "roll_out"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paper:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333337),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(64, 366.71603), Vector2(538.7641, 366.71603)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3063"]
+_data = {
+&"RESET": SubResource("Animation_0yjwt"),
+&"fade": SubResource("Animation_a386x"),
+&"roll_in": SubResource("Animation_rlrfl"),
+&"roll_out": SubResource("Animation_y0gkp")
+}
+
+[node name="Node2D" type="Node2D" unique_id=623338923]
+script = ExtResource("1_e6yby")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=795590319]
+offset_left = -14.0
+offset_top = -25.0
+offset_right = 818.0
+offset_bottom = 640.0
+color = Color(0.27673686, 0.11017526, 0.02189102, 1)
+
+[node name="ScrollBG" type="Parallax2D" parent="." unique_id=1829823111]
+repeat_size = Vector2(0, 7250)
+autoscroll = Vector2(0, -250)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="ScrollBG" unique_id=1828319689]
+modulate = Color(1.3266667, 1.3266667, 1.3266667, 0.49411765)
+offset_right = 800.0
+offset_bottom = 7674.0
+texture = ExtResource("2_bmhvi")
+
+[node name="Paper" type="NinePatchRect" parent="." unique_id=315359981]
+self_modulate = Color(5.060031, 4.1000533, 2.4419107, 1)
+texture_filter = 3
+clip_contents = true
+offset_left = 6.0
+offset_top = 38.0
+offset_right = 70.0
+offset_bottom = 404.71603
+scale = Vector2(1.4588946, 1.4588946)
+texture = ExtResource("3_h41c2")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="LinkButton" type="LinkButton" parent="Paper" unique_id=1120745065]
+layout_mode = 0
+offset_left = 207.69147
+offset_top = 328.33078
+offset_right = 383.69147
+offset_bottom = 368.33078
+scale = Vector2(0.8813432, 0.8813432)
+theme_override_colors/font_color = Color(0.5307334, 0.23268676, 0, 0.46666667)
+theme_override_fonts/font = ExtResource("7_d6hy8")
+text = "Learn on your own?"
+underline = 1
+uri = "https://www.navyfederal.org/makingcents/credit-debt/understanding-credit-card-debt.html"
+
+[node name="Parallax2D" type="Parallax2D" parent="Paper" unique_id=633383345]
+modulate = Color(12.756135, 7.5345354, 7.5345354, 0.14117648)
+repeat_size = Vector2(1230, 0)
+autoscroll = Vector2(500, 0)
+repeat_times = 2
+
+[node name="TextureRect" type="TextureRect" parent="Paper/Parallax2D" unique_id=587527336]
+offset_left = -133.66284
+offset_top = -189.86978
+offset_right = 1093.2817
+offset_bottom = 953.349
+scale = Vector2(0.6631348, 0.6631348)
+texture = ExtResource("4_i1gx4")
+
+[node name="TextureRect" type="TextureRect" parent="Paper" unique_id=1234062152]
+layout_mode = 0
+offset_left = 139.8319
+offset_top = 29.474365
+offset_right = 2059.8318
+offset_bottom = 1309.4744
+scale = Vector2(0.13811415, 0.13811415)
+texture = ExtResource("6_h41c2")
+
+[node name="txt" type="RichTextLabel" parent="Paper" unique_id=33245972]
+texture_filter = 1
+layout_mode = 0
+offset_left = 39.75613
+offset_top = 167.93535
+offset_right = 1253.725
+offset_bottom = 487.211
+scale = Vector2(0.38, 0.38)
+theme_override_colors/default_color = Color(0.35, 0.03149999, 0.03149999, 1)
+theme_override_colors/font_shadow_color = Color(0.16858736, 0.018570421, 0.02027801, 0.1882353)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/normal_font = ExtResource("5_bcs4r")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "How exactly is credit card debt calculated?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Paper" unique_id=1946376946]
+layout_mode = 0
+offset_left = 9.596306
+offset_top = 254.30212
+offset_right = 1098.4817
+offset_bottom = 382.30212
+scale = Vector2(0.480936, 0.480936)
+theme_override_constants/separation = 34
+alignment = 1
+
+[node name="Y" type="Button" parent="Paper/HBoxContainer" unique_id=1698667459]
+clip_contents = true
+layout_mode = 2
+theme = SubResource("Theme_e6yby")
+theme_override_font_sizes/font_size = 41
+text = "Yes!"
+
+[node name="N" type="Button" parent="Paper/HBoxContainer" unique_id=82611387]
+clip_contents = true
+layout_mode = 2
+theme = SubResource("Theme_e6yby")
+theme_override_font_sizes/font_size = 41
+text = "Nope."
+
+[node name="animation" type="AnimationPlayer" parent="." unique_id=1628025860]
+libraries/ = SubResource("AnimationLibrary_f3063")
+
+[node name="stretch" type="AudioStreamPlayer" parent="." unique_id=994548596]
+stream = ExtResource("7_bmhvi")
+
+[node name="wrong" type="AudioStreamPlayer" parent="." unique_id=985008660]
+stream = ExtResource("8_h41c2")
+volume_db = -15.0
+
+[connection signal="pressed" from="Paper/HBoxContainer/Y" to="." method="_on_y_pressed"]
+[connection signal="pressed" from="Paper/HBoxContainer/N" to="." method="_on_n_pressed"]

@@ -22,7 +22,7 @@ texture = ExtResource("1_jm4bb")
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=936098192]
 repeat_size = Vector2(800, 600)
-autoscroll = Vector2(-20, 20)
+autoscroll = Vector2(69.625, 500)
 repeat_times = 2
 
 [node name="TextureRect" type="TextureRect" parent="Background/Parallax2D" unique_id=1822420798]
@@ -44,3 +44,4 @@ theme = ExtResource("4_245q0")
 max_value = 1.0
 step = 0.0
 value = 0.74
+show_percentage = false

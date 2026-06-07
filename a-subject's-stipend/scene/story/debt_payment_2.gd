@@ -5,6 +5,7 @@ extends TextureProgressBar
 @onready var label: RichTextLabel = $label
 
 @onready var _ScrollContainer: ScrollContainer = $"../ScrollContainer"
+@onready var bad: AudioStreamPlayer = $"../ScrollContainer/bad"
 
  
 func _ready() -> void:
@@ -18,9 +19,15 @@ func _process(delta: float) -> void:
 
 func adding():
 	var frank = self
-	_ScrollContainer.adding(frank)
+	if value != 1000:
+		_ScrollContainer.adding(frank)
+	else:
+		bad.play()
 	
 func subtracting():
 	var frank = self
-	_ScrollContainer.subtracting(frank)
+	if value != 0:
+		_ScrollContainer.subtracting(frank)
+	else:
+		bad.play()
 	

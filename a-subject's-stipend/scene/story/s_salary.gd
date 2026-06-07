@@ -4,9 +4,18 @@ extends TextureProgressBar
 @onready var plus: TextureButton = $plus
 @onready var label: RichTextLabel = $label
 
+@onready var bad: AudioStreamPlayer = $"../../bad"
+
+
 @onready var _ScrollContainer = $"../.."
 
+var emergent
+
 func _ready() -> void:
+	if label.text == "Emergency Fund":
+		emergent = true
+		label.text = "Emergency (" + str(Global.emergency) + " G)"
+	
 	self.value = 0
 	plus.pressed.connect(adding)
 	minus.pressed.connect(subtracting)
@@ -17,9 +26,17 @@ func _process(delta: float) -> void:
 
 func adding():
 	var frank = self
-	_ScrollContainer.adding(frank)
+	if value != 500 and !emergent:
+		_ScrollContainer.adding(frank)
+	elif value != 1000 and emergent:
+		_ScrollContainer.adding(frank)
+	else:
+		bad.play()
 	
 func subtracting():
 	var frank = self
-	_ScrollContainer.subtracting(frank)
+	if value != 0:
+		_ScrollContainer.subtracting(frank)
+	else:
+		bad.play()
 	
