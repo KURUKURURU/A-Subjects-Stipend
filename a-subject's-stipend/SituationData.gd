@@ -71,19 +71,19 @@ func situation(random):
 		match area:
 			"food":
 				img = "res://img/situations/oldguy.png"
-				payment = -200
+				payment = -300
 				title = "Insults to the Chef!"
 				body = "You served your guest horrid food!"
 			"water":
 				img = "res://img/situations/glass.png"
-				payment = -100
+				payment = -400
 				title = "Water, Contaminated!"
 				body = "This water should be sealed and contained somewhere sealed and impenetrable."
 			"servants":
 				img = "res://img/situations/plate.png"
-				payment = -200
+				payment = -300
 				title = "Broken Dishes!"
-				body = "Looks like an employee has dropped some plates! Her bills this month might be getting to her and hindering her work performance!"
+				body = "Looks like an employee has dropped some fine china! Her bills this month might be getting to her and hindering her work performance!"
 			"horsecare":
 				#add another instance here
 				img = "res://img/situations/horse.png"
@@ -110,7 +110,7 @@ func situation(random):
 				img = "res://img/situations/oldguy.png"
 				payment = 200
 				title = "House Guest Complimented Service!"
-				body = "Looks like an employee has dropped some plates! Her bills this month might be getting to her and hindering her work performance!"
+				body = "Your food was deeee-lish!"
 			"horsecare":
 				img = "res://img/situations/paper.png"
 				payment = 100

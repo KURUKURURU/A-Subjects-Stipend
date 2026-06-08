@@ -19,8 +19,8 @@ extends Node2D
 @onready var credit_option: CheckButton = $Control/setting/Take/Credit
 @onready var accept_option: TextureButton = $Control/setting/Take/accept
 
-@onready var preview_title: RichTextLabel = $Preview/title
-@onready var preview_body: RichTextLabel = $Preview/body
+@onready var preview_title: RichTextLabel = $Preview/VBoxContainer/title
+@onready var preview_body: RichTextLabel = $Preview/VBoxContainer/body
 
 #var Data = SituationData.new()
 var payment:
@@ -38,6 +38,11 @@ func _process(delta: float) -> void:
 			accept_option.disabled = false
 		else:
 			accept_option.disabled = true
+			
+	if Global.emergency > payment:
+		credit_option.disabled = true
+	else:
+		credit_option.disabled = false
 		
 	
 	
@@ -122,13 +127,15 @@ func pick_payment():
 	await complete_payment
 	var need_to_pay = payment
 	
-	if emergency_option.button_pressed == true:
-		need_to_pay -= Global.emergency
-		Global.emergency -= payment
-		
-	if credit_option.button_pressed == true:
+	if emergency_option.button_pressed:
+		var used_emergency = min(Global.emergency, need_to_pay)
+		Global.emergency -= used_emergency
+		need_to_pay -= used_emergency
+
+	if credit_option.button_pressed:
 		Global.current_principal += need_to_pay
-	
+		need_to_pay = 0
+		
 	emit_signal("finish")
 	finished()
 	

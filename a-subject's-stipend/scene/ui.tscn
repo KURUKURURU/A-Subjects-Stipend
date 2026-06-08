@@ -272,6 +272,7 @@ visible = false
 visible = false
 
 [node name="SettingsBanner" type="Sprite2D" parent="." unique_id=596087236]
+visible = false
 z_index = 10
 position = Vector2(3, -123)
 
@@ -291,6 +292,7 @@ stream = ExtResource("6_ajaei")
 volume_db = -7.786
 
 [node name="Settings" type="TextureButton" parent="." unique_id=297552237]
+visible = false
 modulate = Color(1.0259073, 0.96139175, 0.75960314, 1)
 z_index = 10
 offset_left = -20.265095
@@ -308,6 +310,7 @@ script = ExtResource("8_n2xhd")
 libraries/ = SubResource("AnimationLibrary_4auga")
 
 [node name="Pause" type="TextureButton" parent="." unique_id=725452026]
+visible = false
 modulate = Color(1.0259073, 0.96139175, 0.75960314, 1)
 z_index = 10
 offset_left = -20.265095
@@ -325,6 +328,7 @@ script = ExtResource("8_n2xhd")
 libraries/ = SubResource("AnimationLibrary_4auga")
 
 [node name="hover" type="TextureButton" parent="." unique_id=38207863]
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 z_index = 10
 anchors_preset = -1

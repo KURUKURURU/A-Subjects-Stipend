@@ -30,7 +30,7 @@ func _ready() -> void:
 	await Speak("Crown Princess Marigold", "A common noble like you should have better spending habits, it worries me how you've dug yourself this deep.")
 	await Speak("Crown Princess Marigold", "You have the worst [wave]REDCARD debt[/wave] in the kingdom. I'm not kidding.")
 	await Speak("Crown Princess Marigold", "Credit card debt is something I expected from your character, but when I heard of your situation I was still surprised.")
-	await Speak("Crown Princess Marigold", "Fear not, I won't let you continue this. I command you, in under a year, [shake][font_size=25]to pay your debt.")
+	await Speak("Crown Princess Marigold", "Fear not, I won't let you continue this. I command you, in under 6 months, [shake][font_size=25]to pay your debt.")
 	await Speak("Crown Princess Marigold", "...")
 	
 	await Speak("Crown Princess Marigold", "[font_size=12][wave] If he can just pay them, he'd be a suitable match for me, a crown princess...")

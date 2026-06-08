@@ -4,13 +4,15 @@ extends HBoxContainer
 @onready var i: RichTextLabel = $i
 @onready var total: RichTextLabel = $total
 
+var percentage := ""
+
 func _ready() -> void:
 	pass # Replace with function body.
 
 
 func _process(delta: float) -> void:
 	
-	var percentage =  str(int((Global.antileft)/4074 * 100)) + "%"
+	percentage =  str(int((Global.antileft)/4074 * 100)) + "%"
 	
 	m.text = name.replace("Month_", "") 
 	

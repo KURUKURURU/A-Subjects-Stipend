@@ -626,16 +626,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Screen1/Profit" unique_id=829480525]
+self_modulate = Color(12.5833235, 8.669515, 0.0007527893, 1)
 clip_contents = false
 offset_left = 404.28574
 offset_top = 122.857155
-offset_right = 694.9248
+offset_right = 678.81885
 offset_bottom = 380.55228
 scale = Vector2(1.9513645, 1.9513645)
 size_flags_horizontal = 4
 theme = ExtResource("14_3eb7d")
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 3
+vertical_scroll_mode = 2
 script = ExtResource("15_0w6ok")
 
 [node name="thing" type="VBoxContainer" parent="Screen1/Profit/ScrollContainer" unique_id=1710842996]
@@ -802,25 +803,13 @@ theme = ExtResource("16_78cih")
 text = "needs"
 horizontal_alignment = 1
 
-[node name="spending_question2" type="TextureButton" parent="Screen1/Profit/ScrollContainer/thing/Title2" unique_id=1078846573]
-layout_mode = 0
-offset_left = 174.23706
-offset_top = -249.49196
-offset_right = 390.237
-offset_bottom = -149.49196
-scale = Vector2(0.19583824, 0.38254791)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("6_3k4bp")
-texture_pressed = ExtResource("6_3k4bp")
-texture_hover = ExtResource("7_uug3u")
-stretch_mode = 0
-
 [node name="SSalary2" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1570903246]
 texture_filter = 1
 layout_mode = 2
+min_value = 100.0
 max_value = 500.0
 step = 50.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -910,9 +899,10 @@ e = 300
 [node name="SSalary3" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=183540849]
 texture_filter = 1
 layout_mode = 2
+min_value = 100.0
 max_value = 500.0
 step = 50.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -1001,9 +991,10 @@ e = 0
 [node name="SSalary" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=1010323127]
 texture_filter = 1
 layout_mode = 2
+min_value = 100.0
 max_value = 500.0
 step = 50.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -1089,9 +1080,10 @@ script = ExtResource("28_73vw4")
 [node name="SSalary4" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=318886040]
 texture_filter = 1
 layout_mode = 2
+min_value = 100.0
 max_value = 500.0
 step = 50.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -1181,9 +1173,10 @@ d = 0
 visible = false
 texture_filter = 1
 layout_mode = 2
+min_value = 100.0
 max_value = 500.0
 step = 50.0
-value = 50.0
+value = 100.0
 texture_under = ExtResource("4_ug5vd")
 texture_over = ExtResource("5_co2mp")
 texture_progress = ExtResource("6_2eqe0")
@@ -1449,7 +1442,6 @@ texture_pressed = ExtResource("21_1wvy1")
 texture_hover = ExtResource("22_wdgv3")
 
 [node name="spending_question3" type="TextureButton" parent="Screen1" unique_id=2146721950]
-visible = false
 offset_left = -318.0
 offset_top = 339.99997
 offset_right = -107.288574
@@ -1471,7 +1463,7 @@ autoplay = true
 self_modulate = Color(2.4404953, 2.0005312, 0.97394836, 0.3529412)
 offset_left = 624.0
 offset_top = -462.0
-offset_right = 931.0
+offset_right = 867.0
 offset_bottom = 1099.0
 mouse_default_cursor_shape = 10
 texture_normal = ExtResource("2_hh5bm")
@@ -1525,7 +1517,6 @@ color = Color(0.83, 0.49689332, 0.116199985, 0)
 [connection signal="pressed" from="Screen/Debt/VBoxContainer/Control/Continue" to="." method="FINISH"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Emergency/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
-[connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/Title2/spending_question2" to="." method="debts_q"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary2/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary2/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary3/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
@@ -1536,6 +1527,6 @@ color = Color(0.83, 0.49689332, 0.116199985, 0)
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary4/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/minus" to="Screen1/Profit/ScrollContainer" method="subtracting"]
 [connection signal="pressed" from="Screen1/Profit/ScrollContainer/thing/SSalary5/plus" to="Screen1/Profit/ScrollContainer" method="adding"]
-[connection signal="pressed" from="Screen1/spending_question3" to="." method="debts_q"]
+[connection signal="pressed" from="Screen1/spending_question3" to="." method="spending_q"]
 [connection signal="mouse_entered" from="Transition" to="." method="Transition"]
 [connection signal="pressed" from="Transition" to="." method="Transition"]

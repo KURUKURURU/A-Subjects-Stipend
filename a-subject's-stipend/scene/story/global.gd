@@ -16,6 +16,7 @@ var extra := 0
 var emergency := 0
 var antileft
 var risk
+var goal:= true
 
 var worst_areas
 var best_areas

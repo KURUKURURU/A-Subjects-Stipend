@@ -44,6 +44,8 @@ func _ready() -> void:
 		
 		#AlertMessage.Alert("")
 		await PopUp.popup("Budget", "A budget is a customized plan that tracks your income and guides how you spend your money over a specific period, usually a month. It helps you prioritize your expenses, avoid unnecessary debt, and build savings for future goals.")
+		await PopUp.popup("How do I manage my budget?", "You can adjust the several faucets your money goes to, and put what's left into savings. Make sure you're factoring your debt payment though, as that's one of your larger priorities!")
+		await PopUp.popup("", "Use the - and + buttons to add and subtract from the smaller allocated budgets, and drag your mouse to the side to change screens.")
 	
 	#AlertMessage.Alert("You must budget your finances efficiently and prepare well.")
 	#await AlertMessage.accept_message
@@ -80,7 +82,7 @@ func debts_q() -> void:
 
 func spending_q() -> void:
 	print("spending question")
-	PopUp.popup("Debt", "An obligation or liability to pay or render something to someone else. ")
+	PopUp.popup("Spending Effectively", "You can organize your spending by figuring out what's is more expensives the best price for all your purchase categories. ")
 
 func FINISH() -> void: # next month
 	var sorted = get_sorted_areas()
@@ -110,7 +112,7 @@ func FINISH() -> void: # next month
 	Global.shown_paid = Global.current_principal
 	Global.risk = get_sorted_areas()
 	
-	if Global.current_principal <= 0 or Global.month >= 12:
+	if Global.current_principal <= 0 or Global.month >= 6:
 		Global.antileft = 4074 - Global.owed 
 		Loader.change_level("res://scene/story/game_summary.tscn")
 	else:

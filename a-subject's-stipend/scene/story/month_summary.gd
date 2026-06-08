@@ -10,7 +10,7 @@ func _ready() -> void:
 	earned.text = "+" + str(Global.added) + " g"
 	Global.leftover = Global.added
 	
-	debt.text = str(Global.difference) + " g"
+	debt.text =  "-" + str(Global.difference) + " g"
 	
 	before.text = str(Global.before) + " g"
 	after.text = str(Global.after) + " g"

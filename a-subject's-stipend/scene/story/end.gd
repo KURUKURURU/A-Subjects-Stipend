@@ -18,29 +18,16 @@ func _ready() -> void:
 	await zoom.animation_finished
 	# Have a derpy you face
 
-	musicfade()
+	#musicfade()
 			
-	sad.play()
-	await Speak("Crown Princess Marigold", "Viorel. You need a job.")
-	
-	# Have a view of mari from afar crosshanded
-	await Speak("Crown Princess Marigold", "A common noble like you should have better spending habits, it worries me how you've dug yourself this deep.")
-	await Speak("Crown Princess Marigold", "You have the worst [wave]REDCARD debt[/wave] in the kingdom. I'm not kidding.")
-	await Speak("Crown Princess Marigold", "Credit card debt is something I expected from your character, but when I heard of your situation I was still surprised.")
-	await Speak("Crown Princess Marigold", "Fear not, I won't let you continue this. I command you, in under a year, [shake][font_size=25]to pay your debt.")
+	#sad.play()
+	#await Speak("Crown Princess Marigold", "Viorel. You need a job.")
 	await Speak("Crown Princess Marigold", "...")
 	
-	await Speak("Crown Princess Marigold", "[font_size=12][wave] If he can just pay them, he'd be a suitable match for me, a crown princess...")
-	
-	# he looks up smiling
-	Questbox.startQuest("Debt")
-	await Speak("You","Yes, my Princess. I'll do as you say.")
-	
-	await Speak("Crown Princess Marigold","Do your best, and do it for me. To loose your debt, you must spend wisely and think about the future.")
-	await Speak("Crown Princess Marigold","Don't fall back onto your old habits.")
+	await reaction(Global.goal)
 	
 	await Fade.fade("in")
-	get_tree().change_scene_to_file("res://scene/story/info_session.tscn")
+	Loader.change_level("res://scene/story/start_menu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -65,3 +52,49 @@ func Animate():
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
+
+@onready var img: TextureRect = $Windowww/img
+@onready var animate: AnimationPlayer = $Windowww/animate
+@onready var smack: AudioStreamPlayer = $Windowww/smack
+@onready var celebration: AudioStreamPlayer = $Windowww/celebration
+@onready var wrong: AudioStreamPlayer = $Windowww/wrong
+@onready var sadness: AudioStreamPlayer = $Windowww/sadness
+
+
+func reaction(condition):
+	
+	match condition:
+		
+		true:
+			img.texture = load("res://img/situations/bod.png")
+			celebration.play()
+			animate.play("fadein")
+			await animate.animation_finished
+			
+			await Speak("Crown Princess Marigold", "I knew you could do it!")
+			smack.play()
+			img.texture = load("res://img/situations/hand.png")
+			await Global.wait(2.0)
+			
+			
+			await Speak("Crown Princess Marigold", "[tornado]Great Job!!")
+			await Global.wait(0.5)
+			
+			
+			
+		false:
+			img.texture = load("res://img/situations/pic2.png")
+			
+			animate.play("fadein")
+			await animate.animation_finished
+			sadness.play()
+			await Speak("Crown Princess Marigold", "I can't believe it...")
+			await Speak("Crown Princess Marigold", "I thought you could manage it...")
+			await Global.wait(2.0)
+			
+			wrong.play()
+			img.texture = load("res://img/situations/pic1.png")
+			await Global.wait(1.5)
+			await Speak("Crown Princess Marigold", "My plans... ruined...")
+			await Global.wait(2.5)
+			

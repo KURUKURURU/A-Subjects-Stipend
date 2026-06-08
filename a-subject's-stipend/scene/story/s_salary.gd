@@ -35,7 +35,7 @@ func adding():
 	
 func subtracting():
 	var frank = self
-	if value != 0:
+	if value != 100:
 		_ScrollContainer.subtracting(frank)
 	else:
 		bad.play()

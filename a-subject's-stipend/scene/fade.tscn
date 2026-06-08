@@ -255,7 +255,7 @@ _data = {
 }
 
 [node name="fade" type="Node2D" unique_id=2056393534]
-z_index = 100
+z_index = 4096
 script = ExtResource("1_27sph")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1086501822]
@@ -263,7 +263,7 @@ self_modulate = Color(0.51183194, 0.25056568, 0.51183194, 1)
 clip_contents = true
 offset_top = 560.0
 offset_right = 800.0
-offset_bottom = 4220.0
+offset_bottom = 4219.999
 texture = ExtResource("3_pk4yt")
 expand_mode = 1
 stretch_mode = 2

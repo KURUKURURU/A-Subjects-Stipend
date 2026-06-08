@@ -25,7 +25,8 @@ func _ready() -> void:
 	await roll("How do we calculate credit card debt?", card_img)
 	await roll("Credit debt is based on two core parts:
 		PRINCIPAL and INTEREST", card_img)
-	await roll("Principal is the amount of money you actually owe [wave]REDCARD[/wave], minus any payments already made.", holdgirl_img)
+	await roll("[wave]REDCARD[/wave] is this Kingdom's Credit Card company.", holdgirl_img)
+	await roll("Principal is the amount of money you actually owe [wave]REDCARD[/wave].", holdgirl_img)
 	await roll("Interest is the cost of borrowing money from [wave]REDCARD[/wave], an additional fee.", holdgirl_img)
 	await roll("APR, or the Annual Percentage Rate, is the total yearly percentage gathered from your principal to calculate the cost of borrowing, based off your interest rate plus any additional services.", pointgirl_img)
 	await roll("The APR gives a much clearer picture of the actual, total cost of a loan, however the interest rate and APR can be very similar when dealing with credit debt.", card_img)

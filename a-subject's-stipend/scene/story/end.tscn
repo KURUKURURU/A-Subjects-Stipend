@@ -16,6 +16,11 @@
 [ext_resource type="AudioStream" uid="uid://b7j2djh4yu12n" path="res://sound/The Palace.wav" id="14_kjy1k"]
 [ext_resource type="Texture2D" uid="uid://dhuvbkuat8bie" path="res://img/filter.png" id="15_5a13n"]
 [ext_resource type="Texture2D" uid="uid://bq5fvbksqtxl" path="res://img/test.png" id="16_vw27e"]
+[ext_resource type="AudioStream" uid="uid://c21frre162s1m" path="res://sound/smacking.wav" id="17_spa8o"]
+[ext_resource type="Texture2D" uid="uid://7f7b4q46i70t" path="res://img/situations/bod.png" id="17_u2wys"]
+[ext_resource type="AudioStream" uid="uid://gt3hmx77j16h" path="res://sound/826622__xkeril__memories-of-a-sweet-summer-music-loop.wav" id="18_u2wys"]
+[ext_resource type="AudioStream" uid="uid://difjaydw0f3by" path="res://sound/509925__supergamersvk__arguement-loop.wav" id="19_txamo"]
+[ext_resource type="AudioStream" uid="uid://drt44kyqcl8w6" path="res://sound/strongwrong.wav" id="20_gu2bb"]
 
 [sub_resource type="Animation" id="Animation_nh031"]
 length = 0.001
@@ -229,6 +234,42 @@ animations = [{
 "speed": 6.9
 }]
 
+[sub_resource type="Animation" id="Animation_6prbd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Windowww:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oateh"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Windowww:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ed0o4"]
+_data = {
+&"RESET": SubResource("Animation_6prbd"),
+&"fadein": SubResource("Animation_oateh")
+}
+
 [node name="Start" type="Node2D" unique_id=1564351414]
 script = ExtResource("1_nxybq")
 
@@ -320,3 +361,36 @@ offset_right = 660.0
 offset_bottom = 600.0
 mouse_filter = 2
 texture = ExtResource("16_vw27e")
+
+[node name="Windowww" type="Control" parent="." unique_id=1818592407]
+modulate = Color(1, 1, 1, 0)
+z_index = 4005
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="animate" type="AnimationPlayer" parent="Windowww" unique_id=1845733612]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ed0o4")
+
+[node name="img" type="TextureRect" parent="Windowww" unique_id=956817996]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_u2wys")
+
+[node name="smack" type="AudioStreamPlayer" parent="Windowww" unique_id=926533104]
+stream = ExtResource("17_spa8o")
+pitch_scale = 0.32
+
+[node name="celebration" type="AudioStreamPlayer" parent="Windowww" unique_id=670106659]
+stream = ExtResource("18_u2wys")
+pitch_scale = 1.14
+
+[node name="sadness" type="AudioStreamPlayer" parent="Windowww" unique_id=1231395230]
+stream = ExtResource("19_txamo")
+
+[node name="wrong" type="AudioStreamPlayer" parent="Windowww" unique_id=843196758]
+stream = ExtResource("20_gu2bb")
+pitch_scale = 0.42

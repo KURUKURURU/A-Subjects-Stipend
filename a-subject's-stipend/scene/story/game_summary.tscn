@@ -109,7 +109,7 @@ offset_left = 219.0
 offset_top = 27.0
 offset_right = 586.0
 offset_bottom = 434.0
-theme_override_constants/separation = 9
+theme_override_constants/separation = 37
 
 [node name="title" type="HBoxContainer" parent="VBoxContainer" unique_id=653916054]
 layout_mode = 2
@@ -356,7 +356,6 @@ fit_content = true
 horizontal_alignment = 1
 
 [node name="Month_6" type="HBoxContainer" parent="VBoxContainer" unique_id=256206318]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = -17
 script = ExtResource("4_44lfx")
@@ -386,240 +385,6 @@ text = "100"
 fit_content = true
 
 [node name="total" type="RichTextLabel" parent="VBoxContainer/Month_6" unique_id=1192295349]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_7" type="HBoxContainer" parent="VBoxContainer" unique_id=1729894086]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=811142675]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1133486497]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1249835964]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_7" unique_id=1549917804]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_8" type="HBoxContainer" parent="VBoxContainer" unique_id=938028115]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=149738462]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=923323242]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=608945503]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_8" unique_id=59151879]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_9" type="HBoxContainer" parent="VBoxContainer" unique_id=1186960802]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=432628408]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=717906219]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=371398055]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_9" unique_id=623337922]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_10" type="HBoxContainer" parent="VBoxContainer" unique_id=1324567077]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=791467400]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=1781665669]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=919113325]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_10" unique_id=13139963]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_11" type="HBoxContainer" parent="VBoxContainer" unique_id=849095776]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=2060294990]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=1174071059]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=25537221]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_11" unique_id=136270395]
-clip_contents = false
-custom_minimum_size = Vector2(117.68, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "200
-"
-fit_content = true
-horizontal_alignment = 1
-
-[node name="Month_12" type="HBoxContainer" parent="VBoxContainer" unique_id=100674869]
-layout_mode = 2
-theme_override_constants/separation = -17
-script = ExtResource("4_44lfx")
-
-[node name="m" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=434903154]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="p" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=529719956]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "1"
-fit_content = true
-
-[node name="i" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=2100433751]
-clip_contents = false
-custom_minimum_size = Vector2(100.13, 0)
-layout_mode = 2
-theme = ExtResource("3_44lfx")
-text = "100"
-fit_content = true
-
-[node name="total" type="RichTextLabel" parent="VBoxContainer/Month_12" unique_id=1952656921]
 clip_contents = false
 custom_minimum_size = Vector2(117.68, 0)
 layout_mode = 2
@@ -719,3 +484,5 @@ offset_top = -30.968124
 offset_right = 59.999504
 offset_bottom = 69.031876
 texture = ExtResource("8_5nctv")
+
+[connection signal="pressed" from="Continue" to="." method="complete"]
