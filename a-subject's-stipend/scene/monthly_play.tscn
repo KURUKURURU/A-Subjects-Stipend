@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7wi08267vk7u" path="res://scene/story/card_play.tscn" id="2_d5t03"]
 [ext_resource type="Theme" uid="uid://c0107gwsduunx" path="res://theme/text_small.tres" id="2_kv73j"]
 [ext_resource type="Theme" uid="uid://bnj0fm4hpncl1" path="res://theme/text_big.tres" id="2_ru4vb"]
+[ext_resource type="AudioStream" uid="uid://c1f7ui5p27fi7" path="res://sound/818465__bestfreesoundaccount__wheatfield.wav" id="6_2iktb"]
 
 [sub_resource type="Animation" id="Animation_e1cbd"]
 resource_name = "ProgressMonth"
@@ -51,9 +52,9 @@ position = Vector2(399, 300)
 texture = ExtResource("2_3kk7k")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1956723408]
-offset_top = 536.0
+offset_top = 538.0
 offset_right = 800.0
-offset_bottom = 598.0
+offset_bottom = 600.0
 theme = ExtResource("2_kv73j")
 max_value = 20.0
 
@@ -72,3 +73,7 @@ text = "Month"
 
 [node name="CardPlay" parent="." unique_id=387277677 instance=ExtResource("2_d5t03")]
 visible = false
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1508540388]
+stream = ExtResource("6_2iktb")
+autoplay = true

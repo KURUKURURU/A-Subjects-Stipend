@@ -14,7 +14,7 @@ var emergent
 func _ready() -> void:
 	if label.text == "Emergency Fund":
 		emergent = true
-		label.text = "Emergency (" + str(Global.emergency) + " G)"
+		label.text = "Savings (" + str(Global.emergency) + " G)"
 	
 	self.value = 0
 	plus.pressed.connect(adding)

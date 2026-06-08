@@ -73,6 +73,9 @@ func debts_q() -> void:
 	print("ggg")
 	PopUp.popup("Debt", "An obligation or liability to pay or render something to someone else. ")
 
+func spending_q() -> void:
+	print("spending question")
+	PopUp.popup("Debt", "An obligation or liability to pay or render something to someone else. ")
 
 func FINISH() -> void: # next month
 	

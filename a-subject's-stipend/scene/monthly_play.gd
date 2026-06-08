@@ -39,7 +39,7 @@ func _ready() -> void:
 	
 	Questbox.startQuest("Debt")
 	#await Questbox.drawTowards(Questbox.debt_progressbar, float((Global.current_principal)))
-	await Questbox.modify(Questbox.debt, Questbox.debt_progressbar, Global.owed)
+	Questbox.modify(Questbox.debt, Questbox.debt_progressbar, Global.owed)
 	
 	for i in range(ticks):
 		await play()
@@ -60,7 +60,7 @@ func _process(delta: float) -> void:
 	
 func play():
 	card_play.hide()
-	var wait_time = randi_range(3, 9)
+	var wait_time = randi_range(1, (12-Global.month))
 	await Global.wait(wait_time) # halfway
 	
 	progress_animation.pause()

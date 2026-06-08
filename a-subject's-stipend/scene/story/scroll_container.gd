@@ -14,7 +14,7 @@ extends ScrollContainer
 
 
 func _ready() -> void:
-	total_money.value = 3000 + Global.leftover
+	total_money.value = 2000 + Global.leftover
 	Global.leftover = 0
 
 
