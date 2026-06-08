@@ -19,6 +19,9 @@ extends Node2D
 @onready var credit_option: CheckButton = $Control/setting/Take/Credit
 @onready var accept_option: TextureButton = $Control/setting/Take/accept
 
+@onready var preview_title: RichTextLabel = $Preview/title
+@onready var preview_body: RichTextLabel = $Preview/body
+
 #var Data = SituationData.new()
 var payment:
 	get:
@@ -40,9 +43,12 @@ func _process(delta: float) -> void:
 	
 	if SituationData.img != "":
 		img.texture = load(SituationData.img)
-	title.text = SituationData.title
 	
+	title.text = SituationData.title
+	preview_title.text = SituationData.title
 	body.text = SituationData.body
+	preview_body.text = SituationData.body
+	
 	
 
 func _ready() -> void:
@@ -92,7 +98,7 @@ func event(area):
 
 	match area:
 		"Servants":
-			SituationData.servant(chance)
+			SituationData.situation(chance)
 
 	print("Payment =", SituationData.payment)
 	print("Global.added BEFORE =", Global.added)

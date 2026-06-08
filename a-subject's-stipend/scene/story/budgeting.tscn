@@ -1178,6 +1178,7 @@ c = 400
 d = 0
 
 [node name="SSalary5" type="TextureProgressBar" parent="Screen1/Profit/ScrollContainer/thing" unique_id=426176867]
+visible = false
 texture_filter = 1
 layout_mode = 2
 max_value = 500.0

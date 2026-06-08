@@ -15,6 +15,10 @@ var paid := 0
 var extra := 0
 var emergency := 0
 var antileft
+var risk
+
+var worst_areas
+var best_areas
 
 var APR := 0.22
 

@@ -24,10 +24,15 @@ extends Node2D
 
 @onready var _continue: Button = $Screen/Debt/VBoxContainer/Control/Continue
 @onready var emergency: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/Emergency
+@onready var food: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/SSalary2
+@onready var water: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/SSalary3
+@onready var servants: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/SSalary
+@onready var horsecare: TextureProgressBar = $Screen1/Profit/ScrollContainer/thing/SSalary4
 
 #var GS = GameSummary.new()
 
 var page := 1
+
 
 func _ready() -> void:
 	#bank.value = 1025
@@ -78,7 +83,19 @@ func spending_q() -> void:
 	PopUp.popup("Debt", "An obligation or liability to pay or render something to someone else. ")
 
 func FINISH() -> void: # next month
-	
+	var sorted = get_sorted_areas()
+
+	Global.worst_areas = [
+	sorted[0]["name"],
+	sorted[1]["name"],
+	sorted[2]["name"]
+	]
+
+	Global.best_areas = [
+		sorted[-1]["name"],
+		sorted[-2]["name"],
+		sorted[-3]["name"]
+	]
 	#Global.shown_paid = Global.current_principal
 	Global.paid = DEBT_PAYMENT.value 
 	Global.emergency += emergency.value 
@@ -91,6 +108,7 @@ func FINISH() -> void: # next month
 	Global.extra = 0
 	
 	Global.shown_paid = Global.current_principal
+	Global.risk = get_sorted_areas()
 	
 	if Global.current_principal <= 0 or Global.month >= 12:
 		Global.antileft = 4074 - Global.owed 
@@ -99,3 +117,33 @@ func FINISH() -> void: # next month
 		
 		await Fade.fade("in")
 		Loader.change_level("res://scene/monthly_play.tscn")
+
+#func get_random_risk_area():
+	#var total = 0
+#
+	#for area in budgets:
+		#total += max(1, 500 - budgets[area])
+#
+	#var roll = randi_range(1, total)
+#
+	#for area in budgets:
+		#roll -= max(1, 500 - budgets[area])
+#
+		#if roll <= 0:
+			#return area
+#
+	#return "debt"
+
+func get_sorted_areas():
+	var arr = [
+		{"name":"servants", "value":servants.value},
+		{"name":"food", "value":food.value},
+		{"name":"water", "value":water.value},
+		{"name":"horsecare", "value":horsecare.value}
+	]
+
+	arr.sort_custom(func(a,b):
+		return a.value < b.value
+	)
+
+	return arr
