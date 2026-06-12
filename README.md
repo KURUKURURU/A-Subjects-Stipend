@@ -21,3 +21,12 @@ At the end if you overpay your debt, you'll have Mari displeased with you. Pleas
 Don't think I'll win at all but isn't it interesting how so many other projects and devs feel the same and they still uploaded their projects? They're proud of them and they should be, cuz practice makes perfect and I'm sure one day we'll get as good as the greats. Not everyone has to do everything but everyone can do something.
 
 thanks for coming to my ted talk 
+
+credits for the music:
+
+https://freesound.org/people/SuperGamerSVK/sounds/509925/
+https://freesound.org/people/xkeril/sounds/826622/
+https://freesound.org/people/bestfreesoundaccount/sounds/818465/
+https://freesound.org/people/Bertrof/sounds/131657/
+https://freesound.org/people/byronabadia/sounds/724763/
+https://freesound.org/people/newagesoup/sounds/377842/
